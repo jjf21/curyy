@@ -1,0 +1,24 @@
+doctype 5
+html
+  head
+    title Cv Designer
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
+    = csrf_meta_tags
+    = csp_meta_tag
+
+  body.bg-dark id=(controller.controller_name) class=(controller.action_name)
+    header.header
+      .container
+        a href="/" Cv Designer
+
+    main.container role="main"
+      - flash.each do |name, msg|
+        .alert role="alert"
+          = raw(msg)
+      = yield
+
+    footer.footer
+      .container
+        p &copy; #{Date.current.year} All rights reserved.

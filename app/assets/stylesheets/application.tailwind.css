@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+
+
+.field {
+  @apply border py-2 px-3;
+}
+
+@tailwind utilities;

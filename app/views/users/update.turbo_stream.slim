@@ -1,0 +1,13 @@
+- if @user.errors.empty?
+  = turbo_stream.replace "#{dom_id(@user)}_form" do
+    =< link_to "edit", edit_user_path(@user)
+
+  = turbo_stream.replace "#{dom_id(@user)}_item" do
+    = render "user", user: @user
+
+  = turbo_stream.replace "user_item" do
+    = render "/themes/#{@theme}/user", user: @user
+
+- else
+  = turbo_stream.replace "user_form" do
+    = render "form", user: @user

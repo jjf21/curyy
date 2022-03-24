@@ -1,0 +1,21 @@
+.cv-editor-layout
+  .left
+    h1 User
+    = turbo_frame_tag "edit_user" do
+      =< link_to "edit", edit_user_path(@user)
+
+    #user
+      = render 'users/user', user: @user
+
+
+    h1
+      | Experiences
+
+
+    = turbo_frame_tag "new_experience" do
+      =< link_to "ajouter", new_experience_path
+    #experiences
+      - @user.experiences.each do |experience|
+        = render 'experiences/experience', experience: experience
+  .right
+    = render "/themes/hello_world", user: @user

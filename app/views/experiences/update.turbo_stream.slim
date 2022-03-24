@@ -1,0 +1,10 @@
+- if @experience.errors.empty?
+  = turbo_stream.replace "#{dom_id(@experience)}_item" do
+    = render "experience", experience: @experience
+
+  = turbo_stream.replace "#{dom_id(@experience)}_cv_item" do
+    = render "/themes/#{@theme}/experience", experience: @experience
+
+- else
+  = turbo_stream.replace "#{dom_id(@experience)}_form" do
+    = render "form", experience: @experience

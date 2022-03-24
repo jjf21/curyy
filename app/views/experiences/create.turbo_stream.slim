@@ -1,0 +1,15 @@
+- if @experience.errors.empty?
+  - # Append content on form
+  = turbo_stream.append "experiences" do
+    = render "experience", experience: @experience
+
+  - # Remove new form
+  = turbo_stream.remove "new_experience"
+
+  - # Append content on CV
+  = turbo_stream.append "experiences_right" do
+    = render "themes/#{@theme}/experience", experience: @experience
+
+- else
+  = turbo_stream.replace "#{dom_id(@experience)}_form" do
+    = render "form", experience: @experience
