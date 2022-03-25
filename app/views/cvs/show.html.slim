@@ -9,9 +9,8 @@
 
 
     h2 Config
-    div data-controller="color-picker"
-      label.label.block Background color
-      input.color-picker.field type="text" data-color-picker-target="source" value="#1F5710" data-action="keyup->color-picker#changeBackground"
+    = turbo_frame_tag dom_id(@cv) do
+      = render "/cvs/form", cv: @cv
 
     h2.inline-block Experiences
     = turbo_frame_tag "new_experience" do
@@ -20,7 +19,8 @@
     #experiences
       - @user.experiences.each do |experience|
         = render 'experiences/experience', experience: experience
+
   .w-1/2.bg-slate-100
     #cv_container
       .wrapper
-        = render "/themes/hello_world", user: @user
+        = render "/themes/hello_world", user: @user, cv: @cv

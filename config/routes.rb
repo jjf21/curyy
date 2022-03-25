@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   resources :experiences
   devise_for :users
   resources :users, only: [:edit, :update]
-  get '/user', to: 'users#show'
+  resources :cvs do
+    get :export, on: :member
+  end
   root to: "pages#root"
-  get '/export', to: 'pages#export'
+
 end

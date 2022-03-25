@@ -1,0 +1,3 @@
+- @cvs.each do |cv|
+  .card.px-10.py-40.rounded.border.inline-block
+    = link_to "#{cv.theme_id } - #{cv.theme.name}", cv_path(cv)

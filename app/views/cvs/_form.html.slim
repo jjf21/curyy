@@ -1,0 +1,16 @@
+= simple_form_for cv, html: { id: "#{dom_id(cv)}_form" } do |f|
+  .inline-block data-controller="color-picker"
+    = f.input :background, input_html: {data: {color_picker_target: "source", action: "keyup->color-picker#changeBackground", attr: "background"}}
+
+  .inline-block
+    = f.input :main_color
+
+  .inline-block data-controller="color-picker"
+    = f.input :text_color, input_html: {data: {color_picker_target: "source", action: "keyup->color-picker#changeTextColor", attr: "background"}}
+
+  = f.button :submit
+
+
+- #div data-controller="color-picker"
+- #label.label.block Background color
+- #input.color-picker.field type="text" data-color-picker-target="source" value="#1F5710" data-action="keyup->color-picker#changeBackground"
