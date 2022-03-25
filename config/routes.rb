@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update]
   get '/user', to: 'users#show'
   root to: "pages#root"
+  get '/export', to: 'pages#export'
 end

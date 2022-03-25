@@ -9,9 +9,11 @@ html
     = csp_meta_tag
 
   body.bg-dark id=(controller.controller_name) class=(controller.action_name)
-    header.header
-      .container
-        a href="/" Cv Designer
+    header.header.py-4
+      .flex.justify-between.mx-12
+        a.text-yellow-500 href="/user" CVDESIGNER
+        .right
+          = link_to 'Download CV', export_path
 
     main.container-fluid role="main"
       - flash.each do |name, msg|

@@ -1,4 +1,4 @@
-div id="#{dom_id(experience)}_item"
+div id="#{dom_id(experience)}_item" *{data: { 'stream-enter-class': "slide-in", 'stream-exit-class': "slide-out" }}
   = turbo_frame_tag dom_id(experience) do
     p
       strong =< experience.title

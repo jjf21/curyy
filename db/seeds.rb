@@ -48,3 +48,5 @@ Experience.create(
   item_type: "education",
   title: "Formation Ruby on Rails"
 )
+
+Theme.create!(name: "hello_world", background: "#cfcfcf", main_color: "#eab308", text_color: "#2b315c", font_family: "Roboto")

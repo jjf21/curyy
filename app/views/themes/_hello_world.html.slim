@@ -1,11 +1,13 @@
+section#hello_world.page.bg-blue-100
+  .flex.items-center.bg-black.py-5
+    img.object-cover.h-40.w-40.ml-20.bg-yellow-500.rounded-full src="https://cdn.pixabay.com/photo/2018/08/28/12/41/avatar-3637425__340.png"
+    #user_right
+      = render "themes/hello_world/user", user: current_user
+  .px-12.py-6
+    #experiences_right
+      p.text-4xl.pb-4.underline.underline-offset-8 Work Experiences
+      - user.experiences.each do |experience|
+        = render "themes/hello_world/experience", experience: experience
 
-#cv_container
-  .wrapper
-    section#one.page
-      h3.text-4xl CV Template:  HELLO WORLD
 
-      #user_right
-        = render "themes/hello_world/user", user: current_user
-      #experiences_right
-        - user.experiences.each do |experience|
-          = render "themes/hello_world/experience", experience: experience
+    p.text-gray-500 CV Template:  HELLO WORLD

@@ -16,6 +16,7 @@ gem "cssbundling-rails"
 gem "slim-rails"
 gem "simple_form"
 gem "devise", "~> 4.8"
+gem 'grover'
 
 
 

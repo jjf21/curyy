@@ -1,2 +1,4 @@
-p#user_item
-  = "#{user.first_name} #{user.last_name}"
+#user_item.text-white.ml-32 *{data: { 'stream-enter-class': "slide-in", 'stream-exit-class': "slide-out" }}
+  p.text-6xl =user.first_name
+  p.text-4xl =user.last_name
+  p.text-yellow-500.text-4xl =user.headline

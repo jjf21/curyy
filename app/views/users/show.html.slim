@@ -8,6 +8,10 @@
       = render 'users/user', user: @user
 
 
+    h2 Config
+    div data-controller="color-picker"
+      label.label.block Background color
+      input.color-picker.field type="text" data-color-picker-target="source" value="#1F5710" data-action="keyup->color-picker#changeBackground"
 
     h2.inline-block Experiences
     = turbo_frame_tag "new_experience" do
@@ -17,4 +21,6 @@
       - @user.experiences.each do |experience|
         = render 'experiences/experience', experience: experience
   .w-1/2.bg-slate-100
-    = render "/themes/hello_world", user: @user
+    #cv_container
+      .wrapper
+        = render "/themes/hello_world", user: @user
