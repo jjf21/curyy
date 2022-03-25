@@ -1,4 +1,4 @@
-= form_with(model: experience, id: "#{dom_id(experience)}_form") do |form|
+= simple_form_for experience, html: { id: "#{dom_id(experience)}_form" } do |f|
   - if experience.errors.any?
     div style="color: red"
       h2 = "#{pluralize(experience.errors.count, 'error')} prohibited this experience from being saved:"
@@ -7,12 +7,6 @@
           li = error.full_message
 
   div
-    = form.hidden_field :user_id
-
-  div
-    = form.label :title, style: "display: block"
-    = form.text_field :title
-
-
-  div
-    = form.submit
+    = f.hidden_field :user_id
+    = f.input :title
+    = f.button :submit

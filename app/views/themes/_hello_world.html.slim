@@ -1,5 +1,11 @@
-#user_right
-  = render "themes/hello_world/user", user: current_user
-#experiences_right
-  - user.experiences.each do |experience|
-    = render "themes/hello_world/experience", experience: experience
+
+#cv_container
+  .wrapper
+    section#one.page
+      h3.text-4xl CV Template:  HELLO WORLD
+
+      #user_right
+        = render "themes/hello_world/user", user: current_user
+      #experiences_right
+        - user.experiences.each do |experience|
+          = render "themes/hello_world/experience", experience: experience

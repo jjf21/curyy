@@ -1,7 +1,7 @@
 div id="#{dom_id(experience)}_item"
   = turbo_frame_tag dom_id(experience) do
     p
-      =< experience.title
+      strong =< experience.title
 
-      =< link_to "delete", experience_path(experience), method: :delete
-      =< link_to "edit", edit_experience_path(experience)
+      =< link_to "edit", edit_experience_path(experience), class: 'border px-2 bg-gray-700 text-white'
+      =< link_to "delete", experience_path(experience), data: { "turbo-method": :delete }, class: 'border px-2 bg-gray-700 text-white'

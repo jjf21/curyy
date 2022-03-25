@@ -1,9 +1,58 @@
 @tailwind base;
 @tailwind components;
+@tailwind utilities;
 
-
-.field {
-  @apply border py-2 px-3;
+html, body {
+  height: 100%;
+  font-size: 100%;
 }
 
-@tailwind utilities;
+* {
+  box-sizing: border-box;
+}
+
+.field {
+  @apply border py-1 px-3 shadow appearance-none rounded text-gray-700;
+}
+
+.label {
+  @apply text-gray-700 block
+}
+
+.input_wrapper {
+  @apply inline-block pr-2;
+}
+
+.btn {
+  @apply px-5 py-2 bg-blue-500 text-white;
+}
+
+h2 {
+  @apply text-4xl font-bold mt-4;
+}
+
+.page {
+  width: 21cm;
+  height: 29.7cm;
+  padding: 2cm;
+  margin: 1cm 0;
+  background: white;
+  box-shadow: 0 4px 5px rgba(75, 75, 75, 0.2);
+  border: 1px #d3d3d3 solid;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+#cv_container {
+  margin: 0;
+  padding: 0;
+  transform-origin: top center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  /* remove extra-space after pages */
+  height: 100vh;
+}
+

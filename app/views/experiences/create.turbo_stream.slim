@@ -3,8 +3,9 @@
   = turbo_stream.append "experiences" do
     = render "experience", experience: @experience
 
-  - # Remove new form
-  = turbo_stream.remove "new_experience"
+  - # Replace new form with Ajouter btn
+  = turbo_stream.replace "new_experience" do
+    =< link_to "ajouter", new_experience_path, class: 'btn'
 
   - # Append content on CV
   = turbo_stream.append "experiences_right" do
