@@ -5,4 +5,5 @@ class User < ApplicationRecord
   has_many :experiences
   has_many :cvs
   has_many :skills
+  has_many :links
 end
