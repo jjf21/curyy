@@ -1,6 +1,6 @@
 = simple_form_for cv, html: { id: "#{dom_id(cv)}_form" } do |f|
   .inline-block data-controller="color-picker"
-    = f.input :background, input_html: {data: {color_picker_target: "source", action: "keyup->color-picker#changeBackground", attr: "background"}}
+    = f.input :background, as: :color, input_html: {data: {color_picker_target: "source", action: "keyup->color-picker#changeBackground", attr: "background"}}
 
   .inline-block
     = f.input :main_color

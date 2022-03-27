@@ -1,7 +1,7 @@
 - @cv = cv
 - style = "background-color: #{cv.background}; color:#{cv.text_color}"
 
-section#hello_world.page style=style
+section#hello_world.page style=style data-controller="cv-zoom"
   .flex.items-center.bg-black.py-5
     img.object-cover.h-40.w-40.ml-20.bg-yellow-500.rounded-full src="https://cdn.pixabay.com/photo/2018/08/28/12/41/avatar-3637425__340.png"
     #user_right

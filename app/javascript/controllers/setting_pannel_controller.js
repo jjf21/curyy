@@ -12,7 +12,6 @@ export default class extends Controller {
   }
 
   toggleSetting() {
-    console.log('Toggle', this.pannelTarget.classList)
     this.pannelTarget.classList.toggle('w-0')
     this.pannelTarget.classList.toggle('px-0')
     // this.pannelTarget.classList.toggle('hidden')
