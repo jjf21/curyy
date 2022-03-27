@@ -17,7 +17,12 @@ html, body {
 }
 
 .field {
-  @apply border py-1 px-3 shadow appearance-none rounded text-gray-700;
+  @apply border py-1 px-3 appearance-none rounded text-gray-700;
+}
+
+.field.color {
+  @apply border-l-0 rounded-l-none;
+  width: calc(100% - 35px);
 }
 
 .label {

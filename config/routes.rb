@@ -7,5 +7,4 @@ Rails.application.routes.draw do
     get :export, on: :member
   end
   root to: "pages#root"
-
 end
