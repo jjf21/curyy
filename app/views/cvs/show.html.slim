@@ -1,16 +1,11 @@
 .cv-editor-layout.flex
-  .w-1/2.bg-green-100
+  .w-1/2.bg-green-100.p-6
     h2.inline-block User
     = turbo_frame_tag "edit_user" do
       =< link_to "edit", edit_user_path(@user), class: 'btn'
 
     #user
       = render 'users/user', user: @user
-
-
-    h2 Config
-    = turbo_frame_tag dom_id(@cv) do
-      = render "/cvs/form", cv: @cv
 
     h2.inline-block Experiences
     = turbo_frame_tag "new_experience" do
@@ -20,7 +15,8 @@
       - @user.experiences.each do |experience|
         = render 'experiences/experience', experience: experience
 
-  .w-1/2.bg-slate-100
+  .w-1/2
+    = render "cvs/setting"
     #cv_container
       .wrapper
         = render "/themes/hello_world", user: @user, cv: @cv

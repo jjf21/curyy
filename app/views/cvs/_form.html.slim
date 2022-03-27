@@ -8,7 +8,7 @@
   .inline-block data-controller="color-picker"
     = f.input :text_color, input_html: {data: {color_picker_target: "source", action: "keyup->color-picker#changeTextColor", attr: "background"}}
 
-  = f.button :submit
+  - # f.button :submit
 
 
 - #div data-controller="color-picker"
