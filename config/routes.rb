@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :experiences
+  resources :experiences, except: [:index, :show]
+  resources :skills, except: [:index, :show]
   devise_for :users
   resources :users, only: [:edit, :update]
   resources :cvs do

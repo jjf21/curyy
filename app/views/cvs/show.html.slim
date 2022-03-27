@@ -15,6 +15,18 @@
       - @user.experiences.each do |experience|
         = render 'experiences/experience', experience: experience
 
+
+
+    h2.inline-block Skills
+    = turbo_frame_tag "new_skill" do
+      =< link_to "ajouter", new_skill_path, class: 'btn'
+      
+    #skills
+      - @user.skills.each do |skill|
+        = render 'skills/skill', skill: skill
+
+
+
   .w-1/2
     = render "cvs/setting"
     #cv_container

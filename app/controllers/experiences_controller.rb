@@ -1,14 +1,5 @@
 class ExperiencesController < ApplicationController
-  before_action :set_experience, only: %i[show edit update destroy]
-
-  # TODO: delete
-  def index
-    @experiences = Experience.all
-  end
-
-  # TODO: delete
-  def show
-  end
+  before_action :set_experience, only: %i[edit update destroy]
 
   def new
     @experience = Experience.new(user: current_user)

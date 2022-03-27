@@ -12,5 +12,10 @@ section#hello_world.page style=style
       - user.experiences.each do |experience|
         = render "themes/hello_world/experience", experience: experience
 
+    #skills_right
+      p.text-4xl.pb-4.underline.underline-offset-8 Skills
+      - user.skills.each do |skill|
+        = render "themes/hello_world/skill", skill: skill
+
 
     p.text-gray-500 CV Template:  HELLO WORLD

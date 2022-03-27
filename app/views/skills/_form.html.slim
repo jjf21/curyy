@@ -1,0 +1,15 @@
+= simple_form_for skill, html: { id: "#{dom_id(skill)}_form" } do |f|
+  - if skill.errors.any?
+    div style="color: red"
+      h2 = "#{pluralize(skill.errors.count, 'error')} prohibited this skill from being saved:"
+      ul
+        - skill.errors.each do |error|
+          li = error.full_message
+
+  div
+    = f.hidden_field :user_id
+    = f.input :name
+    = f.input :level
+    = f.input :certification
+    = f.input :item_type
+    = f.button :submit, "Update"

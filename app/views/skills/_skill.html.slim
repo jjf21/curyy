@@ -1,0 +1,7 @@
+div id="#{dom_id(skill)}_item" *{data: { 'stream-enter-class': "slide-in", 'stream-exit-class': "slide-out" }}
+  = turbo_frame_tag dom_id(skill) do
+    p
+      strong =< skill.name
+
+      =< link_to "edit", edit_skill_path(skill), class: 'border px-2 bg-gray-700 text-white'
+      =< link_to "delete", skill_path(skill), data: { "turbo-method": :delete }, class: 'border px-2 bg-gray-700 text-white'
