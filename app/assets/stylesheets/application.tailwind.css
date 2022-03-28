@@ -21,12 +21,16 @@ html, body {
 }
 
 .field.color {
-  @apply border-l-0 rounded-l-none;
+  @apply border-l-0 rounded-l-none whitespace-nowrap;
   width: calc(100% - 28px);
 }
 
 .label {
   @apply text-gray-700 block
+}
+
+.label.color {
+  @apply whitespace-nowrap;
 }
 
 .input_wrapper {
