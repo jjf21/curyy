@@ -6,7 +6,7 @@
   - # Replace new form with Ajouter btn
   = turbo_stream.replace "new_skill" do
     = turbo_frame_tag "new_skill" do
-      =< link_to "ajouter", new_skill_path, class: 'btn'
+      =< link_to "ajouter", new_skill_path, class: 'text-primary'
 
   - # Append content on CV
   = turbo_stream.append "skills_right" do

@@ -64,6 +64,10 @@ h2 {
   transition-timing-function: linear;
 }
 
+.text-primary {
+  @apply text-yellow-500;
+}
+
 #cv_container {
   margin: 0;
   padding: 0;

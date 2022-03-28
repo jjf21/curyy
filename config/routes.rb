@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :skills, except: [:index, :show]
   devise_for :users
   resources :users, only: [:edit, :update]
-  resources :cvs do
+  resources :cvs, except: [:new] do
     get :export, on: :member
   end
   root to: "pages#root"

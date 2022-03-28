@@ -9,10 +9,6 @@ class CvsController < ApplicationController
     @user = current_user
   end
 
-  def new
-    @cv = Cv.new(user: current_user)
-  end
-
   def edit
   end
 
@@ -21,7 +17,7 @@ class CvsController < ApplicationController
     if @cv.save
       redirect_to @cv, notice: "Cv was successfully created."
     else
-      render :new, status: :unprocessable_entity
+      redirect_to :cvs, error: "CV was not created"
     end
   end
 

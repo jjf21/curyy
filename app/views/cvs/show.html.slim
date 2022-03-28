@@ -2,14 +2,14 @@
   .w-1/2.bg-green-100.p-6
     h2.inline-block User
     = turbo_frame_tag "edit_user" do
-      =< link_to "edit", edit_user_path(@user), class: 'btn'
+      =< link_to "Modifier", edit_user_path(@user), class: 'text-primary'
 
     #user
       = render 'users/user', user: @user
 
     h2.inline-block Experiences
     = turbo_frame_tag "new_experience" do
-      =< link_to "ajouter", new_experience_path, class: 'btn'
+      =< link_to "ajouter", new_experience_path, class: 'text-primary'
 
     #experiences
       - @user.experiences.each do |experience|
@@ -17,7 +17,7 @@
 
     h2.inline-block Skills
     = turbo_frame_tag "new_skill" do
-      =< link_to "ajouter", new_skill_path, class: 'btn'
+      =< link_to "ajouter", new_skill_path, class: 'text-primary'
 
     #skills
       - @user.skills.each do |skill|
