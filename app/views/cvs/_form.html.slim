@@ -1,12 +1,14 @@
 = simple_form_for cv, html: { id: "#{dom_id(cv)}_form" } do |f|
+  = f.input :id, as: :hidden
+
   .inline-block data-controller="color-picker"
     = f.input :background, as: :color, input_html: {data: {color_picker_target: "input", action: "keyup->color-picker#changeBackground", attr: "background"}}
 
-  .inline-block
-    = f.input :main_color
+  .inline-block data-controller="color-picker"
+    = f.input :main_color, as: :color, input_html: {data: {color_picker_target: "input", action: "keyup->color-picker#changeMainColor", attr: "primary"}}
 
   .inline-block data-controller="color-picker"
-    = f.input :text_color, input_html: {data: {color_picker_target: "input", action: "keyup->color-picker#changeTextColor", attr: "text"}}
+    = f.input :text_color, as: :color, input_html: {data: {color_picker_target: "input", action: "keyup->color-picker#changeTextColor", attr: "text"}}
 
   - # f.button :submit
 
