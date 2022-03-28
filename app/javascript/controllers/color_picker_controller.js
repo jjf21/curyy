@@ -26,7 +26,7 @@ export default class extends Controller {
   }
 
   togglePalette() {
-    this.paletteTarget.classList.toggle('h-0')
+    this.paletteTarget.classList.toggle('hidden');
   }
 
   setPaletteBackground() {

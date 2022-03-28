@@ -22,7 +22,7 @@ html, body {
 
 .field.color {
   @apply border-l-0 rounded-l-none;
-  width: calc(100% - 35px);
+  width: calc(100% - 28px);
 }
 
 .label {
@@ -30,7 +30,7 @@ html, body {
 }
 
 .input_wrapper {
-  @apply inline-block pr-2;
+  @apply inline-block;
 }
 
 .btn {
@@ -55,6 +55,15 @@ h2 {
   flex-direction: column;
 }
 
+.page * {
+  @apply transition;
+}
+
+.transition {
+  transition-property: all;
+  transition-timing-function: linear;
+}
+
 #cv_container {
   margin: 0;
   padding: 0;
@@ -66,6 +75,8 @@ h2 {
   /* remove extra-space after pages */
   height: 100vh;
 }
+
+/* ANIMATION */
 
 .slide-in {
   animation: fade-in 0.25s ease-out,
@@ -85,8 +96,6 @@ h2 {
 .fade-out {
   animation: fade-out 0.25s ease-out,;
 }
-
-
 
 @keyframes fade-in {
   from { opacity: 0; }
