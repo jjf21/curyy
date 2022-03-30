@@ -7,15 +7,16 @@
     #user
       = render 'users/user', user: @user
 
-    h2.inline-block Experiences
-    = turbo_frame_tag "new_experience" do
-      =< link_to "ajouter", new_experience_path, class: 'text-primary'
+    - Experience.item_types.keys.each do |type|
 
-    #experiences
-      - @user.experiences.each do |experience|
-        = render 'experiences/experience', experience: experience
+      h2.inline-block= type.upcase
+      = render "/experiences/new_btn", type: type
 
-    h2.inline-block Skills
+      div id="#{type}_experiences"
+        - @user.send("#{type}_experiences").each do |experience|
+          = render 'experiences/experience', experience: experience
+
+    h2.uppercase.inline-block Skill
     = turbo_frame_tag "new_skill" do
       =< link_to "ajouter", new_skill_path, class: 'text-primary'
 

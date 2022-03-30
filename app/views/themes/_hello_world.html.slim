@@ -4,15 +4,20 @@
 section#hello_world.page.transition style=style data-controller="cv-zoom"
   .flex.items-center.bg-black.py-5
     img.object-cover.h-40.w-40.ml-20.bg-yellow-500.rounded-full src="https://cdn.pixabay.com/photo/2018/08/28/12/41/avatar-3637425__340.png"
-    #user_right
+    #cv_user
       = render "themes/hello_world/user", user: current_user
   .px-12.py-6
-    #experiences_right
-      p.text-4xl.pb-4.underline.underline-offset-8 Work Experiences
-      - user.experiences.each do |experience|
+    #cv_work_experiences
+      p.text-4xl.pb-4.underline.underline-offset-8 Work
+      - user.work_experiences.each do |experience|
         = render "themes/hello_world/experience", experience: experience
 
-    #skills_right
+    #cv_education_experiences
+      p.text-4xl.pb-4.underline.underline-offset-8 Education
+      - user.education_experiences.each do |experience|
+        = render "themes/hello_world/experience", experience: experience
+
+    #cv_skills
       p.text-4xl.pb-4.underline.underline-offset-8 Skills
       - user.skills.each do |skill|
         = render "themes/hello_world/skill", skill: skill

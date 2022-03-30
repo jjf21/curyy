@@ -1,2 +1,2 @@
-= turbo_frame_tag "new_experience" do
+= turbo_frame_tag "new_#{@experience.item_type}_experience" do
   = render "form", experience: @experience

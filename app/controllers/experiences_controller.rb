@@ -2,7 +2,7 @@ class ExperiencesController < ApplicationController
   before_action :set_experience, only: %i[edit update destroy]
 
   def new
-    @experience = Experience.new(user: current_user)
+    @experience = Experience.new(user: current_user, **experience_params)
   end
 
   def edit

@@ -6,4 +6,13 @@ class User < ApplicationRecord
   has_many :cvs
   has_many :skills
   has_many :links
+
+  def work_experiences
+    experiences.work
+  end
+
+  def education_experiences
+    experiences.education
+  end
+
 end

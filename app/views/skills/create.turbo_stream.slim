@@ -9,7 +9,7 @@
       =< link_to "ajouter", new_skill_path, class: 'text-primary'
 
   - # Append content on CV
-  = turbo_stream.append "skills_right" do
+  = turbo_stream.append "cv_skills" do
     = render "themes/#{@theme}/skill", skill: @skill
 
 - else

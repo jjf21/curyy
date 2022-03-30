@@ -1,0 +1,3 @@
+- p "HELLLLOOOOOO " + "new_#{type}_experience"
+= turbo_frame_tag "new_#{type}_experience" do
+  =< link_to "ajouter", new_experience_path(experience: {item_type: type}), class: 'text-primary'

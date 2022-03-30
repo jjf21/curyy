@@ -1,15 +1,14 @@
 - if @experience.errors.empty?
   - # Append content on form
-  = turbo_stream.append "experiences" do
+  = turbo_stream.append "#{@experience.item_type}_experiences" do
     = render "experience", experience: @experience
 
   - # Replace new form with Ajouter btn
-  = turbo_stream.replace "new_experience" do
-    = turbo_frame_tag "new_experience" do
-      =< link_to "ajouter", new_experience_path, class: 'text-primary'
+  = turbo_stream.replace "new_#{@experience.item_type}_experience" do
+    = render "/experiences/new_btn", type: @experience.item_type
 
   - # Append content on CV
-  = turbo_stream.append "experiences_right" do
+  = turbo_stream.append "cv_#{@experience.item_type}_experiences" do
     = render "themes/#{@theme}/experience", experience: @experience
 
 - else
