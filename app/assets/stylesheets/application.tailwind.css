@@ -2,15 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
-  height: 100%;
-  font-size: 100%;
-  overflow-x: hidden;
-}
 
-* {
-  box-sizing: border-box;
-}
 
 @media print {
   body { color-adjust: exact; }
@@ -44,25 +36,6 @@ html, body {
 h2 {
   @apply text-4xl font-bold mt-4;
 }
-
-.wrapper {
-  margin: 2rem 0;
-  box-shadow: 0 4px 5px rgba(75, 75, 75, 0.2);
-  border: 1px #d3d3d3 solid;
-}
-
-.page {
-  width: 21cm;
-  height: 29.7cm;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-.page * {
-  @apply transition duration-75	;
-}
-
 .transition {
   transition-property: all;
   transition-timing-function: linear;
@@ -70,57 +43,4 @@ h2 {
 
 .text-primary {
   @apply text-yellow-500;
-}
-
-#cv_container {
-  margin: 0;
-  padding: 0;
-  transform-origin: top center;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  /* remove extra-space after pages */
-  height: 100vh;
-}
-
-/* ANIMATION */
-
-.slide-in {
-  animation: fade-in 0.25s ease-out,
-             slide-in 0.25s ease-out;
-}
-
-.slide-out {
-  animation: fade-out 0.25s ease-out,
-             slide-out 0.25s ease-out;
-}
-
-
-.fade-in {
-  animation: fade-out 0.25s ease-out,
-}
-
-.fade-out {
-  animation: fade-out 0.25s ease-out,;
-}
-
-@keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes fade-out {
-  from { opacity: 1; }
-  to { opacity: 0; }
-}
-
-@keyframes slide-in {
-  from { transform: translateX(4rem); }
-  to { transform: translateX(0); }
-}
-
-@keyframes slide-out {
-  from { transform: translateX(0); }
-  to { transform: translateX(4rem); }
 }
