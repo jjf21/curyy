@@ -38,6 +38,11 @@ html, body {
   flex-direction: column;
 }
 
-.page * {
-  @apply transition duration-75	;
+.transition {
+  transition-property: all;
+  transition-timing-function: linear;
+}
+
+#cv_body , .text-xl {
+  font-size: 100%;
 }

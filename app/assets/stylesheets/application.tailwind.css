@@ -33,12 +33,12 @@
   @apply bg-white p-4 mb-4;
 }
 
+.page * {
+  @apply transition duration-75	;
+}
+
 h2 {
   @apply text-xl mt-0 text-gray-800 mb-2;
-}
-.transition {
-  transition-property: all;
-  transition-timing-function: linear;
 }
 
 .text-primary {
