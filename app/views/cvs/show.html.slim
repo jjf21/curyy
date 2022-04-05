@@ -1,11 +1,11 @@
 .cv-editor-layout.flex
   .w-1/2.p-6
     h2.inline-block.mt-0 Informations
-    = turbo_frame_tag dom_id(@user) do
+    = turbo_frame_tag "edit_user" do
       =< link_to feather('edit-2', class:"h-5 w-5 relative top-0.5"), edit_user_path(@user), class: 'text-primary inline-block'
 
-    #user
-      = render 'users/user', user: @user
+      #user
+        = render 'users/user', user: @user
 
     - Experience.item_types.keys.each do |type|
 
