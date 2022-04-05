@@ -12,9 +12,9 @@ export default class extends Controller {
   }
 
   toggleSetting() {
-    this.pannelTarget.classList.toggle('w-0')
-    this.pannelTarget.classList.toggle('px-0')
-    // this.pannelTarget.classList.toggle('hidden')
+    // this.pannelTarget.classList.toggle('w-0')
+    // this.pannelTarget.classList.toggle('px-0')
+    this.pannelTarget.classList.toggle('hidden')
   }
 
 }
