@@ -15,6 +15,18 @@ class User < ApplicationRecord
     experiences.education
   end
 
+  def language_skills
+    skills.language
+  end
+
+  def tool_skills
+    skills.tool
+  end
+
+  def skill_skills
+    skills.skill
+  end
+
   def full_name
     "#{first_name} #{last_name}"
   end

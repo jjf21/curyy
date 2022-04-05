@@ -1,2 +1,3 @@
-= turbo_frame_tag "new_skill" do
+= p "-------------------- new_#{@skill.item_type}_skill --------------------"
+= turbo_frame_tag "new_#{@skill.item_type}_skill" do
   = render "form", skill: @skill

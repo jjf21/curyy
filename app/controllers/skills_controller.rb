@@ -2,7 +2,7 @@ class SkillsController < ApplicationController
   before_action :set_skill, only: %i[edit update destroy]
 
   def new
-    @skill = Skill.new(user: current_user)
+    @skill = Skill.new(user: current_user, **skill_params)
   end
 
   def edit

@@ -9,7 +9,7 @@
 }
 
 .field {
-  @apply border py-1 px-3 appearance-none rounded text-gray-700;
+  @apply w-full border py-1 px-3 appearance-none rounded text-gray-700;
 }
 
 .field.color {
@@ -25,16 +25,12 @@
   @apply whitespace-nowrap;
 }
 
-.input_wrapper {
-  @apply inline-block;
-}
-
 .btn {
   @apply px-5 py-2 bg-blue-500 text-white;
 }
 
 h2 {
-  @apply text-4xl font-bold mt-4;
+  @apply text-xl mt-4 text-gray-800;
 }
 .transition {
   transition-property: all;

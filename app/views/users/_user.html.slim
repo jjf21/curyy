@@ -1,7 +1,14 @@
-div id="#{dom_id(user)}_item"
+div.text-sm.flex id="#{dom_id(user)}_item"
+  p.border-r-2.pr-8.mr-4
+    = @user.full_name
+    br
+    = @user.email
+    br
+    = @user.phone
+    br
+    = @user.address
+
   p
-    strong First Name:
-    =< @user.first_name
-  p
-    strong Last Name:
-    =< @user.last_name
+    = @user.headline
+    = @user.about
+    = @user.website

@@ -1,15 +1,14 @@
 - if @skill.errors.empty?
   - # Append content on form
-  = turbo_stream.append "skills" do
+  = turbo_stream.append "#{@skill.item_type}_skills" do
     = render "skill", skill: @skill
 
   - # Replace new form with Ajouter btn
-  = turbo_stream.replace "new_skill" do
-    = turbo_frame_tag "new_skill" do
-      =< link_to "ajouter", new_skill_path, class: 'text-primary'
+  = turbo_stream.replace "new_#{@skill.item_type}_skill" do
+    = render "/skills/new_btn", type: @skill.item_type
 
   - # Append content on CV
-  = turbo_stream.append "cv_skills" do
+  = turbo_stream.append "cv_#{@skill.item_type}_skills" do
     = render "themes/#{@theme}/skill", skill: @skill
 
 - else

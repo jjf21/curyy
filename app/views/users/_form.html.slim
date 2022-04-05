@@ -1,10 +1,7 @@
 = simple_form_for user, html: { id: "#{dom_id(user)}_form" } do |f|
-  = f.input :first_name
-  = f.input :last_name
-  = f.input :birthdate
+  = f.input :headline, placeholder: "Product Owner"
   = f.input :phone, placeholder: "+33 6 00 00 00 00"
   = f.input :address, placeholder: "Paris"
-  = f.input :headline, placeholder: "Product Owner"
   = f.input :about, placeholder: "Présentez vous en 1 phrase"
   = f.input :website, placeholder: "https://site.com"
   = f.input :interests

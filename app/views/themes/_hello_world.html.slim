@@ -6,14 +6,24 @@ section#hello_world.page.transition style=style data-controller="cv-zoom"
     #cv_user
       = render "themes/hello_world/user", user: current_user
   .flex
-    #left.border-r-2.w-1/3.ml-8.pr-8.my-6
+    #left.border-r-2.w-1/3.ml-8.pr-2.my-6
       #cv_contact
-        p.text-xl.pb-4.uppercase Contact
+
         = render "themes/hello_world/contact", user: user
-      #cv_skills
+      #cv_skill_skills
         p.text-xl.py-4.uppercase Compétences
-        - user.skills.each do |skill|
+        - user.skill_skills.each do |skill|
           = render "themes/hello_world/skill", skill: skill
+      #cv_tool_skills
+        p.text-xl.py-4.uppercase Outils
+        - user.tool_skills.each do |skill|
+          = render "themes/hello_world/skill", skill: skill
+      #cv_language_skills
+        p.text-xl.py-4.uppercase Langues
+        - user.language_skills.each do |skill|
+          = render "themes/hello_world/skill", skill: skill
+
+
     #right.w-2/3.mx-8.my-6
       #cv_work_experiences
         p.text-xl.pb-4.uppercase.tracking-wider Experiences professionnelles

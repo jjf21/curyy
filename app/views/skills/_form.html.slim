@@ -8,8 +8,8 @@
 
   div
     = f.hidden_field :user_id
+    = f.hidden_field :item_type
     = f.input :name
-    = f.input :level
-    = f.input :certification
-    = f.input :item_type
+    - if skill.language?
+      = f.input :certification
     = f.button :submit, "Update"

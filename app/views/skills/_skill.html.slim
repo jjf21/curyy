@@ -1,7 +1,7 @@
 div id="#{dom_id(skill)}_item" *{data: { 'stream-enter-class': "slide-in", 'stream-exit-class': "slide-out" }}
   = turbo_frame_tag dom_id(skill) do
-    p
-      strong =< skill.name
+    div
+      span =< "✗ #{skill.name}"
 
-      =< link_to "edit", edit_skill_path(skill), class: 'border px-2 bg-gray-700 text-white'
-      =< link_to "delete", skill_path(skill), data: { "turbo-method": :delete }, class: 'border px-2 bg-gray-700 text-white'
+      =< link_to feather('edit-2', class:"h-4 w-4 relative top-0.5"), edit_skill_path(skill), class: 'inline-block'
+      =< link_to feather('trash', class:"h-4 w-4 relative top-0.5"), skill_path(skill), data: { "turbo-method": :delete }, class: 'inline-block'

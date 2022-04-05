@@ -1,7 +1,7 @@
 div id="#{dom_id(experience)}_item" *{data: { 'stream-enter-class': "slide-in", 'stream-exit-class': "slide-out" }}
   = turbo_frame_tag dom_id(experience) do
-    p
-      strong =< experience.title
+    div
+      span =< "✗ #{experience.title}"
 
-      =< link_to "edit", edit_experience_path(experience), class: 'border px-2 bg-gray-700 text-white'
-      =< link_to "delete", experience_path(experience), data: { "turbo-method": :delete }, class: 'border px-2 bg-gray-700 text-white'
+      =< link_to feather('edit-2', class:"h-4 w-4 relative top-0.5"), edit_experience_path(experience), class: 'inline-block'
+      =< link_to feather('trash', class:"h-4 w-4 relative top-0.5"), experience_path(experience), data: { "turbo-method": :delete }, class: 'inline-block'
