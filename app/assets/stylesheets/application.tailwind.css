@@ -29,8 +29,12 @@
   @apply px-5 py-2 bg-blue-500 text-white;
 }
 
+.card {
+  @apply bg-white p-4 mb-4;
+}
+
 h2 {
-  @apply text-xl mt-4 text-gray-800;
+  @apply text-xl mt-0 text-gray-800 mb-2;
 }
 .transition {
   transition-property: all;

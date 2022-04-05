@@ -42,8 +42,12 @@ class CvsController < ApplicationController
 
   def export
     html = render_to_string partial: '/themes/hello_world', locals: {user: User.first, cv: @cv}, layout: false
-    style_tag_options = [{ content: Rails.application.assets['application.css'].to_s }]
-    grover = Grover.new("<html><body>#{html}</body></html>", format: 'A4', style_tag_options: style_tag_options)
+    style_tag_options = [{ content: Rails.application.assets['tailwind.css'].to_s }]
+    script_tag_options = [
+      { url: 'https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js' },
+      { content: 'feather.replace()' }
+    ]
+    grover = Grover.new("<html><head><meta charset='UTF-8' /></head><body>#{html}</body></html>", format: 'A4', style_tag_options: style_tag_options, script_tag_options: script_tag_options)
     pdf = grover.to_pdf
 
     send_data pdf, type: "application/pdf"

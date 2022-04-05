@@ -1,5 +1,5 @@
-div.text-sm.flex id="#{dom_id(user)}_item"
-  p.border-r-2.pr-8.mr-4
+div.text-sm id="#{dom_id(user)}_item"
+  p
     = @user.full_name
     br
     = @user.email
@@ -7,8 +7,9 @@ div.text-sm.flex id="#{dom_id(user)}_item"
     = @user.phone
     br
     = @user.address
-
-  p
+    br
     = @user.headline
+    br
     = @user.about
+    br
     = @user.website

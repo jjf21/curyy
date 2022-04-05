@@ -21,7 +21,7 @@ html
           .right
             = link_to 'Download CV', export_cv_path(@cv)
 
-    main.container-fluid role="main"
+    main.container-fluid.bg-gray-100 role="main"
       - flash.each do |name, msg|
         .alert role="alert"
           = raw(msg)

@@ -2,6 +2,7 @@ div id="#{dom_id(experience)}_item" *{data: { 'stream-enter-class': "slide-in", 
   = turbo_frame_tag dom_id(experience) do
     div
       span =< "✗ #{experience.title}"
+      span.font-light.text-xs =< "@ #{experience.company}"
 
       =< link_to feather('edit-2', class:"h-4 w-4 relative top-0.5"), edit_experience_path(experience), class: 'inline-block'
       =< link_to feather('trash', class:"h-4 w-4 relative top-0.5"), experience_path(experience), data: { "turbo-method": :delete }, class: 'inline-block'
