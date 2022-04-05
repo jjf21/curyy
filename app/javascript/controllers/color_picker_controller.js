@@ -2,10 +2,9 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
 
-  static targets = [ "input" , "picker_container", "picker_icon", "palette"]
+  static targets = [ "input" , ]
 
   connect() {
-    this.setPaletteBackground()
   }
 
   initialize() {
@@ -15,14 +14,12 @@ export default class extends Controller {
     var color = "#fff"
     if (/^#[0-9A-F]{6}$/i.test(this.inputTarget.value)) { color = this.inputTarget.value }
     document.querySelector(".page").style.background = color;
-    this.updateModel()
   }
 
   changeTextColor() {
     var color = "#000000"
     if (/^#[0-9A-F]{6}$/i.test(this.inputTarget.value)) { color = this.inputTarget.value }
     document.querySelector(".page").style.color = color;
-    this.updateModel()
   }
 
   changeMainColor() {
@@ -30,15 +27,10 @@ export default class extends Controller {
     if (/^#[0-9A-F]{6}$/i.test(this.inputTarget.value)) { color = this.inputTarget.value }
     let css = `<style>.text-main{ color: ${color}; } .bg-main{ background: ${color};}<style>`
     document.querySelector(".page").insertAdjacentHTML("beforeend", css)
-    this.updateModel()
   }
 
   togglePalette() {
     this.paletteTarget.classList.toggle('hidden');
-  }
-
-  setPaletteBackground() {
-    this.picker_containerTarget.style.background = this.inputTarget.value
   }
 
   setColor(e) {
@@ -46,13 +38,10 @@ export default class extends Controller {
       this.inputTarget.value = e.target.dataset.color
     }
 
-    this.setPaletteBackground()
     let attr = this.inputTarget.dataset.attr;
     if ( attr == "background" ) {
-      console.log('background')
       this.changeBackground()
     } else if ( attr == "text_color" ) {
-      console.log('text')
       this.changeTextColor()
     } else if ( attr == "main_color" ) {
       this.changeMainColor()
