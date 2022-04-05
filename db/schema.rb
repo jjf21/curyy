@@ -10,19 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_27_183423) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_05_205823) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cvs", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "theme_id", null: false
-    t.string "background"
+    t.string "body_bg"
     t.string "main_color"
     t.string "text_color"
     t.string "font_family"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "header_bg"
+    t.string "body_bg_pattern"
+    t.string "font_size"
     t.index ["theme_id"], name: "index_cvs_on_theme_id"
     t.index ["user_id"], name: "index_cvs_on_user_id"
   end
@@ -64,12 +67,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_27_183423) do
 
   create_table "themes", force: :cascade do |t|
     t.string "name"
-    t.string "background"
+    t.string "body_bg"
     t.string "main_color"
     t.string "text_color"
     t.string "font_family"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "header_bg"
+    t.string "body_bg_pattern"
+    t.string "font_size"
   end
 
   create_table "users", force: :cascade do |t|

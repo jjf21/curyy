@@ -51,5 +51,5 @@ Experience.create(
 
 
 
-theme = Theme.find_or_create_by!(name: "hello_world", background: "#cfcfcf", main_color: "#eab308", text_color: "#2b315c", font_family: "Roboto")
-Cv.create(theme: theme, user: u, background: "#cfcfcf", main_color: "#eab308", text_color: "#2b315c", font_family: "Roboto")
+theme = Theme.find_or_create_by!(name: "hello_world", body_bg: "#cfcfcf", main_color: "#eab308", text_color: "#2b315c", font_family: "Roboto")
+Cv.create(theme: theme, user: u, body_bg: "#cfcfcf", main_color: "#eab308", text_color: "#2b315c", font_family: "Roboto")

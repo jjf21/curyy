@@ -10,7 +10,13 @@ export default class extends Controller {
   initialize() {
   }
 
-  changeBackground() {
+  changeHeaderBg() {
+    var color = "#000000"
+    if (/^#[0-9A-F]{6}$/i.test(this.inputTarget.value)) { color = this.inputTarget.value }
+    document.querySelector("#cv_header").style.background = color;
+  }
+
+  changeBodyBg() {
     var color = "#fff"
     if (/^#[0-9A-F]{6}$/i.test(this.inputTarget.value)) { color = this.inputTarget.value }
     document.querySelector(".page").style.background = color;
@@ -29,9 +35,6 @@ export default class extends Controller {
     document.querySelector(".page").insertAdjacentHTML("beforeend", css)
   }
 
-  togglePalette() {
-    this.paletteTarget.classList.toggle('hidden');
-  }
 
   setColor(e) {
     if (e.target.dataset.color) {
@@ -39,8 +42,10 @@ export default class extends Controller {
     }
 
     let attr = this.inputTarget.dataset.attr;
-    if ( attr == "background" ) {
-      this.changeBackground()
+    if ( attr == "body_bg" ) {
+      this.changeBodyBg()
+    } else if ( attr == "header_bg" ) {
+      this.changeHeaderBg()
     } else if ( attr == "text_color" ) {
       this.changeTextColor()
     } else if ( attr == "main_color" ) {

@@ -1,11 +1,13 @@
 - @cv = cv
-- style = "background-color: #{cv.background}; color:#{cv.text_color}"
+- page_style = "background-color: #{cv.body_bg}; color:#{cv.text_color}"
+- header_style = "background-color: #{cv.header_bg}"
+
 style
   |  .text-main{color: #{cv.main_color};} .bg-main{background: #{cv.main_color}}
 
 
-section#hello_world.page.transition style=style data-controller="cv-zoom"
-  #cv_header.flex.items-center.justify-center.bg-gray-800.py-5
+section#hello_world.page.transition style=page_style data-controller="cv-zoom"
+  #cv_header.flex.items-center.justify-center.bg-gray-800.py-5 style=header_style
     #cv_user
       = render "themes/hello_world/user", user: current_user
   #cv_body.flex

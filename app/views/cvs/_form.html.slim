@@ -2,17 +2,13 @@
   = f.hidden_field :id
 
   .inline-block data-controller="color-picker"
-    = f.input :background, input_html: {data: {coloris: "", color_picker_target: "input", action: "change->color-picker#updateModel input->color-picker#setColor", attr: "background"}}
+    = f.input :header_bg, input_html: {data: {coloris: "", color_picker_target: "input", action: "change->color-picker#updateModel input->color-picker#setColor", attr: "header_bg"}}
+
+  .inline-block data-controller="color-picker"
+    = f.input :body_bg, input_html: {data: {coloris: "", color_picker_target: "input", action: "change->color-picker#updateModel input->color-picker#setColor", attr: "body_bg"}}
 
   .inline-block data-controller="color-picker"
     = f.input :main_color, input_html: {data: {coloris: "", color_picker_target: "input", action: "change->color-picker#updateModel input->color-picker#setColor", attr: "main_color"}}
 
   .inline-block data-controller="color-picker"
     = f.input :text_color, input_html: {data: {coloris: "", color_picker_target: "input", action: "change->color-picker#updateModel input->color-picker#setColor", attr: "text_color"}}
-
-  - # f.button :submit
-
-
-- #div data-controller="color-picker"
-- #label.label.block Background color
-- #input.color-picker.field type="text" data-color-picker-target="input" value="#1F5710" data-action="keyup->color-picker#changeBackground"

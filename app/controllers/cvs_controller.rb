@@ -60,6 +60,6 @@ class CvsController < ApplicationController
   end
 
   def cv_params
-    params.require(:cv).permit(:user_id, :theme_id, :background, :main_color, :text_color, :font_family)
+    params.require(:cv).permit(:user_id, :theme_id, :header_bg, :body_bg, :body_bg_pattern, :font_size, :main_color, :text_color, :font_family)
   end
 end
