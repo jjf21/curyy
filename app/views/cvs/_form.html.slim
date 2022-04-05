@@ -2,13 +2,13 @@
   = f.hidden_field :id
 
   .inline-block data-controller="color-picker"
-    = f.input :background, as: :color, input_html: {data: {color_picker_target: "input", action: "keyup->color-picker#changeBackground", attr: "background"}}
+    = f.input :background, as: :color, input_html: {data: {color_picker_target: "input", action: "keyup->color-picker#setColor", attr: "background"}}
 
   .inline-block data-controller="color-picker"
-    = f.input :main_color, as: :color, input_html: {data: {color_picker_target: "input", action: "keyup->color-picker#changeMainColor", attr: "primary"}}
+    = f.input :main_color, as: :color, input_html: {data: {color_picker_target: "input", action: "keyup->color-picker#setColor", attr: "main_color"}}
 
   .inline-block data-controller="color-picker"
-    = f.input :text_color, as: :color, input_html: {data: {color_picker_target: "input", action: "keyup->color-picker#changeTextColor", attr: "text"}}
+    = f.input :text_color, as: :color, input_html: {data: {color_picker_target: "input", action: "keyup->color-picker#setColor", attr: "text_color"}}
 
   - # f.button :submit
 

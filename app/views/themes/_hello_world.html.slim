@@ -1,5 +1,8 @@
 - @cv = cv
 - style = "background-color: #{cv.background}; color:#{cv.text_color}"
+style
+  |  .text-main{color: #{cv.main_color};} .bg-main{background: #{cv.main_color}}
+
 
 section#hello_world.page.transition style=style data-controller="cv-zoom"
   .flex.items-center.justify-center.bg-gray-800.py-5
