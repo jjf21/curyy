@@ -10,6 +10,18 @@ export default class extends Controller {
   initialize() {
   }
 
+  test(e){
+    console.log(e.target.src)
+    let pattern = e.target.dataset.name
+    this.changeBgPattern(pattern)
+    this.inputTarget.value = e.target.dataset.name
+    this.inputTarget.dispatchEvent(new Event('change'));
+  }
+
+  changeBgPattern(patternSrc) {
+    document.querySelector("#cv_body").style.backgroundImage = "url(/patterns/"+ patternSrc +".png)";
+  }
+
   changeHeaderBg() {
     var color = "#000000"
     if (/^#[0-9A-F]{6}$/i.test(this.inputTarget.value)) { color = this.inputTarget.value }
