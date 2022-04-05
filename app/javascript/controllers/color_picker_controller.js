@@ -19,7 +19,7 @@ export default class extends Controller {
   }
 
   changeBgPattern(patternSrc) {
-    document.querySelector("#cv_body").style.backgroundImage = "url(/patterns/"+ patternSrc +".png)";
+    document.querySelector("#cv_body").style.background = "url(/patterns/"+ patternSrc +".png)";
   }
 
   changeHeaderBg() {
@@ -31,7 +31,7 @@ export default class extends Controller {
   changeBodyBg() {
     var color = "#fff"
     if (/^#[0-9A-F]{6}$/i.test(this.inputTarget.value)) { color = this.inputTarget.value }
-    document.querySelector(".page").style.background = color;
+    document.querySelector("#cv_body").style.background = color;
   }
 
   changeTextColor() {

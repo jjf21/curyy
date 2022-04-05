@@ -6,19 +6,15 @@
 
   .inline-block data-controller="color-picker"
     = f.input :body_bg, input_html: {data: {coloris: "", color_picker_target: "input", action: "change->color-picker#updateModel input->color-picker#setColor", attr: "body_bg"}}
+  p.pb-2 ou
+  .inline-block data-controller="color-picker"
+    = f.input :body_bg_pattern, as: :hidden, input_html: {data: {color_picker_target: "input", action: "change->color-picker#updateModel", attr: "body_bg_pattern"}}
+    .flex
+      - ["natural_white", "so_white"].each do |pattern|
+        = image_tag "/patterns/#{pattern}.png", class:"h-12 w-12 border mr-4", data: {color_picker_target: "input", action: "click->color-picker#test", name: pattern}
 
   .inline-block data-controller="color-picker"
     = f.input :main_color, input_html: {data: {coloris: "", color_picker_target: "input", action: "change->color-picker#updateModel input->color-picker#setColor", attr: "main_color"}}
 
   .inline-block data-controller="color-picker"
     = f.input :text_color, input_html: {data: {coloris: "", color_picker_target: "input", action: "change->color-picker#updateModel input->color-picker#setColor", attr: "text_color"}}
-
-
-  .inline-block data-controller="color-picker"
-    - # f.input :body_bg_pattern, input_html: {color_picker_target: "input", action: "change->color-picker#updateModel input->color-picker#setColor", attr: "header_bg"}}
-
-  .inline-block data-controller="color-picker"
-    = f.input :body_bg_pattern, as: :hidden, input_html: {data: {color_picker_target: "input", action: "change->color-picker#updateModel", attr: "body_bg_pattern"}}
-    .flex
-      - ["natural_white", "so_white"].each do |pattern|
-        = image_tag "/patterns/#{pattern}.png", class:"h-12 w-12 border mr-4", data: {color_picker_target: "input", action: "click->color-picker#test", name: pattern}
