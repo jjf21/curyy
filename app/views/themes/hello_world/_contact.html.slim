@@ -1,0 +1,6 @@
+.pb-2.mb-2.border-b-2
+  - [[user.email, "at-sign"], [user.phone, "phone"], [user.address, "map-pin"]].each do |item|
+    - if item[0].present?
+      .flex.items-center.pb-4
+        = feather(item[1], class:"p-1 bg-primary rounded-full cursor-pointer mr-3 text-white")
+        p= item[0]

@@ -42,5 +42,8 @@ h2 {
 }
 
 .text-primary {
-  @apply text-yellow-500;
+  color: #ccb68c;
+}
+.bg-primary {
+  background: #ccb68c;
 }

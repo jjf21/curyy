@@ -31,9 +31,9 @@ Experience.create(
   start_date: 5.years.ago,
   end_date: 10.years.ago,
   current: false,
-  description: "exp description 2",
-  company: "Kedge",
-  location: "Bordeaux",
+  description: "Diplôme d'ingénieur de l'École centrale de Lille de Centrale Lille Institut",
+  company: "Iteem",
+  location: "Lille",
   item_type: "education",
   title: "Master"
 )
@@ -42,12 +42,14 @@ Experience.create(
   start_date: 4.years.ago,
   end_date: 5.years.ago,
   current: false,
-  description: "exp description 2",
+  description: "Le Wagon est une formation en développement web qui apprend aux étudiants à développer entièrement des applications web",
   company: "Le Wagon",
   location: "Lille",
   item_type: "education",
   title: "Formation Ruby on Rails"
 )
+
+
 
 theme = Theme.find_or_create_by!(name: "hello_world", background: "#cfcfcf", main_color: "#eab308", text_color: "#2b315c", font_family: "Roboto")
 Cv.create(theme: theme, user: u, background: "#cfcfcf", main_color: "#eab308", text_color: "#2b315c", font_family: "Roboto")

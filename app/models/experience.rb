@@ -3,4 +3,8 @@ class Experience < ApplicationRecord
 
   belongs_to :user
 
+  def period
+    "#{start_date&.year} - #{end_date&.year}"
+  end
+
 end

@@ -1,3 +1,6 @@
 = tag.div id:"#{dom_id(experience)}_cv_item", class:"pb-3", data: { stream_enter_class: "slide-in", stream_exit_class: "slide-out" }
-  p.text-2xl ="#{experience.title} @ #{experience.company}"
-  p= experience.description
+  .flex.justify-between
+    p.uppercase.font-bold = experience.title
+    p = experience.period
+  p.mb-1= [experience.company, experience.location].compact.join(', ')
+  p.font-light= experience.description
