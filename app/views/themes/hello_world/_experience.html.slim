@@ -1,8 +1,13 @@
-= tag.div id:"#{dom_id(experience)}_cv_item", class:"pb-3", data: { stream_enter_class: "slide-in", stream_exit_class: "slide-out" }
+= tag.div id:"#{dom_id(experience)}_cv_item", class:"pb-3", data: { stream_enter_class: "slide-in", stream_exit_class: "slide-out", controller: "item", item_type: experience.item_type}
   .flex.justify-between
     = editable_tag experience, "title" do
       p.uppercase.font-bold = experience.title
-    p = experience.period
+    div
+      = editable_tag experience, "start_date" do
+        span = experience.start_date
+      = experience.end_date.present? ? " - " : ""
+      = editable_tag experience, "end_date" do
+        span = experience.end_date
   p.mb-1
     = editable_tag experience, "company" do
       span= experience.company

@@ -16,7 +16,8 @@ gem "cssbundling-rails"
 gem "slim-rails"
 gem "simple_form"
 gem "devise", "~> 4.8"
-gem 'grover'
+gem 'grover' # print html to pdf
+gem 'acts_as_list' # help with ordering element
 
 
 

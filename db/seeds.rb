@@ -6,8 +6,8 @@ end
 
 Experience.create(
   user: u,
-  start_date: Date.today,
-  end_date: 10.months.ago,
+  start_date: "mai 2020",
+  end_date: "juin 2021",
   current: true,
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   company: "Choose Your Boss",
@@ -17,8 +17,8 @@ Experience.create(
 )
 Experience.create(
   user: u,
-  start_date: 12.months.ago,
-  end_date: 20.months.ago,
+  start_date: "sept 2018",
+  end_date: "oct 2019",
   current: false,
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   company: "RDV Solidarité",
@@ -28,8 +28,8 @@ Experience.create(
 )
 Experience.create(
   user: u,
-  start_date: 5.years.ago,
-  end_date: 10.years.ago,
+  start_date: "2010",
+  end_date: "2015",
   current: false,
   description: "Diplôme d'ingénieur de l'École centrale de Lille de Centrale Lille Institut",
   company: "Iteem",
@@ -39,8 +39,8 @@ Experience.create(
 )
 Experience.create(
   user: u,
-  start_date: 4.years.ago,
-  end_date: 5.years.ago,
+  start_date: "2015",
+  end_date: "2019",
   current: false,
   description: "Le Wagon est une formation en développement web qui apprend aux étudiants à développer entièrement des applications web",
   company: "Le Wagon",

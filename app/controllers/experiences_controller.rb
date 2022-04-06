@@ -1,5 +1,5 @@
 class ExperiencesController < ApplicationController
-  before_action :set_experience, only: %i[edit update destroy]
+  before_action :set_experience, only: %i[edit update destroy change_position]
 
   def new
     @experience = Experience.new(user: current_user, **experience_params)
@@ -9,7 +9,12 @@ class ExperiencesController < ApplicationController
   end
 
   def create
-    @experience = Experience.new(experience_params)
+    if params[:use_template] == 'true'
+      @experience = Experience.new_template(current_user, params[:item_type].to_s)
+    else
+      @experience = Experience.new(experience_params)
+    end
+
     respond_to do |format|
       if @experience.save
         format.html { redirect_to @experience, notice: "Experience was successfully created." }
@@ -35,6 +40,21 @@ class ExperiencesController < ApplicationController
     @experience.destroy
     respond_to do |format|
       format.html { redirect_to experiences_url, notice: "Experience was successfully destroyed." }
+      format.turbo_stream
+    end
+  end
+
+  def change_position
+    if params[:direction] == "lower"
+      @experience.move_lower
+    elsif params[:direction] == "higher"
+      @experience.move_higher
+    end
+
+    @higher_experience = @experience.higher_item
+    @lower_experience = @experience.lower_item
+    @direction = params[:direction]
+    respond_to do |format|
       format.turbo_stream
     end
   end

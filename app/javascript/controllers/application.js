@@ -4,6 +4,7 @@ import ColorPickerController from "./color_picker_controller"
 import SettingPannelController from "./setting_pannel_controller"
 import CvZoomController from "./cv_zoom_controller"
 import Editable from "./editable_controller"
+import Item from "./item_controller"
 
 const application = Application.start()
 // Configure Stimulus development experience
@@ -14,5 +15,6 @@ Stimulus.register("color-picker", ColorPickerController)
 Stimulus.register("setting-pannel", SettingPannelController)
 Stimulus.register("cv-zoom", CvZoomController)
 Stimulus.register("editable", Editable)
+Stimulus.register("item", Item)
 
 export { application }
