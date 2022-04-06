@@ -22,7 +22,7 @@ export default class extends Controller {
     var zoomLevel = Math.min(zoomWidth, zoomHeight);
     // stop zooming when book fits page
     if (zoomLevel >= 1) return;
-    document.querySelector("#cv_container").style.transform = "scale(" + zoomLevel + ")";
+    // document.querySelector("#cv_container").style.transform = "scale(" + zoomLevel + ")";
   }
 
 }

@@ -1,6 +1,16 @@
 = tag.div id:"#{dom_id(experience)}_cv_item", class:"pb-3", data: { stream_enter_class: "slide-in", stream_exit_class: "slide-out" }
   .flex.justify-between
-    p.uppercase.font-bold = experience.title
+    = editable_tag experience, "title" do
+      p.uppercase.font-bold = experience.title
     p = experience.period
-  p.mb-1= [experience.company, experience.location].compact.join(', ')
-  p.font-extralight= experience.description
+  p.mb-1
+    = editable_tag experience, "company" do
+      span= experience.company
+    = " , "
+    = editable_tag experience, "location" do
+      span= experience.location
+  = editable_tag experience, "description" do
+    p.font-extralight= experience.description
+
+  .hidden
+    = render '/experiences/form', experience: experience

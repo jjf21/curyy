@@ -1,6 +1,19 @@
-.pb-2.mb-2.border-b-2
-  - [[user.email, "at-sign"], [user.phone, "phone"], [user.address, "map-pin"]].each do |item|
-    - if item[0].present?
-      .flex.items-center.pb-4
-        = feather(item[1], class:"p-1 bg-main rounded-full cursor-pointer mr-3 text-white")
-        p= item[0]
+= tag.div id:"#{dom_id(user)}_cv_item", class:"pb-2 mb-2 border-b-2", data: { stream_enter_class: "slide-in", stream_exit_class: "slide-out" }
+  .flex.items-center.pb-4
+    = feather('at-sign', class:"p-1 bg-main rounded-full cursor-pointer mr-3 text-white")
+    = editable_tag user, "email" do
+      p= user.email
+
+  .flex.items-center.pb-4
+    = feather('phone', class:"p-1 bg-main rounded-full cursor-pointer mr-3 text-white")
+    = editable_tag user, "phone" do
+      p= user.phone
+
+  .flex.items-center.pb-4
+    = feather('map-pin', class:"p-1 bg-main rounded-full cursor-pointer mr-3 text-white")
+    = editable_tag user, "address" do
+      p= user.address
+
+
+  .hidden
+    = render 'users/form', user: user

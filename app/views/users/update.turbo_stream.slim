@@ -1,7 +1,4 @@
 - if @user.errors.empty?
-  = turbo_stream.replace "#{dom_id(@user)}_form" do
-    = turbo_frame_tag "edit_user" do
-      =< link_to "edit", edit_user_path(@user), class: 'text-main'
 
   = turbo_stream.replace "#{dom_id(@user)}_item" do
     = render "user", user: @user

@@ -1,8 +1,14 @@
 = tag.div id:"#{dom_id(skill)}_cv_item", class:"pb-1", data: { stream_enter_class: "slide-in", stream_exit_class: "slide-out" }
-  p
-    = "◦ #{skill.name}"
+  div
+    span= "◦ "
+    = editable_tag skill, "name" do
+      span= "#{skill.name}"
     - if skill.language? && skill.certification.present?
       = " - "
-      span.italic.font-extralight= skill.certification
+      = editable_tag skill, "certification" do
+        span.italic.font-extralight= skill.certification
     - # elsif skill.tool?
     - # elsif skill.skill?
+
+  .hidden
+    = render '/skills/form', skill: skill

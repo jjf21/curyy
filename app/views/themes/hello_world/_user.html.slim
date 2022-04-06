@@ -1,3 +1,10 @@
 #user_item.text-main.text-center *{data: { 'stream-enter-class': "slide-in", 'stream-exit-class': "slide-out" }}
-  p.text-4xl.uppercase =user.full_name
-  p.text-2xl.uppercase =user.headline
+  .text-4xl.uppercase
+    = editable_tag user, "first_name" do
+      span= user.first_name
+    | &nbsp;
+    = editable_tag user, "last_name" do
+      span= user.last_name
+
+  = editable_tag user, "headline" do
+    p.text-2xl.uppercase =user.headline
