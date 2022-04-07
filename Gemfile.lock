@@ -304,6 +304,8 @@ GEM
     stimulus-rails (1.0.4)
       railties (>= 6.0.0)
     strscan (3.0.1)
+    tailwind_views_generator (0.0.3)
+      railties (>= 4.0)
     temple (0.8.2)
     thor (1.2.1)
     tilt (2.0.10)
@@ -368,6 +370,7 @@ DEPENDENCIES
   spring-commands-rspec
   sprockets-rails
   stimulus-rails
+  tailwind_views_generator
   turbo-rails
   webdrivers
 

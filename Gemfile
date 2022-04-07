@@ -42,6 +42,7 @@ group :development do
   gem "listen"
   gem "spring"
   gem "spring-commands-rspec"
+  gem "tailwind_views_generator"
 end
 
 group :test do

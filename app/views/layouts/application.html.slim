@@ -21,17 +21,11 @@ html
     = csp_meta_tag
 
   body.bg-dark id=(controller.controller_name) class=(controller.action_name)
-    header.header.py-4.shadow
-      .flex.justify-between.mx-12
-        a.text-yellow-500 href="/" CVDESIGNER
-        a.text-yellow-500 href="/cvs" Mes Cvs
+    = render 'shared/navigation'
 
     main.container-fluid.bg-gray-100 role="main"
       - flash.each do |name, msg|
         .alert role="alert"
           = raw(msg)
       = yield
-
-    footer.footer
-      .container
-        p &copy; #{Date.current.year} All rights reserved.
+    = render 'shared/footer'

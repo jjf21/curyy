@@ -2,7 +2,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  before_create :set_cv_email_default
+  before_create :set_default_values
 
   has_many :experiences
   has_many :cvs
@@ -35,8 +35,11 @@ class User < ApplicationRecord
 
   private
 
-  def set_cv_email_default
+  def set_default_values
     self.cv_email = self.email
+    self.phone = "06 ..."
+    self.address = "France"
+    self.headline = "Ceo @ Twitter"
   end
 
 end
