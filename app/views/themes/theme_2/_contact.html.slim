@@ -1,0 +1,18 @@
+= tag.div id:"#{dom_id(user)}_cv_item", class:"pb-2 mb-2 border-b-2"
+  .flex.items-center.pb-4
+    = editable_tag user, "cv_email" do
+      p= user.cv_email
+
+  .flex.items-center.pb-4
+
+    = editable_tag user, "phone" do
+      p= user.phone
+
+  .flex.items-center.pb-4
+    
+    = editable_tag user, "address" do
+      p= user.address
+
+
+  .hidden
+    = render 'users/form', user: user

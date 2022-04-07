@@ -1,8 +1,9 @@
 = simple_form_for user, html: { id: "#{dom_id(user)}_form" } do |f|
+  = hidden_field_tag :theme_name, @cv&.theme&.name
   = f.input :headline, placeholder: "Product Owner"
   = f.input :first_name, placeholder: "John"
   = f.input :last_name, placeholder: "Smith"
-  = f.input :email, placeholder: "Email"
+  = f.input :cv_email, placeholder: "Email"
   = f.input :phone, placeholder: "+33 6 00 00 00 00"
   = f.input :address, placeholder: "Paris"
   = f.input :about, placeholder: "Présentez vous en 1 phrase"

@@ -4,7 +4,7 @@
     = render "user", user: @user
 
   = turbo_stream.replace "user_item" do
-    = render "/themes/#{@theme}/user", user: @user
+    = render "/themes/#{@theme_name}/user", user: @user
 
 - else
   = turbo_stream.replace "user_form" do

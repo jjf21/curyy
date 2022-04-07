@@ -21,7 +21,7 @@ html, body {
   justify-content: flex-start;
   align-items: center;
   /* remove extra-space after pages */
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 .wrapper {

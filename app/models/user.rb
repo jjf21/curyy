@@ -2,6 +2,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  before_create :set_cv_email_default
+
   has_many :experiences
   has_many :cvs
   has_many :skills
@@ -29,6 +31,12 @@ class User < ApplicationRecord
 
   def full_name
     "#{first_name} #{last_name}"
+  end
+
+  private
+
+  def set_cv_email_default
+    self.cv_email = self.email
   end
 
 end

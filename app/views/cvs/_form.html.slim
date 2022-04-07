@@ -1,20 +1,51 @@
 = simple_form_for cv, html: { id: "#{dom_id(cv)}_form" } do |f|
   = f.hidden_field :id
 
-  .inline-block data-controller="color-picker"
-    = f.input :header_bg, input_html: {data: {coloris: "", color_picker_target: "input", action: "change->color-picker#updateModel input->color-picker#setColor", attr: "header_bg"}}
 
-  .inline-block data-controller="color-picker"
-    = f.input :body_bg, input_html: {data: {coloris: "", color_picker_target: "input", action: "change->color-picker#updateModel input->color-picker#setColor", attr: "body_bg"}}
-  p.pb-2 ou
-  .inline-block data-controller="color-picker"
-    = f.input :body_bg_pattern, as: :hidden, input_html: {data: {color_picker_target: "input", action: "change->color-picker#updateModel", attr: "body_bg_pattern"}}
-    .flex
-      - ["natural_white", "so_white"].each do |pattern|
-        = image_tag "/patterns/#{pattern}.png", class:"h-12 w-12 border mr-4", data: {color_picker_target: "input", action: "click->color-picker#test", name: pattern}
+  div
+    button.accordion.py-4.px-8.border-b.border-t.accordion.w-full.flex.justify-between
+      .flex.items-center
+        span.w-6.mt-4
+          i.gg-color-bucket style="--ggs: 0.6"
+        span Arrière plan
+      i.gg-arrow-down-o
+    .accordion-content.overflow-hidden.max-h-0.transition.px-8
+      .inline-block.pt-4 data-controller="color-picker"
+        = f.input :header_bg, input_html: {data: {coloris: "", color_picker_target: "input", action: "change->color-picker#updateModel input->color-picker#setColor", attr: "header_bg"}}
 
-  .inline-block data-controller="color-picker"
-    = f.input :main_color, input_html: {data: {coloris: "", color_picker_target: "input", action: "change->color-picker#updateModel input->color-picker#setColor", attr: "main_color"}}
+      .inline-block data-controller="color-picker"
+        = f.input :body_bg, input_html: {data: {coloris: "", color_picker_target: "input", action: "change->color-picker#updateModel input->color-picker#setColor", attr: "body_bg"}}
+      p.pb-2 ou
+      .inline-block data-controller="color-picker"
+        = f.input :body_bg_pattern, as: :hidden, input_html: {data: {color_picker_target: "input", action: "change->color-picker#updateModel", attr: "body_bg_pattern"}}
+        .flex
+          - ["natural_white", "so_white"].each do |pattern|
+            = image_tag "/patterns/#{pattern}.png", class:"h-12 w-12 border mr-4", data: {color_picker_target: "input", action: "click->color-picker#test", name: pattern}
 
-  .inline-block data-controller="color-picker"
-    = f.input :text_color, input_html: {data: {coloris: "", color_picker_target: "input", action: "change->color-picker#updateModel input->color-picker#setColor", attr: "text_color"}}
+
+    button.accordion.py-4.px-8.border-b.border-t.accordion.w-full.flex.justify-between
+      .flex.items-center
+        span.w-6
+          i.gg-format-color
+        span Textes
+      i.gg-arrow-down-o
+    .accordion-content.overflow-hidden.max-h-0.transition.px-8
+      .inline-block.pt-4 data-controller="color-picker"
+        = f.input :main_color, input_html: {data: {coloris: "", color_picker_target: "input", action: "change->color-picker#updateModel input->color-picker#setColor", attr: "main_color"}}
+
+      .inline-block data-controller="color-picker"
+        = f.input :text_color, input_html: {data: {coloris: "", color_picker_target: "input", action: "change->color-picker#updateModel input->color-picker#setColor", attr: "text_color"}}
+
+    button.accordion.py-4.px-8.border-b.border-t.accordion.w-full.flex.justify-between
+      .flex.items-center
+        span.w-6
+          i.gg-size
+        span Taille
+      i.gg-arrow-down-o
+    .accordion-content.overflow-hidden.max-h-0.transition.px-8
+
+  btn.flex.w-full.px-8.py-4.justify-center.text-primary.underline.cursor-pointer data-action='click->settings#resetThemeConfig'
+    | Remise à zéro
+
+  .hidden
+    = f.submit

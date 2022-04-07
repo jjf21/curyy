@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resources :cvs, except: [:new] do
     get :export, on: :member
   end
+
   root to: "pages#root"
 end

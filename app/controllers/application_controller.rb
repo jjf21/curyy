@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
 	def set_theme
-		@theme = "hello_world"
+		@theme_name = params[:theme_name] if params[:theme_name]
 	end
 end

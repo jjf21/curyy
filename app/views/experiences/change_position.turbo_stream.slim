@@ -3,5 +3,5 @@
 
 - if @direction == "lower"
   = turbo_stream.replace "#{dom_id(@lower_experience)}_cv_item" do
-    = render "themes/#{@theme}/experience", experience: @experience
+    = render "themes/#{@theme_name}/experience", experience: @experience
 - elsif @direction == "higher"

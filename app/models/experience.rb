@@ -1,4 +1,6 @@
 class Experience < ApplicationRecord
+  attr_accessor :newly_created
+
   enum item_type: { work: 0, education: 1 }
 
   acts_as_list scope: [:item_type]
@@ -32,6 +34,10 @@ class Experience < ApplicationRecord
         title: "Diplome"
       )
     end
+  end
+
+  def newly_created!
+    self.newly_created = true
   end
 
 end

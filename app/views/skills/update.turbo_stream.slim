@@ -3,7 +3,7 @@
     = render "skill", skill: @skill
 
   = turbo_stream.replace "#{dom_id(@skill)}_cv_item" do
-    = render "/themes/#{@theme}/skill", skill: @skill
+    = render "/themes/#{@theme_name}/skill", skill: @skill
 
 - else
   = turbo_stream.replace "#{dom_id(@skill)}_form" do

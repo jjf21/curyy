@@ -1,16 +1,20 @@
-= tag.div id:"#{dom_id(user)}_cv_item", class:"pb-2 mb-2 border-b-2", data: { stream_enter_class: "slide-in", stream_exit_class: "slide-out" }
+= tag.div id:"#{dom_id(user)}_cv_item", class:"pb-2 mb-2 border-b-2"
   .flex.items-center.pb-4
-    = feather('at-sign', class:"p-1 bg-main rounded-full cursor-pointer mr-3 text-white")
-    = editable_tag user, "email" do
-      p= user.email
+    span.flex.justify-center.items-center.h-6.w-6.bg-main.rounded-full.cursor-pointer.mr-3.text-white
+      i class="gg-mail"
+    = editable_tag user, "cv_email" do
+      p= user.cv_email
 
   .flex.items-center.pb-4
-    = feather('phone', class:"p-1 bg-main rounded-full cursor-pointer mr-3 text-white")
+    span.flex.justify-center.items-center.h-6.w-6.bg-main.rounded-full.cursor-pointer.mr-3.text-white
+      i class="gg-smartphone"
     = editable_tag user, "phone" do
       p= user.phone
 
   .flex.items-center.pb-4
-    = feather('map-pin', class:"p-1 bg-main rounded-full cursor-pointer mr-3 text-white")
+    span.flex.justify-center.items-center.h-6.w-6.bg-main.rounded-full.cursor-pointer.mr-3.text-white
+      i class="gg-pin"
+
     = editable_tag user, "address" do
       p= user.address
 

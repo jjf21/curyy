@@ -9,9 +9,15 @@ class SkillsController < ApplicationController
   end
 
   def create
-    @skill = Skill.new(skill_params)
+    if params[:use_template] == 'true'
+      @skill = Skill.new_template(current_user, params[:item_type].to_s)
+    else
+      @skill = Skill.new(skill_params)
+    end
+
     respond_to do |format|
       if @skill.save
+        @skill.newly_created!
         format.html { redirect_to @skill, notice: "Skill was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }

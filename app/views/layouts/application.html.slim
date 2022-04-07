@@ -13,6 +13,9 @@ html
     link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.css"
     script src="https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.js"
 
+    link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+    link href='https://css.gg/css' rel='stylesheet'
+
 
     = csrf_meta_tags
     = csp_meta_tag
@@ -20,10 +23,8 @@ html
   body.bg-dark id=(controller.controller_name) class=(controller.action_name)
     header.header.py-4.shadow
       .flex.justify-between.mx-12
-        a.text-yellow-500 href="/cvs" CVDESIGNER
-        - if @cv
-          .right
-            = link_to 'Download CV', export_cv_path(@cv)
+        a.text-yellow-500 href="/" CVDESIGNER
+        a.text-yellow-500 href="/cvs" Mes Cvs
 
     main.container-fluid.bg-gray-100 role="main"
       - flash.each do |name, msg|

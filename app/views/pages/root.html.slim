@@ -1,15 +1,35 @@
-.w-1/2.mx-auto
-  #cv_container
-    .wrapper
-      = render "/themes/hello_world", user: current_user, cv: current_user.cvs.last
+div
+  button.accordion.py-4.bg-white.accordion Couleurs de fond
+  .accordion-content.overflow-hidden.max-h-0.transition
+    p
+      | Whether you need a wordpress website, a shopify site, or a custom fullstack application, we got you! No matter what kind of website or application you need, it will be made with clean and maintable code that follows modern development standards. We also have top notch designers that can make unique designs that will make your website look different and unique. Not to mention that we also provide 24/7 website maintenance so that you get all the support you need.
+  button.accordion Couleur du texte
+  .accordion-content.overflow-hidden.max-h-0.transition
+    p
+      | We believe that in order to have a successful website, you need to constantly adjust and adapt to the data provided by your website visitors. Here at Pierre Web Development, we have narrowed down the specific key performance indicators that will dramatically boost your success with connecting to target markets. We will provide a basic metric dashboard based on how much traffic your site gets, detailed analytical reports that show which parts of your website is the most popular among visitors as well as access to tools you can use to make meaningful decisions based on this data.
+  button.accordion Taille des polices
+  .accordion-content.overflow-hidden.max-h-0.transition
+    p
+      | We know that every great website focuses on helping you get more business and building a brand that your ideal customers will love and support. We can help you set up a great, SEO-focused content strategy, a paid ads campaign, email marketing integration with Mailchimp as well as a social media marketing campaign. We also use popular website analytic tools to track your site's performance and provide you with weekly analytic reports to help bolster your growth.
 
-.w-1/2.mx-auto.px-12
-  - current_user.work_experiences.each do |exp|
-    button btn
-    .border
-      div data-controller="editable" data-action="click->editable#click blur->editable#blur keydown->editable#keydown" data-target="experience_title"
-        = exp.title
-      div data-controller="editable" data-action="click->editable#click blur->editable#blur keydown->editable#keydown" data-target="experience_company"
-        = exp.company
-      .hidden
-        = render '/experiences/form', experience: exp
+javascript:
+
+  const accordionBtns = document.querySelectorAll(".accordion");
+
+  accordionBtns.forEach((accordion) => {
+    accordion.onclick = function () {
+      this.classList.toggle("is-open");
+
+      let content = this.nextElementSibling;
+      console.log(content);
+
+      if (content.style.maxHeight) {
+        //this is if the accordion is open
+        content.style.maxHeight = null;
+      } else {
+        //if the accordion is currently closed
+        content.style.maxHeight = content.scrollHeight + "px";
+        console.log(content.style.maxHeight);
+      }
+    };
+  });

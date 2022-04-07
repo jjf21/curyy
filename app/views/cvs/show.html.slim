@@ -1,34 +1,30 @@
-.cv-editor-layout.flex
-  .w-1/2.p-6
-    .card
-      h2.inline-block Informations
-      = turbo_frame_tag "edit_user" do
-        =< link_to feather('edit-2', class:"h-5 w-5 relative top-0.5"), edit_user_path(@user), class: 'text-primary inline-block'
+.flex.flex-col.md:flex-row
+  .w-full.md:w-96.pt-3.pb-5.bg-slate-100.shadow-lg.rounded-b.transition data-controller="settings"
+    .flex.justify-center.py-4
+      = link_to 'Download CV', export_cv_path(@cv), class: 'btn'
 
-        #user
-          = render 'users/user', user: @user
+    = turbo_frame_tag dom_id(@cv) do
+      = render "/cvs/form", cv: @cv
 
-    - Experience.item_types.keys.each do |type|
-      .card
-        h2.inline-block= type.capitalize
-        = render "/experiences/new_btn", type: type
+  .w-full
+    #theme-selector.relative.mb-6
+      .flex.w-full.justify-center.p-4.hidden
+        .shadow.mr-2 data-controller="theme" data-action="click->theme#changeTheme" data-id="1"
+          = image_tag '/themes/hello_world.png', width: 100
 
-        div id="#{type}_experiences"
-          - @user.send("#{type}_experiences").each do |experience|
-            = render 'experiences/experience', experience: experience
+        .shadow data-controller="theme" data-action="click->theme#changeTheme" data-id="2"
+          = image_tag '/themes/theme_2.png', width: 100
+        .hidden
+          = simple_form_for @cv do |f|
+            = f.hidden_field :id
+            = f.hidden_field :theme_id
+            = f.button :submit
 
-    - Skill.item_types.keys.each do |type|
-      .card
-        h2.inline-block= type.capitalize
-        = render "/skills/new_btn", type: type
-
-        div id="#{type}_skills"
-          - @user.send("#{type}_skills").each do |skill|
-            = render 'skills/skill', skill: skill
+      .theme-selector.flex.justify-center.border-t-2 data-controller="theme" data-action="click->theme#toggleSelector"
+        span.text-xs.bg-gray-200.flex.items-center.px-4.py-2.rounded-b-lg.cursor-pointer.transition.hover:bg-gray-300 Changer de theme
 
 
-  .w-1/2
-    = render "cvs/setting"
-    #cv_container
-      .wrapper
-        = render "/themes/hello_world", user: @user, cv: @cv
+    .mx-auto.w-1/2
+      #cv_container
+        .wrapper
+          = render "/cvs/cv", cv: @cv

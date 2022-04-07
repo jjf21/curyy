@@ -47,3 +47,7 @@ h2 {
 .bg-primary {
   background: #ccb68c;
 }
+
+:root {
+    --ggs: 0.7;
+}

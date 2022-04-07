@@ -1,5 +1,6 @@
 class CvsController < ApplicationController
-  before_action :set_cv, only: %i[show edit update destroy, export]
+  before_action :set_cv, only: %i[show edit update destroy export]
+  before_action :set_theme_name, only: %i[show edit export]
 
   def index
     @cvs = current_user.cvs
@@ -7,6 +8,7 @@ class CvsController < ApplicationController
 
   def show
     @user = current_user
+    @theme = @cv.theme
   end
 
   def edit
@@ -24,6 +26,8 @@ class CvsController < ApplicationController
   def update
     respond_to do |format|
       if @cv.update(cv_params)
+        @theme_name = @cv.theme.name
+        @theme = @cv.theme
         format.turbo_stream
         format.html { redirect_to cv_url(@cv), notice: "Cv was successfully updated." }
       else
@@ -42,12 +46,8 @@ class CvsController < ApplicationController
 
   def export
     html = render_to_string partial: '/themes/hello_world', locals: {user: User.first, cv: @cv}, layout: false
-    style_tag_options = [{ content: Rails.application.assets['tailwind.css'].to_s }]
-    script_tag_options = [
-      { url: 'https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js' },
-      { content: 'feather.replace()' }
-    ]
-    grover = Grover.new("<html><head><meta charset='UTF-8' /></head><body>#{html}</body></html>", format: 'A4', style_tag_options: style_tag_options, script_tag_options: script_tag_options)
+    style_tag_options = [{ content: Rails.application.assets['tailwind.css'].to_s }, { url: 'https://css.gg/css'}]
+    grover = Grover.new("<html><head><meta charset='UTF-8' /></head><body>#{html}</body></html>", format: 'A4', style_tag_options: style_tag_options)
     pdf = grover.to_pdf
 
     send_data pdf, type: "application/pdf"
@@ -55,11 +55,18 @@ class CvsController < ApplicationController
 
   private
 
-  def set_cv
-    @cv = Cv.find(params[:id])
-  end
-
   def cv_params
     params.require(:cv).permit(:user_id, :theme_id, :header_bg, :body_bg, :body_bg_pattern, :font_size, :main_color, :text_color, :font_family)
   end
+
+  def set_theme_name
+    @cv = Cv.find(params[:id])
+    @theme_name = @cv.theme.name
+  end
+
+  def set_cv
+    @cv = Cv.find(params[:id])
+    @theme_name = @cv.theme.name
+  end
+
 end

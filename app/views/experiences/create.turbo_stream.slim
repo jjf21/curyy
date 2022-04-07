@@ -9,7 +9,7 @@
 
   - # Append content on CV
   = turbo_stream.append "cv_#{@experience.item_type}_experiences" do
-    = render "themes/#{@theme}/experience", experience: @experience
+    = render "themes/#{@theme_name}/experience", experience: @experience
 
 - else
   = turbo_stream.replace "#{dom_id(@experience)}_form" do

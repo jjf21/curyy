@@ -23,32 +23,26 @@ export default class extends Controller {
   }
 
   changeHeaderBg() {
-    var color = "#000000"
-    if (/^#[0-9A-F]{6}$/i.test(this.inputTarget.value)) { color = this.inputTarget.value }
-    document.querySelector("#cv_header").style.background = color;
+    document.querySelector("#cv_header").style.background = this.inputTarget.value;
   }
 
   changeBodyBg() {
-    var color = "#fff"
-    if (/^#[0-9A-F]{6}$/i.test(this.inputTarget.value)) { color = this.inputTarget.value }
-    document.querySelector("#cv_body").style.background = color;
+    document.querySelector("#cv_body").style.background = this.inputTarget.value;
   }
 
   changeTextColor() {
-    var color = "#000000"
-    if (/^#[0-9A-F]{6}$/i.test(this.inputTarget.value)) { color = this.inputTarget.value }
-    document.querySelector(".page").style.color = color;
+    document.querySelector("#cv_body").style.color = this.inputTarget.value;
   }
 
   changeMainColor() {
-    var color = "#ccb68c"
-    if (/^#[0-9A-F]{6}$/i.test(this.inputTarget.value)) { color = this.inputTarget.value }
+    var color = this.inputTarget.value
     let css = `<style>.text-main{ color: ${color}; } .bg-main{ background: ${color};}<style>`
     document.querySelector(".page").insertAdjacentHTML("beforeend", css)
   }
 
 
   setColor(e) {
+
     if (e.target.dataset.color) {
       this.inputTarget.value = e.target.dataset.color
     }
