@@ -9,7 +9,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
 	def set_theme
-		@theme_name = params[:theme_name] if params[:theme_name]
+		@cv = Cv.includes(:theme).find_by(id: params[:cv_id])
+		@theme_name = @cv.theme.name if @cv
 	end
 
 	def after_sign_in_path_for(resource)

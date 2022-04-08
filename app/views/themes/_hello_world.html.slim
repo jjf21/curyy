@@ -17,26 +17,26 @@ section#hello_world.page.transition.overflow-hidden data-controller="cv-zoom"
       #cv_contact
         p.text-xl.mb-4.uppercase Contact
         = render "themes/hello_world/contact", user: user
-      #cv_skill_skills data-controller='section' data-item-type='skill' data-model='skill' data-theme-name="#{@theme_name}"
+      #cv_skill_skills data-controller='section' data-item-type='skill' data-model='skill' data-cv-id="#{@cv.id}"
         p.text-xl.my-4.uppercase Compétences
         - user.skill_skills.each do |skill|
           = render "themes/hello_world/skill", skill: skill
-      #cv_tool_skills data-controller='section' data-item-type='tool' data-model='skill' data-theme-name="#{@theme_name}"
+      #cv_tool_skills data-controller='section' data-item-type='tool' data-model='skill' data-cv-id="#{@cv.id}"
         p.text-xl.my-4.uppercase Outils
         - user.tool_skills.each do |skill|
           = render "themes/hello_world/skill", skill: skill
-      #cv_language_skills data-controller='section' data-item-type='language' data-model='skill' data-theme-name="#{@theme_name}"
+      #cv_language_skills data-controller='section' data-item-type='language' data-model='skill' data-cv-id="#{@cv.id}"
         p.text-xl.my-4.uppercase Langues
         - user.language_skills.each do |skill|
           = render "themes/hello_world/skill", skill: skill
 
     #right.w-2/3.mx-8.my-6
-      #cv_work_experiences data-controller='section' data-item-type='work' data-model='experience' data-theme-name="#{@theme_name}"
+      #cv_work_experiences data-controller='section' data-item-type='work' data-model='experience' data-cv-id="#{@cv.id}"
         p.text-xl.mb-4.uppercase.tracking-wider Experiences professionnelles
         - user.work_experiences.each do |experience|
           = render "themes/hello_world/experience", experience: experience
 
-      #cv_education_experiences data-controller='section' data-item-type='education' data-model='experience' data-theme-name="#{@theme_name}"
+      #cv_education_experiences data-controller='section' data-item-type='education' data-model='experience' data-cv-id="#{@cv.id}"
         p.text-xl.my-4.uppercase Formations
         - user.education_experiences.each do |experience|
           = render "themes/hello_world/experience", experience: experience

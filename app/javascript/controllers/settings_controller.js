@@ -5,6 +5,11 @@ export default class extends Controller {
   static targets = [ "pannel", "btn" ]
 
   connect() {
+    this.setAccordion()
+    // this.setColorInput()
+  }
+
+  setAccordion() {
     const accordionBtns = document.querySelectorAll(".accordion");
 
     accordionBtns.forEach((accordion) => {
@@ -23,6 +28,9 @@ export default class extends Controller {
         }
       };
     });
+  }
+
+  setColorInput() {
   }
 
   resetThemeConfig() {

@@ -1,3 +1,6 @@
+- p params[:cv_id]
+- p @cv
+- p @theme_name
 - if @experience.errors.empty?
   = turbo_stream.replace "#{dom_id(@experience)}_item" do
     = render "experience", experience: @experience

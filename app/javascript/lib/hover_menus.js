@@ -19,11 +19,11 @@ function sectionContent(el) {
   let model = el.dataset.model
   let id = el.id.split('_')[1]
   let item_type = el.dataset.itemType || ''
-  let theme_name = el.dataset.themeName || ''
+  let cv_id = el.dataset.cvId || ''
 
   return(`
     <div class="shadow flex bg-white rounded-full border px-2 justify-center items-center">
-      <a href="/${model}s?item_type=${item_type}&use_template=true&theme_name=${theme_name}" class="flex px-2 items-center" data-turbo-method="post"><i class='gg-add mr-1'></i> ajouter</span>
+      <a href="/${model}s?item_type=${item_type}&use_template=true&cv_id=${cv_id}" class="flex px-2 items-center" data-turbo-method="post"><i class='gg-add mr-1'></i> ajouter</span>
     </div>
   `)
 }

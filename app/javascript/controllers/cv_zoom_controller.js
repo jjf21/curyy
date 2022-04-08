@@ -5,10 +5,15 @@ export default class extends Controller {
   static targets = [ "pannel", "btn" ]
 
   connect() {
-    this.adjustZoom
+    this.adjustZoom()
     document.addEventListener('turbo:load', this.adjustZoom)
     window.addEventListener("resize", this.adjustZoom);
 
+  }
+
+  disconnect() {
+    document.removeEventListener('turbo:load', this.adjustZoom)
+    window.removeEventListener("resize", this.adjustZoom);
   }
 
   adjustZoom() {
