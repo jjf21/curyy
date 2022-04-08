@@ -82,7 +82,7 @@ class CvsController < ApplicationController
       p "----------------------"
       p url
       p "----------------------"
-      { url: "#{request.protocol}#{request.host}/assets/#{path}" }
+      {  }
     end
   end
 
