@@ -79,10 +79,7 @@ class CvsController < ApplicationController
     else
       path = Rails.application.assets_manifest.assets['tailwind.css']
       url = "#{request.protocol}#{request.host}/assets/#{path}"
-      p "----------------------"
-      p url
-      p "----------------------"
-      {  }
+      { url: "#{request.protocol}#{request.host}/assets/#{path}" }
     end
   end
 
