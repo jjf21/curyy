@@ -59,3 +59,31 @@ h2 {
 :root {
     --ggs: 0.7;
 }
+
+/* CV page */
+#cv_container {
+  margin: 0;
+  padding: 0;
+  transform-origin: top center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  /* remove extra-space after pages */
+  /* height: 100vh; */
+}
+
+.wrapper {
+  margin: 2rem 0;
+  box-shadow: 0 4px 5px rgba(75, 75, 75, 0.2);
+  border: 1px #d3d3d3 solid;
+}
+
+.page {
+  width: 21cm;
+  height: 29.7cm;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}

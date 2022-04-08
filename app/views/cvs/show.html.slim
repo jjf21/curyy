@@ -1,7 +1,7 @@
 .flex.flex-col.md:flex-row
   .w-full.md:w-96.pt-3.pb-5.bg-slate-100.shadow-lg.rounded-b.transition data-controller="settings"
     .flex.justify-center.py-4
-      = link_to 'Download CV', export_cv_path(@cv), class: 'btn'
+      = link_to 'Download CV', export_cv_path(@cv), class: 'btn', target: '_blank'
 
     = turbo_frame_tag dom_id(@cv) do
       = render "/cvs/form", cv: @cv
