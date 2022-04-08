@@ -3,11 +3,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   before_create :set_default_values
+  after_create :add_default_content
 
-  has_many :experiences
-  has_many :cvs
-  has_many :skills
-  has_many :links
+  has_many :experiences, dependent: :destroy
+  has_many :cvs, dependent: :destroy
+  has_many :skills, dependent: :destroy
+  has_many :links, dependent: :destroy
 
   def work_experiences
     experiences.work
@@ -40,6 +41,14 @@ class User < ApplicationRecord
     self.phone = "06 ..."
     self.address = "France"
     self.headline = "Ceo @ Twitter"
+  end
+
+  def add_default_content
+    Experience.new_template(self, 'work').save!
+    Experience.new_template(self, 'education').save!
+    Skill.new_template(self, 'skill').save!
+    Skill.new_template(self, 'tool').save!
+    Skill.new_template(self, 'language').save!
   end
 
 end

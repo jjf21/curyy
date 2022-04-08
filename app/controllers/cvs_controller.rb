@@ -45,7 +45,7 @@ class CvsController < ApplicationController
   end
 
   def export
-    html = render_to_string partial: '/themes/hello_world', locals: {user: User.first, cv: @cv}, layout: false
+    html = render_to_string partial: '/themes/hello_world', locals: {user: current_user, cv: @cv}, layout: false
     style_tag_options = [{ content: Rails.application.assets['tailwind.css'].to_s }, { url: 'https://css.gg/css'}]
     grover = Grover.new("<html><head><meta charset='UTF-8' /></head><body>#{html}</body></html>", format: 'A4', style_tag_options: style_tag_options)
     pdf = grover.to_pdf
