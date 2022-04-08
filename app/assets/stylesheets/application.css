@@ -1,10 +1,11 @@
 @import "components/animations.css";
+@import "components/fonts.css";
 
 html, body {
   height: 100%;
   font-size: 100%;
   overflow-x: hidden;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Messina Sans', sans-serif;
 }
 
 * {
@@ -16,17 +17,9 @@ html, body {
   transition-timing-function: linear;
 }
 
-#cv_body , .text-xl {
+/* #cv_body , .text-xl {
   font-size: 100%;
   height: 1
-}
-
-#pages.root {
-  background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
-}
-
-#pages.root .container-fluid {
-  background: none;
-}
+} */
 
 abbr {display: none}

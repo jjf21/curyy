@@ -23,7 +23,7 @@ html
   body id=(controller.controller_name) class=(controller.action_name)
     = render 'shared/navigation'
 
-    main.container-fluid.bg-gray-100 role="main"
+    main.container-fluid role="main"
       - flash.each do |name, msg|
         .alert role="alert"
           = raw(msg)

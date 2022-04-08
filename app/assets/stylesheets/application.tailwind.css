@@ -8,6 +8,30 @@
   body { color-adjust: exact; }
 }
 
+.bg-primary {
+  background: #8139df;
+}
+
+.bg-secondary {
+  background: #8139df;
+}
+
+.btn-primary {
+  @apply bg-primary text-white;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-white;
+}
+
+.text-primary {
+  color: #8139df;
+}
+
+.text-secondary {
+  color: #3e0075;
+}
+
 .field {
   @apply w-full border py-1 px-3 appearance-none rounded text-gray-700;
 }
@@ -29,13 +53,9 @@
 }
 
 .btn {
-  @apply mx-auto lg:mx-0 bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-3 px-6 shadow focus:outline-none transform transition hover:scale-105 duration-300 ease-in-out cursor-pointer
+  @apply mx-auto lg:mx-0 rounded-full mt-4 lg:mt-0 py-2 px-4 focus:outline-none transform transition hover:scale-105 duration-300 ease-in-out cursor-pointer
 }
 
-.btn-primary {
-  background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
-  @apply text-white;
-}
 
 .card {
   @apply bg-white p-4 mb-4;
@@ -49,12 +69,6 @@ h2 {
   @apply text-xl mt-0 text-gray-800 mb-2;
 }
 
-.text-primary {
-  color: #e37c8d;
-}
-.bg-primary {
-  background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
-}
 
 :root {
     --ggs: 0.7;
