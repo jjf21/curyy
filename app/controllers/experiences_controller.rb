@@ -18,7 +18,7 @@ class ExperiencesController < ApplicationController
     respond_to do |format|
       if @experience.save
         @experience.newly_created!
-        format.html { redirect_to @experience, notice: "Experience was successfully created." }
+        format.html { redirect_to @experience, notice: "Experience créé" }
       else
         format.html { render :new, status: :unprocessable_entity }
       end

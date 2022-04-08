@@ -1,6 +1,10 @@
 class Theme < ApplicationRecord
   has_many :cvs
 
+  def self.default_theme
+    Theme.first
+  end
+  
   def to_json
     {
       body_bg: self.body_bg,

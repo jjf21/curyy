@@ -15,9 +15,9 @@ class CvsController < ApplicationController
   end
 
   def create
-    @cv = Cv.new(cv_params)
+    @cv = Cv.new(user: current_user, theme: Theme.default_theme)
     if @cv.save
-      redirect_to @cv, notice: "Cv was successfully created."
+      redirect_to @cv, notice: "Cv créé"
     else
       redirect_to :cvs, error: "CV was not created"
     end
@@ -56,7 +56,7 @@ class CvsController < ApplicationController
   private
 
   def cv_params
-    params.require(:cv).permit(:user_id, :theme_id, :header_bg, :body_bg, :body_bg_pattern, :font_size, :main_color, :text_color, :font_family)
+    params.require(:cv).permit(:theme_id, :header_bg, :body_bg, :body_bg_pattern, :font_size, :main_color, :text_color, :font_family)
   end
 
   def set_theme_name

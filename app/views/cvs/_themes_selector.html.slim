@@ -1,0 +1,14 @@
+#theme-selector.relative.mb-6
+  .flex.w-full.justify-center.p-4.hidden
+    - Theme.all.each do |theme|
+      .shadow.mr-2 class="#{theme.id == cv.theme_id ? 'border' : ''}" data-controller="theme" data-action="click->theme#changeTheme" data-id=theme.id
+        = image_tag "/themes/#{theme.name}.png", width: 100
+
+    .hidden
+      = simple_form_for cv do |f|
+        = f.hidden_field :id
+        = f.hidden_field :theme_id
+        = f.button :submit
+
+  .theme-selector.flex.justify-center.border-t-2 data-controller="theme" data-action="click->theme#toggleSelector"
+    span.text-xs.bg-gray-200.flex.items-center.px-4.py-2.rounded-b-lg.cursor-pointer.transition.hover:bg-gray-300 Changer de theme

@@ -18,7 +18,7 @@ class SkillsController < ApplicationController
     respond_to do |format|
       if @skill.save
         @skill.newly_created!
-        format.html { redirect_to @skill, notice: "Skill was successfully created." }
+        format.html { redirect_to @skill, notice: "Skill créé" }
       else
         format.html { render :new, status: :unprocessable_entity }
       end

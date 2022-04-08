@@ -1,6 +1,6 @@
 .card.px-10.py-40.rounded.border.inline-block
   - # TODO: change this link
-  = link_to "Nouveau CV Hello World", cvs_path(cv: {user_id: current_user.id, theme: Theme.first.id}), data: { "turbo-method": :post }
+  = link_to "Nouveau CV", cvs_path, data: { "turbo-method": :post }
 
 - @cvs.each do |cv|
   .card.px-10.py-40.rounded.border.inline-block
