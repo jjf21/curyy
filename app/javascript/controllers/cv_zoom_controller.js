@@ -25,9 +25,10 @@ export default class extends Controller {
     var zoomWidth = documentWidth / (23 * 37.795276);
     var zoomHeight = documentHeight / (31.7 * 37.795276);
     var zoomLevel = Math.min(zoomWidth, zoomHeight);
+    document.querySelector("#cv_container").style.height = documentHeight + "px;"
     // stop zooming when book fits page
     if (zoomLevel >= 1) return;
-    // document.querySelector("#cv_container").style.transform = "scale(" + zoomLevel + ")";
+    document.querySelector("#cv_container").style.transform = "scale(" + zoomLevel + ")";
   }
 
 }

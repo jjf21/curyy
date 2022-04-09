@@ -10,7 +10,7 @@
     = render '/cvs/themes_selector', cv: @cv
 
 
-    .mx-auto.w-1/2
-      #cv_container
+    .mx-auto
+      #cv_container.max-h-screen.md:max-h-fit
         .wrapper
           = render "/cvs/cv", cv: @cv
