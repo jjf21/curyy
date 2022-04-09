@@ -10,5 +10,7 @@ Rails.application.routes.draw do
     get :export, on: :member
   end
 
+  get '/coloris_test', to: 'pages#coloris_test'
+  get '/coloris', to: 'pages#coloris'
   root to: "pages#root"
 end
