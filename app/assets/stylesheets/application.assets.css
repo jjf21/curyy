@@ -1,0 +1,65 @@
+
+@import "components/animations.css";
+@import "components/fonts.css";
+
+html, body {
+  height: 100%;
+  font-size: 100%;
+  overflow-x: hidden;
+  font-family: 'Messina Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.transition {
+  transition-property: all;
+  transition-timing-function: linear;
+}
+
+/* #cv_body , .text-xl {
+  font-size: 100%;
+  height: 1
+} */
+
+abbr {display: none}
+
+
+.dropdown-container {
+  position: relative;
+  display: flex;
+}
+
+.dropdown-container .dropdown {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 12px;
+  right: -20px;
+  padding: 20px;
+  padding-top: 30px;
+  min-width: 250px;
+}
+
+.dropdown-container:hover .dropdown, .dropdown-container .dropdown:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+transition: all 0.5s ease;
+  text-align: left;
+}
+
+.dropdown-container .dropdown li {
+  padding-top: .5rem;
+  clear: both;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-container .dropdown li:last-child {
+  padding-bottom: .5rem;
+}
+
+
+ .dropdown-container { transition: all 0.5s ease; }

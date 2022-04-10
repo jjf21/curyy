@@ -5,7 +5,7 @@ RSpec.describe "Static Pages" do
   it "/ should include the application name in its title" do
     visit root_path
 
-    expect(page).to have_title "Cv Designer"
+    expect(page).to have_title "Curyy"
   end
 
   # Another contrived example, this one relies on the javascript driver.
