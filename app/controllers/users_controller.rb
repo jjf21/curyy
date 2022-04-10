@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update(user_params)
         format.turbo_stream
-        format.html { redirect_to user_url(@user), notice: "User was successfully updated." }
+        format.html { redirect_to user_url(@user) }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end

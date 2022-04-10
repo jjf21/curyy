@@ -17,7 +17,7 @@ class CvsController < ApplicationController
   def create
     @cv = Cv.new(user: current_user, theme: Theme.default_theme)
     if @cv.save
-      redirect_to @cv, notice: "Cv créé"
+      redirect_to @cv
     else
       redirect_to :cvs, error: "CV was not created"
     end
@@ -29,7 +29,7 @@ class CvsController < ApplicationController
         @theme_name = @cv.theme.name
         @theme = @cv.theme
         format.turbo_stream
-        format.html { redirect_to cv_url(@cv), notice: "Cv was successfully updated." }
+        format.html { redirect_to cv_url(@cv) }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -39,7 +39,7 @@ class CvsController < ApplicationController
   def destroy
     @cv.destroy
     respond_to do |format|
-      format.html { redirect_to cvs_url, notice: "Cv was successfully destroyed." }
+      format.html { redirect_to cvs_url }
       format.turbo_stream
     end
   end

@@ -1,7 +1,32 @@
-.card.px-10.py-40.rounded.border.inline-block
-  - # TODO: change this link
-  = link_to "Nouveau CV", cvs_path, data: { "turbo-method": :post }
+- if @cvs.any?
+  .container.mx-auto.mt-6.px-4
+    .sm:flex.sm:items-center
+      .sm:flex-auto
+        h1.text-xl.font-semibold.text-gray-900 Mes cvs
+      .mt-4.sm:mt-0.sm:ml-16.sm:flex-none
+        = link_to "Nouveau", cvs_path, data: { "turbo-method": :post }, class: 'btn border'
 
-- @cvs.each do |cv|
-  .card.px-10.py-40.rounded.border.inline-block
-    = link_to "#{cv.theme_id } - #{cv.theme.name}", cv_path(cv)
+    .mt-8.flex.flex-col
+      .-my-2.-mx-4.overflow-x-auto.sm:-mx-6.lg:-mx-8
+        .inline-block.min-w-full.py-2.align-middle.md:px-6.lg:px-8
+          table.min-w-full.divide-y.divide-gray-300
+            thead
+              tr
+                th.pl-4.pr-3.text-left.text-sm.font-semibold.text-gray-900.sm:pl-6.md:pl-0 class="py-3.5" scope="col"  Theme
+                th.px-3.text-left.text-sm.font-semibold.text-gray-900 class="py-3.5" scope="col"  Créé le
+                th.px-3.text-left.text-sm.font-semibold.text-gray-900 class="py-3.5" scope="col"  Modifié le
+            tbody.divide-y.divide-gray-200
+              - @cvs.each do |cv|
+                tr
+                  td.whitespace-nowrap.py-4.pl-4.pr-3.text-sm.font-medium.text-gray-900.sm:pl-6.md:pl-0= cv.theme.name
+                  td.whitespace-nowrap.py-4.px-3.text-sm.text-gray-500= cv.created_at
+                  td.whitespace-nowrap.py-4.px-3.text-sm.text-gray-500= cv.updated_at
+
+- else
+  .text-center.py-40
+    div
+      i.mx-auto.h-12.w-12.text-gray-400.mb-6 class="gg-file-document" style="--ggs:2;"
+    h3.mt-2.text-sm.font-medium.text-gray-900 No projects
+    p.mt-1.text-sm.text-gray-500 Get started by creating a new project.
+    .mt-6
+      = link_to "Créer mon CV", cvs_path, data: { "turbo-method": :post }, class: 'btn btn-primary'

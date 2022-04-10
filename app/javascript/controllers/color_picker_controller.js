@@ -10,8 +10,7 @@ export default class extends Controller {
   initialize() {
   }
 
-  test(e){
-    console.log(e.target.src)
+  patternSelect(e){
     let pattern = e.target.dataset.name
     this.changeBgPattern(pattern)
     this.inputTarget.value = e.target.dataset.name
@@ -19,7 +18,7 @@ export default class extends Controller {
   }
 
   changeBgPattern(patternSrc) {
-    document.querySelector("#cv_body").style.background = "url(/patterns/"+ patternSrc +".png)";
+    document.querySelector("#cv_body").style.background = "url(/patterns/"+ patternSrc +")";
   }
 
   changeHeaderBg() {

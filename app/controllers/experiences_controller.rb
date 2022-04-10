@@ -18,7 +18,7 @@ class ExperiencesController < ApplicationController
     respond_to do |format|
       if @experience.save
         @experience.newly_created!
-        format.html { redirect_to @experience, notice: "Experience créé" }
+        format.html { redirect_to @experience }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -30,7 +30,7 @@ class ExperiencesController < ApplicationController
     respond_to do |format|
       if @experience.update(experience_params)
         format.turbo_stream
-        format.html { redirect_to experience_url(@experience), notice: "Experience was successfully updated." }
+        format.html { redirect_to experience_url(@experience) }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -40,7 +40,7 @@ class ExperiencesController < ApplicationController
   def destroy
     @experience.destroy
     respond_to do |format|
-      format.html { redirect_to experiences_url, notice: "Experience was successfully destroyed." }
+      format.html { redirect_to experiences_url }
       format.turbo_stream
     end
   end

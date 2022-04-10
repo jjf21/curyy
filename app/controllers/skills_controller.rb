@@ -18,7 +18,7 @@ class SkillsController < ApplicationController
     respond_to do |format|
       if @skill.save
         @skill.newly_created!
-        format.html { redirect_to @skill, notice: "Skill créé" }
+        format.html { redirect_to @skill }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -30,7 +30,7 @@ class SkillsController < ApplicationController
     respond_to do |format|
       if @skill.update(skill_params)
         format.turbo_stream
-        format.html { redirect_to skill_url(@skill), notice: "Skill was successfully updated." }
+        format.html { redirect_to skill_url(@skill) }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -40,7 +40,7 @@ class SkillsController < ApplicationController
   def destroy
     @skill.destroy
     respond_to do |format|
-      format.html { redirect_to skills_url, notice: "Skill was successfully destroyed." }
+      format.html { redirect_to skills_url }
       format.turbo_stream
     end
   end

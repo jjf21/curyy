@@ -56,6 +56,11 @@
   @apply mx-auto lg:mx-0 rounded-full mt-4 lg:mt-0 py-2 px-4 focus:outline-none transform transition hover:scale-105 duration-300 ease-in-out cursor-pointer
 }
 
+.btn-small {
+  @apply py-1 px-4;
+  font-size: 80%;
+}
+
 
 .card {
   @apply bg-white p-4 mb-4;
