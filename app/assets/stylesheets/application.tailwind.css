@@ -45,7 +45,7 @@
 }
 
 .devise .label {
-  @apply text-black text-lg
+  @apply text-black text-lg flex;
 }
 
 .devise .input {

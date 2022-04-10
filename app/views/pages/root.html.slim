@@ -5,7 +5,7 @@
         | Décrochez le job de vos rêves !
       p.leading-normal.text-xl.mb-8
         | Finis les journées entières pour faire son CV sur powerpoint. Simplifiez vous la vie avec notre outil et ses nombreux thèmes. Un clic, un geste et Curyy fait le reste.
-      = link_to 'Créer mon CV', cvs_path, class: "btn btn-primary"
+      = link_to 'Créer mon CV', user_signed_in? ? cvs_path : new_user_registration_path, class: "btn btn-primary"
     .w-full.md:w-3/5.py-6.text-center
       img.w-full.md:w-4/5.z-50 src="https://www.tailwindtoolbox.com/templates/hero.png"
 
