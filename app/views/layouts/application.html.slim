@@ -28,9 +28,11 @@ html
     = csp_meta_tag
 
   body id=(controller.controller_name) class=(controller.action_name)
+    = render 'shared/flashes'
     = render 'shared/navigation'
 
+
     main.container-fluid role="main"
-      = flash_messages
+
       = yield
     = render 'shared/footer'

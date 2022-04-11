@@ -1,5 +1,6 @@
 p.text-center.text-3xl Connexion
 = simple_form_for(resource, as: resource_name, url: session_path(resource_name), class:'flex flex-col pt-3 md:pt-8 ') do |f|
+  = f.error_notification
   .flex.flex-col.pt-4
     = f.input :email, required: true, autofocus: true, input_html: { autocomplete: "email" }, placeholder: 'prenom.nom@email.com'
   .flex.flex-col.pt-4

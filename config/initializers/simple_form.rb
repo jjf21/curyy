@@ -18,7 +18,7 @@ SimpleForm.setup do |config|
   config.button_class = "btn"
   config.error_notification_tag = :div
   config.error_notification_class = "error_notification"
-  config.browser_validations = false
+  config.browser_validations = true
   config.boolean_label_class = "checkbox"
 
   config.label_text = lambda { |label, required, explicit_label| "#{label} #{ "<i class='gg-asterisk' style='--ggs:0.5'></i>" if required}"   }

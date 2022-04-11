@@ -36,13 +36,14 @@
       .inline-block data-controller="color-picker"
         = f.input :text_color, input_html: {data: {coloris: "", color_picker_target: "input", action: "change->color-picker#updateModel input->color-picker#setColor", attr: "text_color"}}
 
-    button.accordion.py-4.px-8.border-b.border-t.accordion.w-full.flex.justify-between
-      .flex.items-center
-        span.w-6
-          i.gg-size
-        span Taille
-      i.gg-arrow-down-o
-    .accordion-content.overflow-hidden.max-h-0.transition.px-8
+    /!
+      button.accordion.py-4.px-8.border-b.border-t.accordion.w-full.flex.justify-between
+        .flex.items-center
+          span.w-6
+            i.gg-size
+          span Taille
+        i.gg-arrow-down-o
+      .accordion-content.overflow-hidden.max-h-0.transition.px-8
 
   btn.flex.w-full.px-8.py-4.justify-center.text-primary.underline.cursor-pointer data-action='click->settings#resetThemeConfig'
     | Remise à zéro
