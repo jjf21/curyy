@@ -19,6 +19,8 @@ gem "devise", "~> 4.8"
 gem 'grover' # print html to pdf
 gem 'acts_as_list' # help with ordering element
 gem "lograge" #clear logs
+gem "ahoy_matey" #analytics
+gem 'activeadmin'
 
 
 
