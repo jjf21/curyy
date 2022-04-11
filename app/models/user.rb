@@ -14,6 +14,10 @@ class User < ApplicationRecord
     experiences.work
   end
 
+  def admin?
+    email == "carl.quivron@gmail.com"
+  end
+
   def education_experiences
     experiences.education
   end
