@@ -25,5 +25,6 @@ module Curyy
 
     config.generators.system_tests = nil
     config.i18n.default_locale = :fr
+    config.assets.css_compressor = nil
   end
 end
