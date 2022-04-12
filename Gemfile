@@ -21,6 +21,8 @@ gem 'acts_as_list' # help with ordering element
 gem "lograge" #clear logs
 gem "ahoy_matey" #analytics
 gem "administrate"
+gem "sentry-ruby" # error report
+gem "sentry-rails" #error report
 
 
 
