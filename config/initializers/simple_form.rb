@@ -8,9 +8,9 @@ SimpleForm.setup do |config|
     b.optional :min_max
     b.optional :readonly
     b.use :label, class: 'label'
+    b.use :error, wrap_with: { tag: :span, class: 'error text-primary text-xs italic' }
     b.use :input, class: 'field', error_class: 'is-invalid', valid_class: 'is-valid'
     b.use :hint,  wrap_with: { tag: :span, class: :hint }
-    b.use :error, wrap_with: { tag: :span, class: :error }
   end
 
   config.default_wrapper = :default

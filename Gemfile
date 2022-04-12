@@ -1,6 +1,8 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+
+# Default
 ruby "3.1.1"
 gem "rails", "~> 7.0.2", ">= 7.0.2.3"
 gem "pg", "~> 1.1"
@@ -13,18 +15,27 @@ gem "jsbundling-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
 gem "cssbundling-rails"
+
+# Fundamentals
 gem "slim-rails"
 gem "simple_form"
 gem "devise", "~> 4.8"
+
+# Services
 gem 'grover' # print html to pdf
 gem 'acts_as_list' # help with ordering element
-gem "lograge" #clear logs
-gem "ahoy_matey" #analytics
+
+# i18n
+gem 'devise-i18n'
+
+# Admin
+gem "ahoy_matey"
 gem "administrate"
-gem "sentry-ruby" # error report
-gem "sentry-rails" #error report
 
-
+# Logging
+gem "sentry-ruby"
+gem "sentry-rails"
+gem "lograge"
 
 group :development, :test do
   gem "byebug"

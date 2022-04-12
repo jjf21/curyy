@@ -20,6 +20,10 @@
   @apply w-full border py-1 px-3 appearance-none rounded text-gray-700;
 }
 
+.field.is-invalid {
+  @apply border-primary;
+}
+
 .label {
   @apply text-gray-700 block
 }
