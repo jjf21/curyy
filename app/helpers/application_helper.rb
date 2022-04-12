@@ -1,15 +1,29 @@
 module ApplicationHelper
 
 
-  FLASH_TYPE_HASH = { success: 'green', error: 'yellow', alert: 'red', notice: 'indigo' }.freeze
-
-  def flash_type(flash_type)
+  def default_meta_tags
     {
-      success: { title: 'Opération réussi', color: 'green'},
-      error: { title: "Une erreur s'est produite", color: 'red'},
-      alert: { title: "Une erreur s'est produite", color: 'yellow'},
-      notice: { title: "Opération réussi", color: 'green'}
-    }[flash_type.to_sym]
+      site: 'Curyy, démarquez votre CV',
+      title: '',
+      reverse: true,
+      separator: '-',
+      description: 'Curyy est un outil de conception premium de CV (curriculum vitae) en ligne. Il permet de choisir un thème, modifier son design, remplir vos expériences et télécharger votre CV au format PDF.',
+      keywords: 'cv design curriculum vitae recrutement theme',
+      canonical: request.original_url,
+      noindex: !Rails.env.production?,
+      icon: [
+        { href: image_url('/favicon.ico') },
+        { href: image_url('/favicon.ico'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/ico' },
+      ],
+      og: {
+        site_name: 'Curyy.com',
+        title: 'Curyy',
+        description: 'Curyy est un outil de conception premium de CV (curriculum vitae) en ligne. Il permet de choisir un thème, modifier son design, remplir vos expériences et télécharger votre CV au format PDF.',
+        type: 'website',
+        url: request.original_url,
+        image: image_url('/og-image.jpg')
+      }
+    }
   end
 
   def editable_tag(item, attribute, &block)

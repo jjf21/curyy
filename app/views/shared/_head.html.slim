@@ -1,0 +1,28 @@
+meta name="viewport" content="width=device-width, initial-scale=1.0"
+meta name="theme-color" content="#3e0075"
+= display_meta_tags(default_meta_tags)
+
+- # Generated via tailwind.config.js
+= stylesheet_link_tag "tailwind", "data-turbo-track": "reload"
+
+- # Generated via cssbundling-rails
+= stylesheet_link_tag "application", "data-turbo-track": "reload"
+
+- # Generated with asset pipeline
+= stylesheet_link_tag "application.assets", "data-turbo-track": "reload"
+
+= javascript_include_tag "application", "data-turbo-track": "reload", defer: true
+
+
+link href="https://fonts.googleapis.com" rel="preconnect" /
+link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" /
+link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet" /
+
+
+
+link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+link href='https://css.gg/css' rel='stylesheet'
+
+
+= csrf_meta_tags
+= csp_meta_tag

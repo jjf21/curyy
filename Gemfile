@@ -21,6 +21,9 @@ gem "slim-rails"
 gem "simple_form"
 gem "devise", "~> 4.8"
 
+# SEO
+gem 'meta-tags'
+
 # Services
 gem 'grover' # print html to pdf
 gem 'acts_as_list' # help with ordering element
