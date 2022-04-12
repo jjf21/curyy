@@ -49,6 +49,13 @@
   font-size: 80%;
 }
 
+.text-error {
+  @apply text-primary;
+}
+
+.text-success {
+  @apply text-green-500;
+}
 
 .card {
   @apply bg-white p-4 mb-4;
