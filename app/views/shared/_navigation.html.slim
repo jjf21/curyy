@@ -4,17 +4,13 @@ nav#header.w-full.py-4
       = link_to 'Curyy', root_path, class: 'text-secondary hover font-bold text-2xl'
       span.text-secondary.text-xs.ml-2 | démarquez votre CV
     .block.lg:hidden.pr-4
-      button#nav-toggle.flex.items-center.p-1.text-pink-800.hover:text-gray-900.focus:outline-none.focus:shadow-outline.transform.transition.hover:scale-105.duration-300.ease-in-out
+      button#nav-toggle.flex.items-center.p-1
         i class="gg-menu"
+
     #nav-content.w-full.flex-grow.lg:flex.lg:items-center.lg:w-auto.hidden.mt-2.lg:mt-0.bg-white.lg:bg-transparent.text-secondary.p-4.lg:p-0.z-20
       ul.list-reset.lg:flex.justify-end.flex-1.items-center
-        - if user_signed_in?
-          li.mr-3
-            = link_to 'Mes CVs', cvs_path, class: "inline-block text-secondary hover:text-primary transition py-2 px-4"
-
         li.mr-3
           = link_to 'Créer mon CV', user_signed_in? ? cvs_path : new_user_registration_path, class: "btn btn-secondary"
-
         - if user_signed_in?
           li.ml-2.dropdown-container
             a.inline-block.border.rounded-full.p-2.transition href="#"
@@ -23,9 +19,13 @@ nav#header.w-full.py-4
               .border.px-2
                 li.border-b
                   = link_to edit_user_registration_path, class: 'flex items-center text-secondary hover:text-primary transition py-2 px-4' do
-                    i.gg-options
+                    i.gg-options.mr-1
                     span.pl-2 Mon compte
+                li.border-b
+                  = link_to cvs_path, class: "flex items-center text-secondary hover:text-primary transition py-2 px-4" do
+                    i.gg-file-document
+                    span.pl-2 Mes CVs
                 li
                   = link_to destroy_user_session_path, class: 'flex items-center inline-block text-secondary hover:text-primary transition py-2 px-4', data: { "turbo-method": :delete } do
-                    i.gg-log-out.mr-1 style='margin-left: 0'
+                    i.gg-log-out.mr-2 style='margin-left: 0'
                     span.pl-2 Deconnexion

@@ -25,6 +25,12 @@ html, body {
 
 abbr {display: none}
 
+::selection {
+  background: #ffe040;
+}
+::-moz-selection {
+  background: #ffe040;
+}
 
 .dropdown-container {
   position: relative;
