@@ -8,28 +8,12 @@
   body { color-adjust: exact; }
 }
 
-.bg-primary {
-  background: #8139df;
-}
-
-.bg-secondary {
-  background: #3e0075;
-}
-
 .btn-primary {
-  @apply bg-primary text-white;
+  @apply bg-primary text-white hover:bg-secondary transition;
 }
 
 .btn-secondary {
-  @apply bg-secondary text-white;
-}
-
-.text-primary {
-  color: #8139df;
-}
-
-.text-secondary {
-  color: #3e0075;
+  @apply bg-secondary text-white hover:bg-primary transition;
 }
 
 .field {

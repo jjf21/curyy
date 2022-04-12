@@ -31,6 +31,10 @@ abbr {display: none}
   display: flex;
 }
 
+.dropdown-container:hover > a {
+  border-color: #3e0075;
+}
+
 .dropdown-container .dropdown {
   visibility: hidden;
   opacity: 0;
