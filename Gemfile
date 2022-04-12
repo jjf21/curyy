@@ -61,6 +61,7 @@ group :development do
   gem "spring"
   gem "spring-commands-rspec"
   gem "tailwind_views_generator"
+  gem "letter_opener"
 end
 
 group :test do
