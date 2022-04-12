@@ -13,7 +13,6 @@ module.exports = {
           light: '#8139df',
           DEFAULT: '#3e0075'
         },
-        'secondary':'#8139df',
         'accent':'#ffe040',
       }
     },
