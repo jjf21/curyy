@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
     root to: "users#index"
   end
-  
+
   resources :experiences, except: [:index, :show] do
     patch :change_position, on: :member
   end
@@ -19,7 +19,12 @@ Rails.application.routes.draw do
     get :export, on: :member
   end
 
-  get '/coloris_test', to: 'pages#coloris_test'
-  get '/coloris', to: 'pages#coloris'
+
+  # Static pages
   root to: "pages#root"
+  get '/terms', to: 'pages#terms'
+  get '/contact', to: 'pages#contact'
+  get '/legal_notices', to: 'pages#legal_notices'
+  get '/services', to: 'pages#services'
+  get '/privacy_policy', to: 'pages#privacy_policy'
 end

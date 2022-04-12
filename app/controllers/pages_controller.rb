@@ -1,10 +1,17 @@
 class PagesController < ApplicationPublicController
+
   def root
   end
 
-  def coloris
+  def contact
   end
 
-  def coloris_test
+  def terms
+  end
+
+  def legal_notices
+  end
+
+  def service
   end
 end
