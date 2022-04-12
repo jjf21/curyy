@@ -4,8 +4,11 @@ nav#header.w-full.py-4
       = link_to 'Curyy', root_path, class: 'text-secondary hover font-bold text-2xl'
       span.text-secondary.text-xs.ml-2 | démarquez votre CV
     .block.lg:hidden.pr-4
-      button#nav-toggle.flex.items-center.p-1
-        i class="gg-menu"
+      - if user_signed_in?
+        button#nav-toggle.flex.items-center.justify-center.h-8.w-8
+          i class="gg-menu"
+      - else
+        = link_to 'Créer mon CV', new_user_registration_path, class: "btn btn-secondary"
 
     #nav-content.w-full.flex-grow.lg:flex.lg:items-center.lg:w-auto.hidden.mt-2.lg:mt-0.bg-white.lg:bg-transparent.text-secondary.p-4.lg:p-0.z-20
       ul.list-reset.lg:flex.justify-end.flex-1.items-center
@@ -29,3 +32,13 @@ nav#header.w-full.py-4
                   = link_to destroy_user_session_path, class: 'flex items-center inline-block text-secondary hover:text-primary transition py-2 px-4', data: { "turbo-method": :delete } do
                     i.gg-log-out.mr-2 style='margin-left: 0'
                     span.pl-2 Deconnexion
+
+
+  #mobile-menu.bg-secondary.text-white.hidden
+    ul.text-center.py-2
+      li.py-2
+        = link_to 'Mon compte', edit_user_registration_path
+      li.py-2
+        = link_to 'Mes CVs', cvs_path
+      li.py-2
+        = link_to 'Deconnexion', destroy_user_session_path, data: { "turbo-method": :delete }
