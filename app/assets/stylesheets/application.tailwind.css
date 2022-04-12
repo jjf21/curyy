@@ -8,12 +8,12 @@
   body { color-adjust: exact; }
 }
 
-.btn-primary {
-  @apply bg-primary text-white hover:bg-secondary transition;
+.btn-primary-light {
+  @apply bg-primary-light text-white hover:bg-primary transition;
 }
 
-.btn-secondary {
-  @apply bg-secondary text-white hover:bg-primary transition;
+.btn-primary {
+  @apply bg-primary text-white hover:bg-primary-light transition;
 }
 
 .field {
@@ -21,7 +21,7 @@
 }
 
 .field.is-invalid {
-  @apply border-primary;
+  @apply border-primary-light;
 }
 
 .label {
@@ -50,7 +50,7 @@
 }
 
 .text-error {
-  @apply text-primary;
+  @apply text-primary-light;
 }
 
 .text-success {

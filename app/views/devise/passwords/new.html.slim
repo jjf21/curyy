@@ -4,6 +4,6 @@ p.text-center.text-3xl Mot de passe oublié
   .flex.flex-col.pt-4
     = f.input :email, required: true, autofocus: true, input_html: { autocomplete: "email" }, placeholder: 'prenom.nom@email.com'
   .flex.justify-center.pt-4.w-full
-    = f.button :submit, 'Reinitialiser mon mot de passe', class:'w-full btn btn-primary'
+    = f.button :submit, 'Reinitialiser mon mot de passe', class:'w-full btn btn-primary-light'
   .flex.pt-4.justify-center
     = render 'devise/shared/links'

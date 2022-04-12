@@ -1,19 +1,19 @@
 nav#header.w-full.py-4
   .w-full.container.mx-auto.flex.flex-wrap.items-center.justify-between.mt-0.py-2
     .pl-4.flex.items-baseline
-      = link_to 'Curyy', root_path, class: 'text-secondary hover font-bold text-2xl'
-      span.text-secondary.text-xs.ml-2 | démarquez votre CV
+      = link_to 'Curyy', root_path, class: 'text-primary hover font-bold text-2xl'
+      span.text-primary.text-xs.ml-2 | démarquez votre CV
     .block.lg:hidden.pr-4
       - if user_signed_in?
         button#nav-toggle.flex.items-center.justify-center.h-8.w-8
           i class="gg-menu"
       - else
-        = link_to 'Créer mon CV', new_user_registration_path, class: "btn btn-secondary"
+        = link_to 'Créer mon CV', new_user_registration_path, class: "btn btn-primary"
 
-    #nav-content.w-full.flex-grow.lg:flex.lg:items-center.lg:w-auto.hidden.mt-2.lg:mt-0.bg-white.lg:bg-transparent.text-secondary.p-4.lg:p-0.z-20
+    #nav-content.w-full.flex-grow.lg:flex.lg:items-center.lg:w-auto.hidden.mt-2.lg:mt-0.bg-white.lg:bg-transparent.text-primary.p-4.lg:p-0.z-20
       ul.list-reset.lg:flex.justify-end.flex-1.items-center
         li.mr-3
-          = link_to 'Créer mon CV', user_signed_in? ? cvs_path : new_user_registration_path, class: "btn btn-secondary"
+          = link_to 'Créer mon CV', user_signed_in? ? cvs_path : new_user_registration_path, class: "btn btn-primary"
         - if user_signed_in?
           li.ml-2.dropdown-container
             a.inline-block.border.rounded-full.p-2.transition href="#"
@@ -21,20 +21,20 @@ nav#header.w-full.py-4
             ul.dropdown
               .border.px-2.bg-white
                 li.border-b
-                  = link_to edit_user_registration_path, class: 'flex items-center text-secondary hover:text-primary transition py-2 px-4' do
+                  = link_to edit_user_registration_path, class: 'flex items-center text-primary hover:text-primary-light transition py-2 px-4' do
                     i.gg-options.mr-1
                     span.pl-2 Mon compte
                 li.border-b
-                  = link_to cvs_path, class: "flex items-center text-secondary hover:text-primary transition py-2 px-4" do
+                  = link_to cvs_path, class: "flex items-center text-primary hover:text-primary-light transition py-2 px-4" do
                     i.gg-file-document
                     span.pl-2 Mes CVs
                 li
-                  = link_to destroy_user_session_path, class: 'flex items-center inline-block text-secondary hover:text-primary transition py-2 px-4', data: { "turbo-method": :delete } do
+                  = link_to destroy_user_session_path, class: 'flex items-center inline-block text-primary hover:text-primary-light transition py-2 px-4', data: { "turbo-method": :delete } do
                     i.gg-log-out.mr-2 style='margin-left: 0'
                     span.pl-2 Deconnexion
 
 
-  #mobile-menu.bg-secondary.text-white.hidden
+  #mobile-menu.bg-primary.text-white.hidden
     ul.text-center.py-2
       li.py-2
         = link_to 'Mon compte', edit_user_registration_path

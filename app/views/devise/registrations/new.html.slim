@@ -12,6 +12,6 @@ p.text-center.text-3xl Inscription
   .flex.flex-col.pt-4
     = f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password" }, placeholder: 'Confirmation'
   .flex.justify-center.pt-4.w-full
-    = f.button :submit, "S'inscrire", class:'w-full btn btn-primary'
+    = f.button :submit, "S'inscrire", class:'w-full btn btn-primary-light'
   .flex.pt-4.justify-center
     = render 'devise/shared/links'
