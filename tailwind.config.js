@@ -10,10 +10,19 @@ module.exports = {
     extend: {
       colors: {
         'primary': {
+          lighter: '#f8edf4',
           light: '#8139df',
           DEFAULT: '#3e0075'
         },
-        'accent':'#ffe040',
+        'pink': {
+          DEFAULT: '#ed0a71'
+        },
+        'yellow': {
+          DEFAULT: '#ffe040'
+        },
+        'green': {
+          DEFAULT: '#45bfa7'
+        }
       }
     },
   },

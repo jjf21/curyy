@@ -1,6 +1,5 @@
 import tippy from 'tippy.js';
 
-
 function itemContent(el) {
   let model = el.id.split('_')[0]
   let id = el.id.split('_')[1]
@@ -30,17 +29,21 @@ function sectionContent(el) {
 
 export function hoverItemMenu(el) {
   let model = el.id.split('_')[0]
-  let maxWidth = model == 'skill' ? 23 : 350
+  let maxWidth = model == 'skill' ? 20 : 350
 
   return (
     tippy(el, {
       content: itemContent(el),
       allowHTML: true,
+      hideOnClick: true,
       interactive: true,
       interactiveBorder: 5,
       flip: false,
+      lazy: false,
+      flipOnUpdate: false,
       maxWidth: maxWidth,
-      placement: 'left-start',
+      offset: [1, -1],
+      placement: 'left',
     })
   )
 }

@@ -21,7 +21,7 @@ module ApplicationHelper
         description: 'Curyy est un outil de conception premium de CV (curriculum vitae) en ligne. Il permet de choisir un thème, modifier son design, remplir vos expériences et télécharger votre CV au format PDF.',
         type: 'website',
         url: request.original_url,
-        image: image_url('/og-image.jpg')
+        image: image_url('/og-image.png')
       }
     }
   end

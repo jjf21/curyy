@@ -12,6 +12,10 @@
   @apply bg-primary-light text-white hover:bg-primary transition;
 }
 
+.btn-pink {
+  @apply bg-pink text-white hover:bg-primary transition;
+}
+
 .btn-primary {
   @apply bg-primary text-white hover:bg-primary-light transition;
 }
@@ -25,7 +29,7 @@
 }
 
 .label {
-  @apply text-gray-700 block
+  @apply text-gray-700 block;
 }
 
 .hint {
@@ -50,11 +54,11 @@
 }
 
 .text-error {
-  @apply text-primary-light;
+  @apply text-pink;
 }
 
 .text-success {
-  @apply text-green-500;
+  @apply text-green;
 }
 
 .card {

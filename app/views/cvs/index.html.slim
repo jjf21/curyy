@@ -23,10 +23,11 @@
                   td.whitespace-nowrap.py-4.px-3.text-sm.text-gray-500= cv.updated_at
 
 - else
-  .text-center.py-40
-    div
-      i.mx-auto.h-12.w-12.text-gray-400.mb-6 class="gg-file-document" style="--ggs:2;"
-    h3.mt-2.text-sm.font-medium.text-gray-900 No projects
-    p.mt-1.text-sm.text-gray-500 Get started by creating a new project.
-    .mt-6
-      = link_to "Créer mon CV", user_signed_in? ? cvs_path : new_user_registration_path, data: { "turbo-method": :post }, class: 'btn btn-primary-light'
+  .py-20
+    .text-center.py-20.w-full.mx-auto.md:border.md:w-1/3
+      div
+        i.mx-auto.h-12.w-12.text-gray-400.mb-6 class="gg-file-document" style="--ggs:2;"
+      h3.mt-2.text-sm.font-medium.text-gray-900 No projects
+      p.mt-1.text-sm.text-gray-500 Get started by creating a new project.
+      .mt-6
+        = link_to "Créer mon CV", user_signed_in? ? cvs_path : new_user_registration_path, data: { "turbo-method": :post }, class: 'btn btn-primary-light'

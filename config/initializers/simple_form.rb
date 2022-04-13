@@ -21,5 +21,5 @@ SimpleForm.setup do |config|
   config.browser_validations = true
   config.boolean_label_class = "checkbox"
 
-  config.label_text = lambda { |label, required, explicit_label| "#{label} #{ "<i class='gg-asterisk' style='--ggs:0.5'></i>" if required}"   }
+  config.label_text = lambda { |label, required, explicit_label| "#{label} #{ "<i class='gg-asterisk' style='--ggs:0.5'></i>" if required.present? }"   }
 end

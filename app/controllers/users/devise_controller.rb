@@ -7,6 +7,9 @@ class Users::DeviseController < ApplicationController
         raise error
       elsif has_errors? && default_action
         render rendering_options.merge(formats: :html, status: :unprocessable_entity)
+      elsif controller.class.to_s == "Devise::RegistrationsController" && request.method == "DELETE"
+        # Fix delete account
+        redirect_to root_path
       else
         redirect_to navigation_location
       end

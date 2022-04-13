@@ -10,12 +10,12 @@ nav#header.w-full.py-4
       - else
         = link_to 'Créer mon CV', new_user_registration_path, class: "btn btn-primary"
 
-    #nav-content.w-full.flex-grow.lg:flex.lg:items-center.lg:w-auto.hidden.mt-2.lg:mt-0.bg-white.lg:bg-transparent.text-primary.p-4.lg:p-0.z-20
+    #nav-content.w-full.flex-grow.lg:flex.lg:items-center.lg:w-auto.hidden.mt-2.lg:mt-0.bg-white.lg:bg-transparent.text-primary.p-4.lg:p-0
       ul.list-reset.lg:flex.justify-end.flex-1.items-center
         li.mr-3
           = link_to 'Créer mon CV', user_signed_in? ? cvs_path : new_user_registration_path, class: "btn btn-primary"
         - if user_signed_in?
-          li.ml-2.dropdown-container
+          li.ml-2.mr-2.dropdown-container
             a.inline-block.border.rounded-full.p-2.transition href="#"
               i.gg-user-list style='--ggs: 1'
             ul.dropdown

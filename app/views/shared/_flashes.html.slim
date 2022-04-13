@@ -1,7 +1,7 @@
 - if flash.any?
   - flash.delete(:timedout)
 
-  .fixed.inset-0.flex.items-end.px-4.py-6.pointer-events-none.sm:p-6.sm:items-start aria-live="assertive"
+  .fixed.inset-0.flex.items-end.px-4.py-6.pointer-events-none.sm:p-6.sm:items-start.z-10 aria-live="assertive"
     .w-full.flex.flex-col.items-center.space-y-4.sm:items-end
       - flash.each_with_index do |msg, index|
         - msg_type = msg[0]
@@ -25,6 +25,7 @@
                       path clip-rule="evenodd" d=("M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z") fill-rule="evenodd" /
 
   javascript:
+
     setTimeout(function(){ document.querySelectorAll('.flash_container').forEach((elem) => elem.remove()) }, 5000);
     document.querySelectorAll('.close-flash').forEach(item => {
       item.addEventListener('click', event => {

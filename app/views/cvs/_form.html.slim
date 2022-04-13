@@ -13,10 +13,10 @@
       .inline-block.pt-4 data-controller="color-picker"
         = f.input :header_bg, input_html: {data: {coloris: "", color_picker_target: "input", action: "change->color-picker#updateModel input->color-picker#setColor", attr: "header_bg"}}
 
-      .inline-block data-controller="color-picker"
+      .inline-block.mt-2 data-controller="color-picker"
         = f.input :body_bg, input_html: {data: {coloris: "", color_picker_target: "input", action: "change->color-picker#updateModel input->color-picker#setColor", attr: "body_bg"}}
       p.pb-2 ou
-      .inline-block data-controller="color-picker"
+      .inline-block.pb-4 data-controller="color-picker"
         = f.input :body_bg_pattern, as: :hidden, input_html: {data: {color_picker_target: "input", action: "change->color-picker#updateModel", attr: "body_bg_pattern"}}
         .flex.overflow-x-scroll
           - Dir.entries("public/patterns")[2..-1].each do |pattern|
@@ -33,7 +33,7 @@
       .inline-block.pt-4 data-controller="color-picker"
         = f.input :main_color, input_html: {data: {coloris: "", color_picker_target: "input", action: "change->color-picker#updateModel input->color-picker#setColor", attr: "main_color"}}
 
-      .inline-block data-controller="color-picker"
+      .inline-block.mt-2 data-controller="color-picker"
         = f.input :text_color, input_html: {data: {coloris: "", color_picker_target: "input", action: "change->color-picker#updateModel input->color-picker#setColor", attr: "text_color"}}
 
     /!
