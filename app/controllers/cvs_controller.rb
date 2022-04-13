@@ -11,8 +11,7 @@ class CvsController < ApplicationController
     @theme = @cv.theme
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @cv = Cv.new(user: current_user, theme: Theme.default_theme)
@@ -45,14 +44,14 @@ class CvsController < ApplicationController
   end
 
   def export
-    # TODO 
-    html = render_to_string partial: '/themes/hello_world', locals: {user: current_user, cv: @cv}, layout: false
+    # TODO
+    html = render_to_string partial: "/themes/hello_world", locals: { user: current_user, cv: @cv }, layout: false
     style_tag_options = [
       tailwind_stylesheet,
-      { url: 'https://css.gg/css'},
-      { url: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap'}
+      { url: "https://css.gg/css" },
+      { url: "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" },
     ]
-    grover = Grover.new("<html><head><meta charset='UTF-8' /></head><body>#{html}</body></html>", format: 'A4', style_tag_options: style_tag_options)
+    grover = Grover.new("<html><head><meta charset='UTF-8' /></head><body>#{html}</body></html>", format: "A4", style_tag_options:)
     pdf = grover.to_pdf
 
     send_data pdf, type: "application/pdf"
@@ -76,12 +75,11 @@ class CvsController < ApplicationController
 
   def tailwind_stylesheet
     if Rails.env.development?
-      { content: Rails.application.assets['tailwind.css'].to_s }
+      { content: Rails.application.assets["tailwind.css"].to_s }
     else
-      path = Rails.application.assets_manifest.assets['tailwind.css']
+      path = Rails.application.assets_manifest.assets["tailwind.css"]
       url = "#{request.protocol}#{request.host}/assets/#{path}"
       { url: "#{request.protocol}#{request.host}/assets/#{path}" }
     end
   end
-
 end

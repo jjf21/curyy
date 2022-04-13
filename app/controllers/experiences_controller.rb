@@ -5,15 +5,14 @@ class ExperiencesController < ApplicationController
     @experience = Experience.new(user: current_user, **experience_params)
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
-    if params[:use_template] == 'true'
-      @experience = Experience.new_template(current_user, params[:item_type].to_s)
-    else
-      @experience = Experience.new(experience_params)
-    end
+    @experience = if params[:use_template] == "true"
+                    Experience.new_template(current_user, params[:item_type].to_s)
+                  else
+                    Experience.new(experience_params)
+                  end
 
     respond_to do |format|
       if @experience.save

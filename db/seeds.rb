@@ -1,8 +1,4 @@
-if User.find_by(email: "a@gmail.com")
-  u = User.find_by(email: "a@gmail.com")
-else
-  u = User.create(email: "a@gmail.com", password: "bestxx", first_name: "Carl", last_name: "Quivron")
-end
+u = User.find_by(email: "a@gmail.com") || User.create(email: "a@gmail.com", password: "bestxx", first_name: "Carl", last_name: "Quivron")
 
 Experience.create(
   user: u,
@@ -49,8 +45,6 @@ Experience.create(
   title: "Formation Ruby on Rails"
 )
 
-
-
 theme = Theme.find_or_create_by!(name: "hello_world", body_bg: "#cfcfcf", main_color: "#eab308", text_color: "#2b315c", font_family: "Roboto")
 theme = Theme.find_or_create_by!(name: "theme_2", body_bg: "#cfcfcf", main_color: "#eab308", text_color: "#2b315c", font_family: "Roboto")
-Cv.create(theme: theme, user: u, body_bg: "#cfcfcf", main_color: "#eab308", text_color: "#2b315c", font_family: "Roboto")
+Cv.create(theme:, user: u, body_bg: "#cfcfcf", main_color: "#eab308", text_color: "#2b315c", font_family: "Roboto")

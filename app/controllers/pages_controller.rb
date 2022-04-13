@@ -1,10 +1,8 @@
 class PagesController < ApplicationPublicController
-
-  def root
-  end
+  def root; end
 
   def contact
-    set_meta_tags title: 'Contact', description: "Formulaire de prise de contact avec l'équipe Curyy"
+    set_meta_tags title: "Contact", description: "Formulaire de prise de contact avec l'équipe Curyy"
   end
 
   def terms

@@ -9,6 +9,5 @@ class EditThemeAndCvAttribute < ActiveRecord::Migration[7.0]
     add_column :themes, :header_bg, :string
     add_column :themes, :body_bg_pattern, :string
     add_column :themes, :font_size, :string
-
   end
 end

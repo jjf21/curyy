@@ -7,24 +7,24 @@ class Skill < ApplicationRecord
 
   def self.new_template(user, item_type)
     case item_type
-    when 'skill'
+    when "skill"
       Skill.new(
-        user: user,
-        item_type: item_type,
+        user:,
+        item_type:,
         name: "Compétence"
       )
-    when 'tool'
+    when "tool"
       Skill.new(
-        user: user,
-        item_type: item_type,
-        name: "Outil",
+        user:,
+        item_type:,
+        name: "Outil"
       )
-    when 'language'
+    when "language"
       Skill.new(
-        user: user,
-        item_type: item_type,
+        user:,
+        item_type:,
         name: "Francais",
-        certification: "natif",
+        certification: "natif"
       )
     end
   end
