@@ -15,20 +15,40 @@ jobs:
         env:
           POSTGRES_USER: curyy
           POSTGRES_DB: curyy_test
-          POSTGRES_PASSWORD: ""
-        ports: ["5432:5432"]
+          POSTGRES_PASSWORD: curyy
+        ports:
+          - 5432:5432
     steps:
       - uses: actions/checkout@v3
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1.1'
+
+      - name: Ruby gem cache
+        uses: actions/cache@v3
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
       - name: Install dependencies
-        run: bundle install
+        run: |
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
+
+      - name: Build and Test
+        env:
+          DATABASE_URL: postgres://curyy:curyy@localhost/curyy_test
+          RAILS_ENV: test
+        run: bin/rails db:setup
+
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
           node-version: 14.17.5
+
       - name: Find yarn cache location
         id: yarn-cache
         run: echo "::set-output name=dir::$(yarn cache dir)"
@@ -42,10 +62,6 @@ jobs:
       - name: Install packages
         run: |
           yarn install --pure-lockfile
-      - name: Build and Test
-        env:
-          POSTGRES_HOST: localhost
-          RAILS_ENV: test
-        run: bin/rails db:setup
+
       - name: Run tests
         run: bundle exec rake
