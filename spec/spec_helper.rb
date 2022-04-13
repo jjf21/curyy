@@ -1,5 +1,5 @@
 # Coverage must be enabled before the application is loaded.
-if ENV["COVERAGE"]
+if true
   require "simplecov"
 
   SimpleCov.start do

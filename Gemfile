@@ -69,6 +69,7 @@ end
 
 group :test do
   gem "capybara"
+  gem 'rails-controller-testing'
   # gem "capybara-email"
   gem "selenium-webdriver"
   gem "shoulda-matchers"

@@ -45,6 +45,7 @@ class CvsController < ApplicationController
   end
 
   def export
+    # TODO 
     html = render_to_string partial: '/themes/hello_world', locals: {user: current_user, cv: @cv}, layout: false
     style_tag_options = [
       tailwind_stylesheet,

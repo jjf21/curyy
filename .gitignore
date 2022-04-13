@@ -35,5 +35,6 @@
 
 /node_modules
 
+coverage
 .byebug_history
 spec/examples.txt
