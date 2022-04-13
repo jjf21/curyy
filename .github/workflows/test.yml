@@ -44,9 +44,7 @@ jobs:
           yarn install --pure-lockfile
       - name: Build and Test
         env:
-          POSTGRES_USER: curyy
-          POSTGRES_PASSWORD: ""
-          POSTGRES_DB: curyy_test
+          POSTGRES_HOST: localhost
           RAILS_ENV: test
         run: bin/rails db:setup
       - name: Run tests
