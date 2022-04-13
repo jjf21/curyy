@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Experience < ApplicationRecord
   attr_accessor :newly_created
 

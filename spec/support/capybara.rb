@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "selenium/webdriver"
 
 Webdrivers.cache_time = 24.hours.seconds

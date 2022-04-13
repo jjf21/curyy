@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Skill < ApplicationRecord
   attr_accessor :newly_created
 

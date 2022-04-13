@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CvsController < ApplicationController
   before_action :set_cv_and_theme_name, only: %i[show edit update destroy export]
   before_action :set_theme_name, only: %i[show edit export]

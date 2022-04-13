@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Users::DeviseController < ApplicationController
   class Responder < ActionController::Responder
     include Rails.application.routes.url_helpers

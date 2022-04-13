@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Coverage must be enabled before the application is loaded.
 if true
   require "simplecov"

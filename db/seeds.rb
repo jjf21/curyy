@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 u = User.find_by(email: "a@gmail.com") || User.create(email: "a@gmail.com", password: "bestxx", first_name: "Carl", last_name: "Quivron")
 
 Experience.create(
