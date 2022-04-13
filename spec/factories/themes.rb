@@ -1,9 +1,10 @@
 FactoryBot.define do
   factory :theme do
     name { "hello_world" }
-    background { "#fff" }
-    main_color { "#fff" }
-    text_color { "#fff" }
-    font_family { "Roboto" }
+    body_bg { "#fff" }
+    header_bg { "blue" }
+    main_color { "yellow" }
+    text_color { "blue" }
+    font_family { "" }
   end
 end

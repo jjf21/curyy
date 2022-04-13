@@ -25,14 +25,26 @@
 #
 FactoryBot.define do
   factory :experience do
-    user { nil }
-    start_date { "2022-03-23" }
-    end_date { "2022-03-23" }
+    user { create(:user) }
+    start_date { "2020" }
+    end_date { "2022" }
     current { false }
-    title { "MyString" }
-    description { "MyText" }
-    company { "MyString" }
-    location { "MyString" }
-    item_type { "" }
+    title { "Experience 1" }
+    description { "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." }
+    company { "Quivron Web Solutions" }
+    location { "Lille" }
+    item_type { "work" }
+
+    trait :work do
+      title { "Developpeur" }
+      company { "Quivron Web Solutions" }
+      item_type { "work" }
+    end
+
+    trait :education do
+      title { "Master IT" }
+      company { "Iteem" }
+      item_type { "education" }
+    end
   end
 end

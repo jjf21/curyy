@@ -19,20 +19,21 @@ Capybara.register_driver :headless_chrome do |app|
   #
   #   puts page.driver.browser.manage.logs.get(:browser).map(&:inspect).join("\n")
   #
-  # This will print out each log entry in the JS log, including e.g. the React welcome notice.
-  capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
-    logging_prefs: { "browser" => "ALL" }
-  )
+  # NOT WORKING ! This will print out each log entry in the JS log, including e.g. the React welcome notice.
+  # capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
+  #   logging_prefs: { "browser" => "ALL" }
+  # )
 
   Capybara::Selenium::Driver.new(
     app,
     browser: :chrome,
     options: browser_options,
-    desired_capabilities: capabilities
+    # desired_capabilities: capabilities
   )
 end
 
-chrome_driver = ENV["HEADLESS"] == "false" ? :chrome : :headless_chrome
+headless = false
+chrome_driver = headless ? :chrome : :headless_chrome
 
 Capybara.default_driver    = :rack_test
 Capybara.javascript_driver = chrome_driver
