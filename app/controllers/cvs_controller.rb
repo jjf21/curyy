@@ -1,5 +1,5 @@
 class CvsController < ApplicationController
-  before_action :set_cv, only: %i[show edit update destroy export]
+  before_action :set_cv_and_theme_name, only: %i[show edit update destroy export]
   before_action :set_theme_name, only: %i[show edit export]
 
   def index
@@ -68,7 +68,7 @@ class CvsController < ApplicationController
     @theme_name = @cv.theme.name
   end
 
-  def set_cv
+  def set_cv_and_theme_name
     @cv = Cv.find(params[:id])
     @theme_name = @cv.theme.name
   end

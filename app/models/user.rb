@@ -10,13 +10,14 @@ class User < ApplicationRecord
   has_many :skills, dependent: :destroy
   has_many :links, dependent: :destroy
 
+  def admin?
+    email == "carl.quivron@gmail.com"
+  end
+
   def work_experiences
     experiences.work
   end
 
-  def admin?
-    email == "carl.quivron@gmail.com"
-  end
 
   def education_experiences
     experiences.education
