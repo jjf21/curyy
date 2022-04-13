@@ -17,7 +17,8 @@ jobs:
           POSTGRES_DB: curyy_test
           POSTGRES_PASSWORD: curyy
         ports:
-          - 5432:5432
+        - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
       - uses: actions/checkout@v3
       - name: Set up Ruby
@@ -53,6 +54,7 @@ jobs:
       - name: Find yarn cache location
         id: yarn-cache
         run: echo "::set-output name=dir::$(yarn cache dir)"
+
       - name: JS package cache
         uses: actions/cache@v1
         with:
