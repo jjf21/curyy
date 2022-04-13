@@ -12,6 +12,6 @@ p.text-center.text-3xl Modifier votre compte
   .flex.justify-center.pt-4.w-full
     = f.button :submit, "Modifier", class:'w-full btn btn-primary-light'
   .flex.pt-4.justify-center
-    = link_to 'Supprimer mon compte', registration_path(current_user), class: 'w-full hover:bg-red-700 hover:text-white btn text-center', data: { confirm: 'Confirmation', "turbo-method": :delete  }, method: :delete
+    = link_to 'Supprimer mon compte', registration_path(current_user), class: 'w-full hover:bg-red-700 hover:text-white btn text-center', data: { turbo_confirm: 'Suppression definitive, voulez vous continuer ?', "turbo-method": :delete  }, method: :delete
   .flex.pt-4.justify-center
     = link_to 'Back', :back

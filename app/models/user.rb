@@ -35,7 +35,8 @@ class User < ApplicationRecord
   end
 
   def full_name
-    "#{first_name} #{last_name}"
+    text = "#{first_name} #{last_name}"
+    text.blank? ? email : text
   end
 
   private

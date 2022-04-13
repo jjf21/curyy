@@ -32,4 +32,5 @@ Devise.setup do |config|
   config.warden do |manager|
     manager.failure_app = TurboFailureApp
   end
+  config.parent_mailer = 'ApplicationMailer'
 end

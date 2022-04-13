@@ -1,5 +1,7 @@
 class Users::DeviseController < ApplicationController
   class Responder < ActionController::Responder
+    include Rails.application.routes.url_helpers
+
     def to_turbo_stream
       controller.render(options.merge(formats: :html))
     rescue ActionView::MissingTemplate => error

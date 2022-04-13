@@ -1,0 +1,28 @@
+doctype 5
+html
+  head
+    meta content="width=device-width, initial-scale=1.0" name="viewport"
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type"
+    title= message.subject
+    = stylesheet_link_tag "mailer"
+
+  body
+    span.preheader
+    table.body border="0" cellpadding="0" cellspacing="0" role="presentation"
+      tr
+        td &nbsp;
+        td.container
+          .content
+            table.main role="presentation"
+              tr
+                td.wrapper
+                  table border="0" cellpadding="0" cellspacing="0" role="presentation"
+                    tr
+                      td
+                        = yield
+
+            .footer
+              table border="0" cellpadding="0" cellspacing="0" role="presentation"
+                tr
+                  td.content-block
+                    span.apple-link Curyy.com

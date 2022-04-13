@@ -16,6 +16,9 @@ gem "turbo-rails"
 gem "stimulus-rails"
 gem "cssbundling-rails"
 
+# Emails
+gem 'premailer-rails'
+
 # Fundamentals
 gem "slim-rails"
 gem "simple_form"
