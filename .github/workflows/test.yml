@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       postgres:
-        image: postgres:14.2
+        image: postgres:11
         env:
           POSTGRES_USER: curyy
           POSTGRES_DB: curyy_test
