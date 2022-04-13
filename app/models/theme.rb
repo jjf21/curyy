@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Theme < ApplicationRecord
-  has_many :cvs
+  has_many :cvs, dependent: :restrict_with_error
 
   def self.default_theme
     Theme.first
