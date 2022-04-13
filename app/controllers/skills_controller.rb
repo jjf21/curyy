@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SkillsController < ApplicationController
   before_action :set_skill, only: %i[edit update destroy]
 
@@ -5,15 +7,14 @@ class SkillsController < ApplicationController
     @skill = Skill.new(user: current_user, **skill_params)
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
-    if params[:use_template] == 'true'
-      @skill = Skill.new_template(current_user, params[:item_type].to_s)
-    else
-      @skill = Skill.new(skill_params)
-    end
+    @skill = if params[:use_template] == "true"
+               Skill.new_template(current_user, params[:item_type].to_s)
+             else
+               Skill.new(skill_params)
+             end
 
     respond_to do |format|
       if @skill.save

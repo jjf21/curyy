@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Experience < ApplicationRecord
   attr_accessor :newly_created
 
@@ -11,10 +13,10 @@ class Experience < ApplicationRecord
 
   def self.new_template(user, item_type)
     case item_type
-    when 'work'
+    when "work"
       Experience.new(
-        user: user,
-        item_type: item_type,
+        user:,
+        item_type:,
         start_date: "jan 2020",
         end_date: "aujourd'hui",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
@@ -22,10 +24,10 @@ class Experience < ApplicationRecord
         location: "Ville",
         title: "Nom du poste"
       )
-    when 'education'
+    when "education"
       Experience.new(
-        user: user,
-        item_type: item_type,
+        user:,
+        item_type:,
         start_date: "2010",
         end_date: "2015",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
@@ -39,5 +41,4 @@ class Experience < ApplicationRecord
   def newly_created!
     self.newly_created = true
   end
-
 end

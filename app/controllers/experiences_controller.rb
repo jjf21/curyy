@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ExperiencesController < ApplicationController
   before_action :set_experience, only: %i[edit update destroy change_position]
 
@@ -5,15 +7,14 @@ class ExperiencesController < ApplicationController
     @experience = Experience.new(user: current_user, **experience_params)
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
-    if params[:use_template] == 'true'
-      @experience = Experience.new_template(current_user, params[:item_type].to_s)
-    else
-      @experience = Experience.new(experience_params)
-    end
+    @experience = if params[:use_template] == "true"
+                    Experience.new_template(current_user, params[:item_type].to_s)
+                  else
+                    Experience.new(experience_params)
+                  end
 
     respond_to do |format|
       if @experience.save
@@ -46,9 +47,10 @@ class ExperiencesController < ApplicationController
   end
 
   def change_position
-    if params[:direction] == "lower"
+    case params[:direction]
+    when "lower"
       @experience.move_lower
-    elsif params[:direction] == "higher"
+    when "higher"
       @experience.move_higher
     end
 

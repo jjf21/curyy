@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # Populate the database with a small set of realistic sample data so that as a developer/designer, you can use the
 # application without having to create a bunch of stuff or pull down production data.
 #

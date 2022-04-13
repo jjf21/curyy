@@ -10,14 +10,14 @@ class TurboFailureApp < Devise::FailureApp
   end
 
   def skip_format?
-    %w(html turbo_stream */*).include? request_format.to_s
+    %w[html turbo_stream */*].include? request_format.to_s
   end
 end
 
 Devise.setup do |config|
-  config.parent_controller = 'Users::DeviseController'
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
-  require 'devise/orm/active_record'
+  config.parent_controller = "Users::DeviseController"
+  config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
+  require "devise/orm/active_record"
   config.case_insensitive_keys = [:email]
   config.strip_whitespace_keys = [:email]
   config.skip_session_storage = [:http_auth]
@@ -27,10 +27,10 @@ Devise.setup do |config|
   config.password_length = 6..128
   config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
   config.reset_password_within = 6.hours
-  config.navigational_formats = ['*/*', :html, :turbo_stream]
+  config.navigational_formats = ["*/*", :html, :turbo_stream]
   config.sign_out_via = :delete
   config.warden do |manager|
     manager.failure_app = TurboFailureApp
   end
-  config.parent_mailer = 'ApplicationMailer'
+  config.parent_mailer = "ApplicationMailer"
 end

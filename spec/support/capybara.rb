@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "selenium/webdriver"
 
 Webdrivers.cache_time = 24.hours.seconds
@@ -27,7 +29,7 @@ Capybara.register_driver :headless_chrome do |app|
   Capybara::Selenium::Driver.new(
     app,
     browser: :chrome,
-    options: browser_options,
+    options: browser_options
     # desired_capabilities: capabilities
   )
 end

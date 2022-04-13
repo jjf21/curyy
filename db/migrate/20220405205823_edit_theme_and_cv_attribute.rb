@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class EditThemeAndCvAttribute < ActiveRecord::Migration[7.0]
   def change
     rename_column :cvs, :background, :body_bg
@@ -9,6 +11,5 @@ class EditThemeAndCvAttribute < ActiveRecord::Migration[7.0]
     add_column :themes, :header_bg, :string
     add_column :themes, :body_bg_pattern, :string
     add_column :themes, :font_size, :string
-
   end
 end

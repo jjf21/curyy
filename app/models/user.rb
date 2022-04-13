@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
@@ -18,7 +20,6 @@ class User < ApplicationRecord
     experiences.work
   end
 
-
   def education_experiences
     experiences.education
   end
@@ -37,24 +38,23 @@ class User < ApplicationRecord
 
   def full_name
     text = "#{first_name} #{last_name}"
-    text.blank? ? email : text
+    text.presence || email
   end
 
   private
 
   def set_default_values
-    self.cv_email = self.email
+    self.cv_email = email
     self.phone = "06 ..."
     self.address = "France"
     self.headline = "Ceo @ Twitter"
   end
 
   def add_default_content
-    Experience.new_template(self, 'work').save!
-    Experience.new_template(self, 'education').save!
-    Skill.new_template(self, 'skill').save!
-    Skill.new_template(self, 'tool').save!
-    Skill.new_template(self, 'language').save!
+    Experience.new_template(self, "work").save!
+    Experience.new_template(self, "education").save!
+    Skill.new_template(self, "skill").save!
+    Skill.new_template(self, "tool").save!
+    Skill.new_template(self, "language").save!
   end
-
 end

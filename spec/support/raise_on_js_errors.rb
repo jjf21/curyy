@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 JavaScriptError = Class.new(StandardError)
 
 # Raise on JS errors (i.e., things logged to the Chrome console as errors).

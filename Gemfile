@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-
 
 # Default
 ruby "3.1.1"
@@ -17,7 +18,7 @@ gem "stimulus-rails"
 gem "cssbundling-rails"
 
 # Emails
-gem 'premailer-rails'
+gem "premailer-rails"
 
 # Fundamentals
 gem "slim-rails"
@@ -25,14 +26,14 @@ gem "simple_form"
 gem "devise", "~> 4.8"
 
 # SEO
-gem 'meta-tags'
+gem "meta-tags"
 
 # Services
-gem 'grover' # print html to pdf
-gem 'acts_as_list' # help with ordering element
+gem "grover" # print html to pdf
+gem "acts_as_list" # help with ordering element
 
 # i18n
-gem 'devise-i18n'
+gem "devise-i18n"
 
 # Admin
 gem "ahoy_matey"
@@ -69,7 +70,7 @@ end
 
 group :test do
   gem "capybara"
-  gem 'rails-controller-testing'
+  gem "rails-controller-testing"
   # gem "capybara-email"
   gem "selenium-webdriver"
   gem "shoulda-matchers"
