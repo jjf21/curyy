@@ -44,7 +44,7 @@ jobs:
           POSTGRES_HOST: localhost
           DATABASE_URL: postgres://curyy:curyy@localhost/curyy_test
           RAILS_ENV: test
-        run: rails db:create db:schema:load
+        run: bin/rails db:create db:schema:load
 
       - name: Setup Node
         uses: actions/setup-node@v1
