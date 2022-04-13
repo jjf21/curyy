@@ -9,6 +9,14 @@ on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:14.2
+        env:
+          POSTGRES_USER: curyy
+          POSTGRES_DB: curyy_test
+          POSTGRES_PASSWORD: ""
+        ports: ["5432:5432"]
     steps:
       - uses: actions/checkout@v3
       - name: Set up Ruby
@@ -36,11 +44,9 @@ jobs:
           yarn install --pure-lockfile
       - name: Build and Test
         env:
-          PG_DATABASE: curyy_test
-          PG_HOST: localhost
-          PG_PORT: 5432
-          PG_USER: postgres
-          PG_PASSWORD: postgres
+          POSTGRES_USER: curyy
+          POSTGRES_PASSWORD: ""
+          POSTGRES_DB: curyy_test
           RAILS_ENV: test
         run: bin/rails db:setup
       - name: Run tests
