@@ -6,8 +6,3 @@
 Rails.application.config.assets.version = "1.0"
 
 # Add additional assets to the asset load path.
-Rails.application.config.assets.precompile = []
-Dir[Rails.root.join("app", "assets", "stylesheets", "components", "**", "*.css")].each do |file|
-  Rails.application.config.assets.precompile << file
-end
-Rails.application.config.assets.precompile << Dir[Rails.root.join("app", "assets", "stylesheets", "application.assets.css")].first
