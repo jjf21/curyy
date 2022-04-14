@@ -20,7 +20,7 @@ class CvsController < ApplicationController
   def create
     @cv = Cv.new(user: current_user, theme: Theme.default_theme)
     if @cv.save
-      redirect_to @cv
+      redirect_to edit_cv_path(@cv)
     else
       redirect_to :cvs, error: "CV was not created"
     end
