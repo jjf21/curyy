@@ -15,12 +15,15 @@
                 th.pl-4.pr-3.text-left.text-sm.font-semibold.text-gray-900.sm:pl-6.md:pl-0 class="py-3.5" scope="col"  Theme
                 th.px-3.text-left.text-sm.font-semibold.text-gray-900 class="py-3.5" scope="col"  Créé le
                 th.px-3.text-left.text-sm.font-semibold.text-gray-900 class="py-3.5" scope="col"  Modifié le
+                th.px-3.text-left.text-sm.font-semibold.text-gray-900 class="py-3.5" scope="col"  Action
             tbody.divide-y.divide-gray-200
               - @cvs.each do |cv|
                 tr
-                  td.whitespace-nowrap.py-4.pl-4.pr-3.text-sm.font-medium.text-gray-900.sm:pl-6.md:pl-0= cv.theme.name
+                  td.whitespace-nowrap.py-4.pl-4.pr-3.text-sm.font-medium.text-gray-900.sm:pl-6.md:pl-0= link_to cv.theme.name, edit_cv_path(cv)
                   td.whitespace-nowrap.py-4.px-3.text-sm.text-gray-500= cv.created_at
                   td.whitespace-nowrap.py-4.px-3.text-sm.text-gray-500= cv.updated_at
+                  td.whitespace-nowrap.py-4.px-3.text-sm= link_to "Modifier", edit_cv_path(cv), class: 'btn btn-primary-light'
+                  td.whitespace-nowrap.py-4.px-3.text-sm= link_to "Download", export_cv_path(cv), class: 'btn btn-pink'
 
 - else
   .py-20

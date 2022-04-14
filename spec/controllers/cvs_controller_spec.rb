@@ -34,7 +34,7 @@ RSpec.describe CvsController do
 
   describe "POST create" do
     before { post :create }
-    it { expect(response).to redirect_to(cv_path(Cv.last.id)) }
+    it { expect(response).to redirect_to(edit_cv_path(Cv.last.id)) }
     it { expect(assigns(:cv).theme).to eq Theme.default_theme }
   end
 

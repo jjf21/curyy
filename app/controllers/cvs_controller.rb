@@ -10,10 +10,12 @@ class CvsController < ApplicationController
 
   def show
     @user = current_user
-    @theme = @cv.theme
   end
 
-  def edit; end
+  def edit
+    @user = current_user
+    @theme = @cv.theme
+  end
 
   def create
     @cv = Cv.new(user: current_user, theme: Theme.default_theme)
