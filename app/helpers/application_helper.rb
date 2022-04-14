@@ -26,12 +26,12 @@ module ApplicationHelper
     }
   end
 
-  def editable_tag(item, attribute, &block)
+  def editable_tag(item, attribute, file = false, &block)
     return unless block_given?
 
     target = "##{dom_id(item)}_cv_item form ##{item.class.to_s.downcase}_#{attribute}"
-
-    content_tag(:div, class: "inline-block", data: { controller: "editable", action: "click->editable#click blur->editable#blur keydown->editable#keydown", target: }) do
+    clickAction = file ? "clickFile" : "click"
+    content_tag(:div, class: "inline-block", data: { controller: "editable", action: "click->editable##{clickAction} blur->editable#blur keydown->editable#keydown", target: }) do
       block.call
     end
   end

@@ -41,7 +41,6 @@ export default class extends Controller {
 
 
   setColor(e) {
-
     if (e.target.dataset.color) {
       this.inputTarget.value = e.target.dataset.color
     }
@@ -56,23 +55,6 @@ export default class extends Controller {
     } else if ( attr == "main_color" ) {
       this.changeMainColor()
     }
-  }
-
-  updateModel() {
-    let attr = this.inputTarget.dataset.attr;
-    let cv_id = document.querySelector("#cv_id").value
-    let formData = new FormData()
-    formData.append(`cv[${attr}]`, this.inputTarget.value);
-
-    fetch(`/cvs/${cv_id}`, {
-      body: formData,
-      method: 'PATCH',
-      dataType: 'script',
-      credentials: "include",
-      headers: {
-        "X-CSRF-Token": document.getElementsByName("csrf-token")[0].content
-      },
-    })
   }
 
 }

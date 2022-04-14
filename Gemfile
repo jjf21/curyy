@@ -31,6 +31,7 @@ gem "meta-tags"
 # Services
 gem "grover" # print html to pdf
 gem "acts_as_list" # help with ordering element
+gem 'cloudinary'
 
 # i18n
 gem "devise-i18n"

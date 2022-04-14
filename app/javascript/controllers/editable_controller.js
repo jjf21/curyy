@@ -33,7 +33,28 @@ export default class extends Controller {
   save() {
     let input = document.querySelector(this.element.dataset.target)
     let form = input.closest('form')
-    input.value = this.element.textContent
+    if (input.type != 'file') {
+      input.value = this.element.textContent
+    }
     form.querySelector('input[type="submit"]').click()
+  }
+
+  clickFile() {
+    let image = this.element.querySelector('.img')
+    let input = document.querySelector(this.element.dataset.target)
+    input.click()
+
+    input.onchange = e => {
+      var file = e.target.files[0];
+      var reader = new FileReader();
+      // reader.readAsText(file, 'UTF-8');
+      reader.onload = e => {
+        var content = e.target.result;
+        // image.style.backgroundImage = 'url(' + content + ')';
+        this.save()
+      }
+
+      reader.readAsDataURL(input.files[0]);
+    }
   }
 }

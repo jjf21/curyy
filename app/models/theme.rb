@@ -7,6 +7,10 @@ class Theme < ApplicationRecord
     Theme.first
   end
 
+  def self.name_with_avatar
+    ["theme_2"]
+  end
+
   def to_json(*_args)
     {
       body_bg:,

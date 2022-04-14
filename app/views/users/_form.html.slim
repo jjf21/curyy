@@ -1,5 +1,6 @@
 = simple_form_for user, html: { id: "#{dom_id(user)}_form" } do |f|
   = hidden_field_tag :cv_id, @cv&.id
+  = f.input :avatar
   = f.input :headline, placeholder: "Product Owner"
   = f.input :first_name, placeholder: "John"
   = f.input :last_name, placeholder: "Smith"

@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  def set_cv_and_theme_name
+  def set_theme_name_and_cv
     @cv = Cv.includes(:theme).find_by(id: params[:cv_id])
     @theme_name = @cv.theme.name if @cv
   end
