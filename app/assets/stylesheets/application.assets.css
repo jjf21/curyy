@@ -1,6 +1,6 @@
 
-@import "animations.css";
-@import "fonts.css";
+@import "components/animations.css";
+@import "components/fonts.css";
 
 html, body {
   height: 100%;
