@@ -64,6 +64,14 @@ abbr {display: none}
   min-height: calc(100vh - 300px);
 }
 
+.empty::before {
+  content: attr(data-placeholder);
+  border-bottom: 1px dashed;
+  font-style: italic;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
 /* ANIMATION */
 .slide-in {
   animation: fade-in 0.25s ease-out,

@@ -1,17 +1,17 @@
 = tag.div id:"#{dom_id(user)}_cv_item", class:"pb-2 mb-2 border-b-2"
-  .flex.items-center.pb-4
+  .flex.items-stretch.pb-4
     span.flex.justify-center.items-center.h-6.w-6.bg-main.rounded-full.cursor-pointer.mr-3.text-white
       i class="gg-mail"
     = editable_tag user, "cv_email" do
       p= user.cv_email
 
-  .flex.items-center.pb-4
+  .flex.items-stretch.pb-4
     span.flex.justify-center.items-center.h-6.w-6.bg-main.rounded-full.cursor-pointer.mr-3.text-white
       i class="gg-smartphone"
     = editable_tag user, "phone" do
       p= user.phone
 
-  .flex.items-center.pb-4
+  .flex.items-stretch.pb-4
     span.flex.justify-center.items-center.h-6.w-6.bg-main.rounded-full.cursor-pointer.mr-3.text-white
       i class="gg-pin"
 

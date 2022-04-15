@@ -26,12 +26,14 @@ module ApplicationHelper
     }
   end
 
-  def editable_tag(item, attribute, file = false, &block)
+  def editable_tag(item, attribute, file: false, &block)
     return unless block_given?
 
+    empty_attribute = item.send(attribute).blank?
     target = "##{dom_id(item)}_cv_item form ##{item.class.to_s.downcase}_#{attribute}"
-    clickAction = file ? "clickFile" : "click"
-    content_tag(:div, class: "inline-block", data: { controller: "editable", action: "click->editable##{clickAction} blur->editable#blur keydown->editable#keydown", target: }) do
+    click_action = file ? "clickFile" : "click"
+
+    content_tag(:div, class: "inline-block #{"relative empty" if empty_attribute}", data: { placeholder: attribute, controller: "editable", action: "click->editable##{click_action} blur->editable#blur keydown->editable#keydown", target: }) do
       block.call
     end
   end

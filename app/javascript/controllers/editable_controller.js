@@ -4,6 +4,7 @@ export default class extends Controller {
   click(event) {
     if (this.preventDoubleClick()) return;
 
+    this.element.classList.remove("empty")
     console.log("click")
     this.element.setAttribute("contenteditable", "true")
     this.element.focus()
