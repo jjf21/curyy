@@ -14,6 +14,8 @@ class User < ApplicationRecord
   has_many :skills, dependent: :destroy
   has_many :links, dependent: :destroy
 
+  validates :first_name, :last_name, presence: true
+
   def admin?
     email == "carl.quivron@gmail.com"
   end
