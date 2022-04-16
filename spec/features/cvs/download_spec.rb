@@ -9,14 +9,15 @@ feature "download" do
 
   before do
     login_as(user, scope: :user)
-    visit cv_path(cv)
   end
 
-  scenario "Download a CV", js: true do
+  scenario "Download button on CV", js: true do
+    visit cv_path(cv)
     expect(page).to have_content("Download CV")
-    click_on "Download CV"
+  end
 
-    # expect(page).to have_current_path(cv_path(Cv.last))
-    expect(page).to have_content("Changer de theme")
+  scenario "Download button on CV edition", js: true do
+    visit edit_cv_path(cv)
+    expect(page).to have_content("Download CV")
   end
 end

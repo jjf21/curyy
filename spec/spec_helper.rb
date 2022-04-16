@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+# frozen_string_literal: false
 
 require "simplecov"
 
@@ -11,7 +11,6 @@ SimpleCov.start do
   add_group  "Helpers", "app/helpers"
   add_group  "Mailers", "app/mailers"
 end
-# frozen_string_literal: true
 
 require "capybara/rspec"
 require "selenium/webdriver"
@@ -88,6 +87,8 @@ RSpec.configure do |config|
   config.before(:suite) do
     DatabaseCleaner.strategy = :deletion
     DatabaseCleaner.clean_with(:truncation)
+    system "yarn build"
+    system "yarn build:css"
   end
 
   config.after(:suite) do
