@@ -9,15 +9,38 @@ style
 
 
 section#theme_2.page.transition.overflow-hidden data-controller="cv-zoom"
+  #cv_header.flex.flex-col.p-16.pb-2 style=header_style
+    = render "themes/theme_2/user", user: user
+    = render "themes/theme_2/contact", user: user
 
-  #cv_body.flex.h-full style=body_style
-    #left.border-r-2.w-1/3.ml-8.pr-2.my-6
-      #cv_avatar
-        = render "themes/theme_2/contact", user: user
-        = render "themes/theme_2/avatar", user: user
+  #cv_body.flex.h-full.pt-8.px-16 style=body_style
 
-    #right.w-2/3.mx-8.my-6
+    #left.w-1/3
+      #cv_skill_skills data-controller='section' data-item-type='skill' data-model='skill' data-cv-id="#{@cv.id}"
+        p.text-xl.mb-4.uppercase.font-bold.tracking-wider Compétences
+        - user.skill_skills.each do |skill|
+          = render "themes/theme_2/skill", skill: skill
+
+      #cv_tool_skills data-controller='section' data-item-type='tool' data-model='skill' data-cv-id="#{@cv.id}"
+        p.text-xl.my-4.uppercase.font-bold.tracking-wider Outils
+        - user.tool_skills.each do |skill|
+          = render "themes/theme_2/skill", skill: skill
+
+      #cv_language_skills data-controller='section' data-item-type='language' data-model='skill' data-cv-id="#{@cv.id}"
+        p.text-xl.my-4.uppercase.font-bold.tracking-wider Langues
+        - user.language_skills.each do |skill|
+          = render "themes/theme_2/skill", skill: skill
+
+    #right.w-2/3
+      #cv_work_experiences data-controller='section' data-item-type='work' data-model='experience' data-cv-id="#{@cv.id}"
+        p.text-xl.mb-4.uppercase.font-bold.tracking-wider Experiences professionnelles
+        - user.work_experiences.each do |experience|
+          = render "themes/theme_2/experience", experience: experience
+
+      #cv_education_experiences data-controller='section' data-item-type='education' data-model='experience' data-cv-id="#{@cv.id}"
+        p.text-xl.my-4.uppercase.font-bold.tracking-wider Formations
+        - user.education_experiences.each do |experience|
+          = render "themes/theme_2/experience", experience: experience
 
 
-
-    p.text-thin.absolute.bottom-0.right-5.text-xs.text-gray-400 Made with ♥︎ on curryy.com
+        p.text-thin.absolute.bottom-0.right-5.text-xs.text-gray-400 Made with ♥︎ on curryy.com

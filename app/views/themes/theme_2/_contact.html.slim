@@ -1,18 +1,19 @@
-= tag.div id:"#{dom_id(user)}_cv_item", class:"pb-2 mb-2 border-b-2"
-  .flex.items-center.pb-4
-    = editable_tag user, "cv_email" do
-      p= user.cv_email
+= tag.div id:"#{dom_id(user)}_cv_item", class:"mt-6 flex justify-between items-center"
 
-  .flex.items-center.pb-4
+  .flex.w-1/3
+    = render 'themes/theme_2/avatar', user:
 
-    = editable_tag user, "phone" do
-      p= user.phone
-
-  .flex.items-center.pb-4
-
+  .flex.flex-col.pb-4.grow
+    p.font-bold Adresse
     = editable_tag user, "address" do
-      p= user.address
+      p.font-light= user.address
 
+  .flex.flex-col.pb-4.grow
+    p.font-bold Contact
+    = editable_tag user, "phone" do
+      p.font-light= user.phone
+    = editable_tag user, "cv_email" do
+      p.font-light= user.cv_email
 
   .hidden
     = render 'users/form', user: user

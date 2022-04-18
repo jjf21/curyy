@@ -1,5 +1,5 @@
-#user_cv_item.text-main.text-center
-  .text-4xl.uppercase
+#user_cv_item.text-main
+  .text-5xl.uppercase.font-bold
     = editable_tag user, "first_name" do
       span= user.first_name
     | &nbsp;
@@ -7,4 +7,4 @@
       span= user.last_name
 
   = editable_tag user, "headline" do
-    p.text-2xl.uppercase =user.headline
+    p.mt-1.tracking-widest.text-xl.uppercase =user.headline

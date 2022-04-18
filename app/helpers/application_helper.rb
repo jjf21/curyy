@@ -33,7 +33,7 @@ module ApplicationHelper
     target = "##{dom_id(item)}_cv_item form ##{item.class.to_s.downcase}_#{attribute}"
     click_action = file ? "clickFile" : "click"
 
-    content_tag(:div, class: "inline-block #{"relative empty" if empty_attribute}", data: { placeholder: attribute, controller: "editable", action: "click->editable##{click_action} blur->editable#blur keydown->editable#keydown", target: }) do
+    content_tag(:div, class: "inline-block #{"relative empty" if !file && empty_attribute}", data: { placeholder: attribute, controller: "editable", action: "click->editable##{click_action} blur->editable#blur keydown->editable#keydown", target: }) do
       block.call
     end
   end
