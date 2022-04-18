@@ -18,7 +18,9 @@ export default class extends Controller {
   }
 
   changeBgPattern(patternSrc) {
-    document.querySelector("#cv_body").style.background = "url(/patterns/"+ patternSrc +")";
+    if (patternSrc) {
+      document.querySelector("#cv_body").style.background = "url(/patterns/"+ patternSrc +")";
+    }
   }
 
   changeHeaderBg() {

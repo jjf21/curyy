@@ -154,6 +154,8 @@ GEM
     factory_bot_rails (6.2.0)
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
+    faker (2.20.0)
+      i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
     foreman (0.87.2)
     geckodriver-helper (0.24.0)
@@ -255,6 +257,9 @@ GEM
     premailer-rails (1.11.1)
       actionmailer (>= 3)
       premailer (~> 1.7, >= 1.7.9)
+    pry (0.14.1)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
     public_suffix (4.0.6)
     puma (5.6.2)
       nio4r (~> 2.0)
@@ -454,6 +459,7 @@ DEPENDENCIES
   devise-i18n
   dotenv-rails
   factory_bot_rails
+  faker
   foreman
   geckodriver-helper
   grover
@@ -466,6 +472,7 @@ DEPENDENCIES
   meta-tags
   pg (~> 1.1)
   premailer-rails
+  pry
   puma (~> 5.0)
   rails (~> 7.0.2, >= 7.0.2.3)
   rails-controller-testing

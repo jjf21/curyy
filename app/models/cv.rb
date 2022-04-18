@@ -9,10 +9,14 @@ class Cv < ApplicationRecord
   before_create :set_theme_default_values
 
   def remove_body_bg
+    return if body_bg_pattern.blank?
+
     self.body_bg = nil
   end
 
   def remove_body_bg_pattern
+    return if body_bg.blank?
+
     self.body_bg_pattern = nil
   end
 

@@ -42,8 +42,6 @@ export default class extends Controller {
       document.querySelector(`#cv_${key}`).value = value
       document.querySelector(`#cv_${key}`).dispatchEvent(event);
     });
-    // this.save()
-    // debugger
   }
 
   save() {

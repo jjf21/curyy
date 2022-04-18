@@ -71,6 +71,7 @@ end
 
 group :test do
   gem "capybara"
+  gem 'pry'
   gem "rails-controller-testing"
   gem "database_cleaner-active_record"
   # gem "capybara-email"
@@ -79,4 +80,5 @@ group :test do
   gem "simplecov"
   gem "webdrivers"
   gem "geckodriver-helper"
+  gem 'faker'
 end

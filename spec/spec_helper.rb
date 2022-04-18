@@ -75,6 +75,10 @@ RSpec.configure do |config|
     DatabaseCleaner.start
   end
 
+  config.before(:each, js: true, debug: true) do
+    Capybara.current_driver = :selenium_chrome
+  end
+
   config.before(:each, js: true) do
     DatabaseCleaner.strategy = :truncation
   end
@@ -84,11 +88,16 @@ RSpec.configure do |config|
     ActionMailer::Base.deliveries.clear
   end
 
+  config.after(:each, js: true, debug: true) do
+    Capybara.use_default_driver
+  end
+
   config.before(:suite) do
     DatabaseCleaner.strategy = :deletion
     DatabaseCleaner.clean_with(:truncation)
     system "yarn build"
     system "yarn build:css"
+    ActionController::Base.allow_forgery_protection = true
   end
 
   config.after(:suite) do

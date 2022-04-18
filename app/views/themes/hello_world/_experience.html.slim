@@ -1,7 +1,7 @@
 = tag.div id:"#{dom_id(experience)}_cv_item", class:"pb-3", data: { stream_enter_class: "stream_enter_#{experience.newly_created ? 'new' : 'update'}", controller: "item", item_type: experience.item_type}
   .flex.justify-between
     = editable_tag experience, "title" do
-      p.uppercase.font-bold = experience.title
+      span.uppercase.font-bold = experience.title
     div
       = editable_tag experience, "start_date" do
         span = experience.start_date
@@ -16,7 +16,7 @@
       span= experience.location
 
   = editable_tag experience, "description" do
-    p.font-extralight= experience.description
+    span.font-extralight= experience.description
 
   .hidden
     = render '/experiences/form', experience: experience
