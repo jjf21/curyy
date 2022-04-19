@@ -19,10 +19,7 @@
       .inline-block.pb-4 data-controller="color-picker"
         = f.input :body_bg_pattern, as: :hidden, input_html: {data: {color_picker_target: "input", action: "change->color-picker#updateModel", attr: "body_bg_pattern"}}
         .flex.overflow-x-scroll
-          - Dir.entries("public/patterns")[2..-1].each do |pattern|
-            - p Dir.entries("public/patterns")
-            - p Dir.entries("public/patterns")[2..-1]
-            - p pattern
+          - Dir.entries("public/patterns").select{|a| a.match(/\w+\.\w+/)}.each do |pattern|
             = image_tag "/patterns/#{pattern}", class:"h-12 w-12 border mr-4", data: {color_picker_target: "input", action: "click->color-picker#patternSelect", name: pattern}
 
 
