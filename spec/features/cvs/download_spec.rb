@@ -3,7 +3,7 @@
 require "rails_helper"
 
 feature "download" do
-  let!(:theme) { create(:theme) }
+  let!(:theme) { create(:theme, :hello_world) }
   let!(:user) { create(:user) }
   let!(:cv) { create(:cv, user:, theme:) }
 
