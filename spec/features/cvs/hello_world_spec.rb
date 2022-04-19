@@ -109,6 +109,7 @@ feature "hello_world theme edition" do
 
     ### Reset
     click_on "Remise à zéro"
+    sleep(0.5) # Wait for DOM to be completely updated
     verify_color(target: "#cv_header", value: theme.header_bg, css_attr: "background-color")
     verify_color(target: "#cv_body", value: theme.body_bg, css_attr: "background-color")
     verify_color(target: ".text-main", value: theme.main_color, css_attr: "color")
