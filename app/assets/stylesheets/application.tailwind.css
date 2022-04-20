@@ -113,3 +113,34 @@ h2 {
   flex-direction: column;
   overflow: hidden;
 }
+
+/* THEME 2 */
+/* Color that must be set */
+/* .timeline-left::before, .timeline-left > .experience::before, .timeline-left > p::before {border-color} */
+/* .timeline-left > .experience::before {background-color} */
+/* .timeline-left > p::before {background-color} */
+.timeline-left { @apply relative }
+.timeline-left::before {
+  position: absolute;
+  height: calc(100% - 1.5rem);
+  content:'';
+  left: -1.75rem;
+  top: 0.3rem;
+  border-left: 1px solid black;
+  z-index: 0;
+}
+.timeline-left > .experience, .timeline-left > p { position: relative }
+.timeline-left > .experience::before, .timeline-left > p::before {
+  position: absolute;
+  content: "";
+  left: -2.2rem;
+  top: .3rem;
+  border-radius: 50px;
+  border: 1px solid black;
+  z-index: 4;
+  width: 1rem;
+  height: 1rem;
+  background-color: black;
+}
+
+/* THEME 2 */

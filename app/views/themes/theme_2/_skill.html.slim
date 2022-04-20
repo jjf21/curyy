@@ -1,6 +1,6 @@
 = tag.div id:"#{dom_id(skill)}_cv_item", class:"pb-1", data: { stream_enter_class: "stream_enter_#{skill.newly_created ? 'new' : 'update'}", controller: "item", item_type: skill.item_type }
   div
-    span= "◦ "
+    span= "● "
     = editable_tag skill, "name" do
       span= "#{skill.name}"
     - if skill.language? && skill.certification.present?

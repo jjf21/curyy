@@ -5,15 +5,19 @@
 - header_style = "background-color: #{cv.header_bg}"
 
 style
-  |  .text-main{color: #{cv.main_color};} .bg-main{background: #{cv.main_color}}
+  | .text-main{color: #{cv.main_color};}
+  | .bg-main{background: #{cv.main_color}}
+  | .timeline-left::before, .timeline-left > .experience::before, .timeline-left > p::before {border-color: #{cv.text_color};}
+  | .timeline-left > p::before {background-color: #{cv.text_color};}
+  | .timeline-left > .experience::before {background-color: #{cv.body_bg};}
 
 
-section#theme_2.page.transition.overflow-hidden data-controller="cv-zoom"
-  #cv_header.flex.flex-col.p-16.pb-2 style=header_style
+section#theme_2.page.transition.overflow-hidden data-controller="cv-zoom" style=body_style
+  #cv_header.flex.flex-col.py-12.px-16 style=header_style
     = render "themes/theme_2/user", user: user
     = render "themes/theme_2/contact", user: user
 
-  #cv_body.flex.h-full.pt-8.px-16 style=body_style
+  #cv_body.flex.h-full.pt-12.px-16
 
     #left.w-1/3
       #cv_skill_skills data-controller='section' data-item-type='skill' data-model='skill' data-cv-id="#{@cv.id}"
@@ -32,15 +36,15 @@ section#theme_2.page.transition.overflow-hidden data-controller="cv-zoom"
           = render "themes/theme_2/skill", skill: skill
 
     #right.w-2/3
-      #cv_work_experiences data-controller='section' data-item-type='work' data-model='experience' data-cv-id="#{@cv.id}"
+      #cv_work_experiences.timeline-left data-controller='section' data-item-type='work' data-model='experience' data-cv-id="#{@cv.id}"
         p.text-xl.mb-4.uppercase.font-bold.tracking-wider Experiences professionnelles
         - user.work_experiences.each do |experience|
           = render "themes/theme_2/experience", experience: experience
 
-      #cv_education_experiences data-controller='section' data-item-type='education' data-model='experience' data-cv-id="#{@cv.id}"
+      #cv_education_experiences.timeline-left data-controller='section' data-item-type='education' data-model='experience' data-cv-id="#{@cv.id}"
         p.text-xl.my-4.uppercase.font-bold.tracking-wider Formations
         - user.education_experiences.each do |experience|
           = render "themes/theme_2/experience", experience: experience
 
 
-        p.text-thin.absolute.bottom-0.right-5.text-xs.text-gray-400 Made with ♥︎ on curryy.com
+      p.text-thin.absolute.bottom-0.right-5.text-xs.text-gray-400 Made with ♥︎ on curryy.com
