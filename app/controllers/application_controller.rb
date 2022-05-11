@@ -15,6 +15,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(_resource)
+    AhoyEventsService.new(ahoy).track_sign_up
     current_user.admin? ? admin_root_path : cvs_path
   end
 

@@ -13,8 +13,9 @@ class User < ApplicationRecord
   has_many :cvs, dependent: :destroy
   has_many :skills, dependent: :destroy
   has_many :links, dependent: :destroy
+  has_many :visits, class_name: "Ahoy::Visit"
 
-  validates :first_name, :last_name, presence: true
+  # validates :first_name, :last_name, presence: true
 
   def admin?
     email == "carl.quivron@gmail.com"

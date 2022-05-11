@@ -2,11 +2,20 @@
 
 Rails.application.routes.draw do
   namespace :admin do
+    root to: "dashboard#index"
+
+    resources :themes
+    resources :experiences
+    resources :skills
     resources :themes
     resources :cvs
     resources :users
+    resources :dashboard, only: [:index]
 
-    root to: "users#index"
+    namespace :ahoy do
+      resources :visits
+      resources :events
+    end
   end
 
   resources :experiences, except: [:index, :show] do

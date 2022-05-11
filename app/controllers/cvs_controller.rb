@@ -57,7 +57,7 @@ class CvsController < ApplicationController
     ]
     grover = Grover.new("<html><head><meta charset='UTF-8' /></head><body>#{html}</body></html>", format: "A4", style_tag_options:)
     pdf = grover.to_pdf
-
+    AhoyEventsService.new(ahoy).download_cv
     send_data pdf, type: "application/pdf"
   end
 

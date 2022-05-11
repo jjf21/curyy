@@ -1,8 +1,6 @@
-# frozen_string_literal: true
-
 require "administrate/base_dashboard"
 
-class UserDashboard < Administrate::BaseDashboard
+class ExperienceDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -10,25 +8,18 @@ class UserDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    experiences: Field::HasMany,
-    cvs: Field::HasMany,
-    visits: Field::HasMany,
-    skills: Field::HasMany,
-    links: Field::HasMany,
+    user: Field::BelongsTo,
     id: Field::Number,
-    email: Field::String,
-    first_name: Field::String,
-    last_name: Field::String,
-    birthdate: Field::Date,
-    phone: Field::String,
-    address: Field::String,
-    headline: Field::String,
-    about: Field::String,
-    website: Field::String,
-    interests: Field::Text,
+    start_date: Field::String,
+    end_date: Field::String,
+    title: Field::String,
+    description: Field::Text,
+    company: Field::String,
+    location: Field::String,
+    item_type: Field::Select.with_options(searchable: false, collection: ->(field) { field.resource.class.send(field.attribute.to_s.pluralize).keys }),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    cv_email: Field::String,
+    position: Field::Number,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -37,55 +28,42 @@ class UserDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-    email
-    experiences
-    cvs
-    visits
-    skills
+    user
+    id
+    start_date
+    end_date
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
+    user
     id
-    email
-    first_name
-    last_name
-    headline
-    cvs
-    experiences
-    skills
-    visits
-    birthdate
-    phone
-    address
-    about
-    website
-    interests
+    start_date
+    end_date
+    title
+    description
+    company
+    location
+    item_type
     created_at
     updated_at
-    cv_email
+    position
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    experiences
-    cvs
-    skills
-    links
-    email
-    first_name
-    last_name
-    birthdate
-    phone
-    address
-    headline
-    about
-    website
-    interests
-    cv_email
+    user
+    start_date
+    end_date
+    title
+    description
+    company
+    location
+    item_type
+    position
   ].freeze
 
   # COLLECTION_FILTERS
@@ -100,10 +78,10 @@ class UserDashboard < Administrate::BaseDashboard
   #   }.freeze
   COLLECTION_FILTERS = {}.freeze
 
-  # Overwrite this method to customize how users are displayed
+  # Overwrite this method to customize how experiences are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(user)
-  #   "User ##{user.id}"
+  # def display_resource(experience)
+  #   "Experience ##{experience.id}"
   # end
 end
