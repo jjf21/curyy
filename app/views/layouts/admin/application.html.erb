@@ -25,6 +25,7 @@ By default, it renders:
   <%= render "stylesheet" %>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag if defined?(csp_meta_tag) %>
+  <%= javascript_include_tag "administrate", "data-turbo-track": "reload", defer: true %>
 </head>
 <body>
   <%= render "icons" %>

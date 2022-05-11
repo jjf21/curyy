@@ -3,22 +3,18 @@ header.main-content__header role="banner"
     | Dashboard
 
 section.main-content__body.main-content__body--flush.px-4
-  .card
-    h2 Nombre de visiteur
-    div
-      | graph
+  .flex.w-100
+    .w-1/2
+      h2 Visiteur / mois
+      = line_chart @visits.group_by_month(:started_at).count
+    .w-1/2
+      h2 Cv créé / mois
+      = line_chart @cvs.group_by_month(:created_at).count
 
-  .card
-    h2 Device
-    div
-      | graph
-
-  .card
-    h2 Browser
-    div
-      | graph
-
-  .card
-    h2 Pays
-    div
-      | graph
+  .flex.w-100
+    .w-1/2
+      h2 Supports
+      = pie_chart @visits.group(:device_type).count
+    .w-1/2
+      h2 Evenements
+      = pie_chart @events.group(:name).count

@@ -39,6 +39,8 @@ gem "devise-i18n"
 # Admin
 gem "ahoy_matey"
 gem "administrate"
+gem "chartkick"
+gem "groupdate"
 
 # Logging
 gem "sentry-ruby"

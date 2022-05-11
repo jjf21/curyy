@@ -7,8 +7,10 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.0.1",
     "@hotwired/turbo-rails": "^7.1.1",
-    "autoprefixer": "^10.4.4",
     "@melloware/coloris": "0.10.4-rc1",
+    "autoprefixer": "^10.4.4",
+    "chart.js": "^3.7.1",
+    "chartkick": "^4.1.1",
     "esbuild": "^0.14.27",
     "postcss": "^8.4.12",
     "puppeteer": "^13.5.2",
