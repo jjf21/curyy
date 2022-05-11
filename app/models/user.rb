@@ -51,7 +51,7 @@ class User < ApplicationRecord
     self.cv_email = email
     self.phone = "06 ..."
     self.address = "France"
-    self.headline = "Ceo @ Twitter"
+    self.headline = "Poste actuel"
   end
 
   def add_default_content

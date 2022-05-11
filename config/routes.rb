@@ -26,4 +26,5 @@ Rails.application.routes.draw do
   get "/legal_notices", to: "pages#legal_notices"
   get "/services", to: "pages#services"
   get "/privacy_policy", to: "pages#privacy_policy"
+  get "/contact", to: "pages#contact"
 end
