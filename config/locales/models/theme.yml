@@ -1,0 +1,14 @@
+fr:
+  activerecord:
+    models:
+      theme: Thème
+    attributes:
+      theme:
+        name: Nom
+        header_bg: Fond de l'en-tête
+        body_bg: Fond principal
+        main_color: Couleur primaire
+        text_color: Couleur du texte
+        font_family: Typo
+        body_bg_pattern: Motif de fond
+        font_size: Taille

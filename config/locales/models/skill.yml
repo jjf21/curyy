@@ -1,0 +1,13 @@
+fr:
+  activerecord:
+    models:
+      skill: Compétence
+    attributes:
+      skill:
+        name: Nom
+        level: Niveau
+        certification: Certificat
+        item_types:
+          tool: Outil
+          language: Langue
+          skill: Compétence

@@ -1,5 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
+import { convertHtmlToRaw } from "../lib/utils"
+
 export default class extends Controller {
   click(event) {
     if (this.preventDoubleClick()) return;
@@ -11,14 +13,12 @@ export default class extends Controller {
   }
 
   blur(event) {
-    console.log("blur")
     this.element.removeAttribute("contenteditable")
     window.sessionStorage.setItem('lastEdit', Date.now())
     this.save()
   }
 
   keydown(event) {
-    console.log("keydown")
     // if (event.keyCode == 13) {
     //   event.preventDefault()
     //   this.element.removeAttribute("contenteditable")
@@ -35,7 +35,14 @@ export default class extends Controller {
     let input = document.querySelector(this.element.dataset.target)
     let form = input.closest('form')
     if (input.type != 'file') {
-      input.value = this.element.textContent
+      var value = ''
+      if (this.element.dataset.placeholder == "description") {
+        // Support multiline content for some fields
+        value = convertHtmlToRaw(this.element.firstChild.innerHTML)
+      } else {
+        value = this.element.textContent
+      }
+      input.value = value
     }
     form.querySelector('input[type="submit"]').click()
   }

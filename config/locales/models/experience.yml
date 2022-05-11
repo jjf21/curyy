@@ -1,0 +1,15 @@
+fr:
+  activerecord:
+    models:
+      experience: Expérience
+    attributes:
+      experience:
+        start_date: Début
+        end_date: Fin
+        title: Titre
+        description: Description
+        company: Société
+        location: Lieu
+        item_types:
+          work: Travail
+          education: Ecole
