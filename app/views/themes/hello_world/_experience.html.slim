@@ -8,7 +8,7 @@
       = experience.end_date.present? ? " - " : ""
       = editable_tag experience, "end_date" do
         span = experience.end_date
-  p.mb-1
+  .mb-1
     = editable_tag experience, "company" do
       span= experience.company
     = " , "
@@ -16,7 +16,7 @@
       span= experience.location
 
   = editable_tag experience, "description" do
-    span.font-extralight= simple_format experience.description
+    span.font-extralight= simple_format(experience.description) unless experience.description.blank?
 
   .hidden
     = render '/experiences/form', experience: experience
