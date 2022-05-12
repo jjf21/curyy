@@ -20,6 +20,7 @@ class CvsController < ApplicationController
   def create
     @cv = Cv.new(user: current_user, theme: Theme.default_theme)
     if @cv.save
+      EventsTrackingService.new(ahoy).create_cv
       redirect_to edit_cv_path(@cv)
     else
       redirect_to :cvs, error: "CV was not created"
@@ -57,7 +58,7 @@ class CvsController < ApplicationController
     ]
     grover = Grover.new("<html><head><meta charset='UTF-8' /></head><body>#{html}</body></html>", format: "A4", style_tag_options:)
     pdf = grover.to_pdf
-    AhoyEventsService.new(ahoy).download_cv
+    EventsTrackingService.new(ahoy).download_cv
     send_data pdf, type: "application/pdf"
   end
 
