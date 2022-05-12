@@ -24,6 +24,7 @@ gem "premailer-rails"
 gem "slim-rails"
 gem "simple_form"
 gem "devise", "~> 4.8"
+gem "pundit"
 
 # SEO
 gem "meta-tags"

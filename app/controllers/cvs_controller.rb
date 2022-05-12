@@ -2,10 +2,9 @@
 
 class CvsController < ApplicationController
   before_action :set_cv_and_theme_name, only: %i[show edit update destroy export]
-  before_action :set_theme_name, only: %i[show edit export]
 
   def index
-    @cvs = current_user.cvs
+    @cvs = policy_scope(Cv)
   end
 
   def show
@@ -68,13 +67,9 @@ class CvsController < ApplicationController
     params.require(:cv).permit(:theme_id, :header_bg, :body_bg, :body_bg_pattern, :font_size, :main_color, :text_color, :font_family)
   end
 
-  def set_theme_name
-    @cv = Cv.find(params[:id])
-    @theme_name = @cv.theme.name
-  end
-
   def set_cv_and_theme_name
     @cv = Cv.find(params[:id])
+    authorize(@cv)
     @theme_name = @cv.theme.name
   end
 
