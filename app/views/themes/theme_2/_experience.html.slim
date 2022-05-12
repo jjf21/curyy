@@ -14,10 +14,9 @@
     = " , "
     = editable_tag experience, "location" do
       span= experience.location
-    = " , "
-    span= experience.newly_created
+
   = editable_tag experience, "description" do
-    p.font-extralight= experience.description
+    span.font-extralight= simple_format(experience.description) unless experience.description.blank?
 
   .hidden
     = render '/experiences/form', experience: experience

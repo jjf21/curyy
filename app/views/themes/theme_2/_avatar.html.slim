@@ -1,4 +1,4 @@
 #avatar_cv_item.text-center
   = editable_tag user, "avatar", file: true do
-    - avatar = current_user.avatar.present? ? url_for(current_user.avatar) : "https://image.spreadshirtmedia.net/image-server/v1/mp/compositions/T757A1MPA4537PT10X0Y14D179095208FS2368/views/3,width=550,height=550,appearanceId=1,backgroundColor=FFFFFF,noPt=true/contour-noir-rond-noir-gourde.jpg"
-    .img.rounded-full.h-40.w-40.bg-cover style="background-image:url(#{avatar})"
+    - avatar = current_user.avatar.present? ? url_for(current_user.avatar) : "https://toppng.com/uploads/preview/roger-berry-avatar-placeholder-11562991561rbrfzlng6h.png"
+    .img.cursor-pointer.rounded-full.h-40.w-40.bg-cover style="background-image:url(#{avatar})"

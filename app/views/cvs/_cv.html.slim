@@ -1,4 +1,13 @@
 div id="#{dom_id(cv)}_item" *{data: { 'stream-enter-class': "slide-in", 'stream-exit-class': "slide-out" }}
   = turbo_frame_tag dom_id(cv) do
     #theme-config data-theme-config="#{@theme.to_json}"
+
+    style#variables
+      | :root {
+        --header-bg: #{@cv.header_bg};
+        --body-bg: #{@cv.body_bg};
+        --main-color: #{@cv.main_color};
+        --text-color: #{@cv.text_color};
+       }
+       
     = render "/themes/#{@theme_name}", cv: cv
