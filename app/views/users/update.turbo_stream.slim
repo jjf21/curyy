@@ -6,6 +6,9 @@
   = turbo_stream.replace "user_cv_item" do
     = render "/themes/#{@theme_name}/user", user: @user
 
+  = turbo_stream.replace "#{dom_id(@user)}_cv_item" do
+    = render "/themes/#{@theme_name}/contact", user: @user
+
   - if Theme.name_with_avatar.include?(@theme_name)
     = turbo_stream.replace "avatar_cv_item" do
       = render "/themes/#{@theme_name}/avatar", user: @user
