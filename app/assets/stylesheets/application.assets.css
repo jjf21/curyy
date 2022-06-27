@@ -60,6 +60,11 @@ abbr {display: none}
   background: #ffe040;
 }
 
+.turbolinks-progress-bar {
+  height: 5px;
+  background-color: #3d0075;
+}
+
 .min-h-body-content {
   min-height: calc(100vh - 300px);
 }
