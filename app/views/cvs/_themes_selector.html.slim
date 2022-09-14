@@ -1,8 +1,10 @@
 #theme-selector.relative
   .flex.w-full.justify-center.p-4.hidden
     - Theme.all.each do |theme|
-      .shadow.mr-2 class="#{theme.id == cv.theme_id ? 'border' : ''}" data-controller="theme" data-action="click->theme#changeTheme" data-id=theme.id
-        = image_tag "/themes/#{theme.name}.png", width: 100
+      .flex.flex-col.text-center.text-sm.mr-2
+        span= theme.name
+        .shadow class="#{theme.id == cv.theme_id ? 'border' : ''}" data-controller="theme" data-action="click->theme#changeTheme" data-id=theme.id
+          = image_tag "/themes/#{theme.name}.png", width: 100
 
     .hidden
       = simple_form_for cv do |f|

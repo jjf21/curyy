@@ -1,8 +1,13 @@
 - @cv = cv
 - user = @cv.user
 
-- p "-------------"
-- p !@cv.body_bg_pattern.blank?
+style#variables
+  | :root {
+    --header-bg: #{@cv.header_bg};
+    --body-bg: #{@cv.body_bg};
+    --main-color: #{@cv.main_color};
+    --text-color: #{@cv.text_color};
+   }
 
 style#custom_style
   | #cv_header {background-color: var(--header-bg)}

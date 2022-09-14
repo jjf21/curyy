@@ -1,9 +1,10 @@
 #user_cv_item.text-main.text-center
   .text-4xl.uppercase
-    = editable_tag user, "first_name" do
+    
+    .inline-block
       span= user.first_name
     | &nbsp;
-    = editable_tag user, "last_name" do
+    .inline-block
       span= user.last_name
 
   = editable_tag user, "headline" do
