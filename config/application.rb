@@ -28,5 +28,8 @@ module Curyy
     config.generators.system_tests = nil
     config.i18n.default_locale = :fr
     config.assets.css_compressor = nil
+    config.assets.configure do |env|
+        env.export_concurrent = false
+    end
   end
 end
