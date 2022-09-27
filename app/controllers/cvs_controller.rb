@@ -53,7 +53,7 @@ class CvsController < ApplicationController
     style_tag_options = [
       tailwind_stylesheet,
       { url: "https://css.gg/css" },
-      { url: "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" },
+      # { url: "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" },
     ]
     grover = Grover.new("<html><head><meta charset='UTF-8' /></head><body>#{html}</body></html>", format: "A4", style_tag_options:)
     pdf = grover.to_pdf
