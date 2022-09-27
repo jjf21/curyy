@@ -36,7 +36,7 @@ export default class extends Controller {
     let form = input.closest('form')
     if (input.type != 'file') {
       var value = ''
-      if (this.element.dataset.placeholder == "description") {
+      if (this.element.dataset.placeholder == "Description") {
         // Support multiline content for some fields
         value = convertHtmlToRaw(this.element.firstChild.innerHTML)
       } else {
