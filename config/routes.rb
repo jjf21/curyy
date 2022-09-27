@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update]
   resources :cvs, except: [:new] do
     get :export, on: :member
+    get :test_export, on: :member
   end
 
   # Static pages

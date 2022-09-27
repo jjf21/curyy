@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 @media print {
   body { color-adjust: exact; }
 }
@@ -95,6 +93,7 @@ h2 {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  font-family:
   /* remove extra-space after pages */
   /* height: 100vh; */
 }
@@ -112,6 +111,7 @@ h2 {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  font-family: 'Messina Sans', sans-serif;
 }
 
 /* THEME 2 */

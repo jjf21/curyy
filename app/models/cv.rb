@@ -29,4 +29,8 @@ class Cv < ApplicationRecord
     self.header_bg = theme.header_bg
     # self.font_size = theme.font_size
   end
+
+  def filename
+    "CV_#{user.first_name}_#{user.last_name}.pdf"
+  end
 end

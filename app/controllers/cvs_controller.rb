@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CvsController < ApplicationController
-  before_action :set_cv_and_theme_name, only: %i[show edit update destroy export]
+  before_action :set_cv_and_theme_name, only: %i[show edit update destroy export test_export]
 
   def index
     @cvs = policy_scope(Cv)
@@ -58,7 +58,15 @@ class CvsController < ApplicationController
     grover = Grover.new("<html><head><meta charset='UTF-8' /></head><body>#{html}</body></html>", format: "A4", style_tag_options:)
     pdf = grover.to_pdf
     EventsTrackingService.new(ahoy).download_cv
-    send_data pdf, type: "application/pdf"
+    send_data pdf, type: "application/pdf", filename: @cv.filename
+  end
+
+  def test_export
+    html = render_to_string partial: "/themes/hello_world", locals: { user: current_user, cv: @cv }, layout: false
+
+    respond_to do |format|
+      format.html { render inline: "<style>#{tailwind_stylesheet[:content]}</style><link href='https://css.gg/css' rel='stylesheet'> #{html}" }
+    end
   end
 
   private
