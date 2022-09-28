@@ -53,9 +53,9 @@ class CvsController < ApplicationController
     style_tag_options = [
       tailwind_stylesheet,
       { url: "https://css.gg/css" },
-      # { url: "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" },
+      { url: "https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700" },
     ]
-    grover = Grover.new("<html><head><meta charset='UTF-8' /></head><body>#{html}</body></html>", format: "A4", style_tag_options:)
+    grover = Grover.new("<html><head><meta charset='UTF-8' /></head><body>#{html}</body></html>", format: "A4", style_tag_options:, wait_for_function: 'document.fonts.ready')
     pdf = grover.to_pdf
     EventsTrackingService.new(ahoy).download_cv
     send_data pdf, type: "application/pdf", filename: @cv.filename

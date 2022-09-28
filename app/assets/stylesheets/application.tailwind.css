@@ -111,7 +111,8 @@ h2 {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  font-family: 'Messina Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 100%;
 }
 
 /* THEME 2 */
