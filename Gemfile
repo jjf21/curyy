@@ -36,6 +36,7 @@ gem "cloudinary"
 
 # i18n
 gem "devise-i18n"
+gem 'rails-i18n'
 
 # Admin
 gem "ahoy_matey"

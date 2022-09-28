@@ -1,4 +1,6 @@
 fr:
+  cv:
+    new: Créer un Cv
   activerecord:
     models:
       cv: Cv
@@ -10,4 +12,4 @@ fr:
         text_color: Couleur du texte
         font_family: Typo
         body_bg_pattern: Motif de fond
-        font_size: Taille 
+        font_size: Taille

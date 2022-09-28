@@ -2,7 +2,7 @@ footer.bg-primary
   .max-w-7xl.mx-auto.py-12.px-4.overflow-hidden.sm:px-6.lg:px-8
     .pb-8.flex.items-baseline.justify-center.text-yellow
       = link_to 'Curyy', root_path, class: 'font-bold text-2xl'
-      span.text-xs.ml-2 | démarquez votre CV
+      span.text-xs.ml-2 = t("app.meta.title")
     nav.-mx-5.-my-2.flex.flex-wrap.justify-center.text-white.flex-col.text-center.lg:flex-row.lg:text-left aria-label="Footer"
       .px-5.lg:border-r
         = link_to "Notre outil", services_path

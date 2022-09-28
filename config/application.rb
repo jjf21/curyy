@@ -26,6 +26,7 @@ module Curyy
     config.load_defaults 7.0
 
     config.generators.system_tests = nil
+    config.i18n.available_locales = [:fr, :en]
     config.i18n.default_locale = :fr
     config.assets.css_compressor = nil
     config.assets.configure do |env|

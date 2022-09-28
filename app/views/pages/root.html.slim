@@ -2,10 +2,10 @@
   .container.px-3.mx-auto.flex.flex-wrap.justify-center.flex-col.md:flex-row.items-center
     .text-primary.flex.flex-col.w-full.md:w-2/5.justify-center.items-start.text-center.md:text-left
       h1.my-4.text-5xl.font-bold.tracking-tighter
-        | Décrochez le job de vos rêves !
+        = t('home.section_1.title')
       p.leading-normal.text-xl.mb-8
-        | Finis les journées entières pour faire son CV sur powerpoint. Simplifiez vous la vie avec notre outil et ses nombreux thèmes. Un clic, un geste et Curyy fait le reste.
-      = link_to 'Créer mon CV', user_signed_in? ? cvs_path : new_user_registration_path, class: "btn btn-pink"
+        = t('home.section_1.paragraph')
+      = link_to t('cv.new'), user_signed_in? ? cvs_path : new_user_registration_path, class: "btn btn-pink"
     .w-full.flex.justify-center.md:w-2/5.text-center
       img.w-full.md:w-4/5.z-50 src="https://www.tailwindtoolbox.com/templates/hero.png"
 

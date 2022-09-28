@@ -1,5 +1,12 @@
 ---
 fr:
+  app:
+    baseline: démarquez votre CV
+    meta:
+      title: Démarquez votre CV en 5 minutes
+      description: Curyy est un outil de conception premium de CV (curriculum vitae) en ligne. Il permet de choisir un thème, modifier son design, remplir vos expériences et télécharger votre CV au format PDF.
+      keywords: cv design curriculum vitae recrutement theme
+
   activerecord:
     errors:
       messages:

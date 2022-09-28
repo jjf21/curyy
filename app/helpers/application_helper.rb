@@ -3,12 +3,12 @@
 module ApplicationHelper
   def default_meta_tags
     {
-      site: "Curyy, démarquez votre CV",
+      site: I18n.t("app.meta.title"),
       title: "",
       reverse: true,
       separator: "-",
-      description: "Curyy est un outil de conception premium de CV (curriculum vitae) en ligne. Il permet de choisir un thème, modifier son design, remplir vos expériences et télécharger votre CV au format PDF.",
-      keywords: "cv design curriculum vitae recrutement theme",
+      description: I18n.t("app.meta.description"),
+      keywords: I18n.t("app.meta.keywords"),
       canonical: request.original_url,
       noindex: !Rails.env.production?,
       icon: [
@@ -18,7 +18,7 @@ module ApplicationHelper
       og: {
         site_name: "Curyy.com",
         title: "Curyy",
-        description: "Curyy est un outil de conception premium de CV (curriculum vitae) en ligne. Il permet de choisir un thème, modifier son design, remplir vos expériences et télécharger votre CV au format PDF.",
+        description: I18n.t("app.meta.description"),
         type: "website",
         url: request.original_url,
         image: image_url("/og-image.png"),

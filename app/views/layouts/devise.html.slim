@@ -8,7 +8,7 @@ html
       .w-full.flex.flex-col class="md:w-1/3"
         .flex.justify-center.md:justify-start.pt-12.md:pl-12.md:mb-4.items-baseline
           = link_to 'Curyy', root_path, class: 'text-primary no-underline hover:no-underline font-bold text-2xl lg:text-4xl'
-          span.text-primary.text-xs.ml-2 | démarquez votre CV
+          span.text-primary.text-xs.ml-2 = t("app.baseline")
 
         .flex.flex-col.justify-center.md:justify-start.my-auto.pt-8.md:pt-0.px-8.md:px-12
           = yield
