@@ -25,6 +25,7 @@ gem "slim-rails"
 gem "simple_form"
 gem "devise", "~> 4.8"
 gem "pundit"
+gem 'friendly_id'
 
 # SEO
 gem "meta-tags"

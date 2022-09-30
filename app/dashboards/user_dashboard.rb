@@ -38,9 +38,9 @@ class UserDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     email
-    experiences
-    cvs
     visits
+    cvs
+    experiences
     skills
   ].freeze
 

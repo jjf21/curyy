@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :themes
     resources :cvs
     resources :users
+    resources :articles
     resources :dashboard, only: [:index]
 
     namespace :ahoy do
@@ -37,4 +38,6 @@ Rails.application.routes.draw do
   get "/services", to: "pages#services"
   get "/privacy_policy", to: "pages#privacy_policy"
   get "/contact", to: "pages#contact"
+  get "/exemples_de_cv", to: "pages#examples"
+  resources :articles, only: [:index, :show], path: 'blog'
 end

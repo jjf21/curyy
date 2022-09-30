@@ -18,4 +18,9 @@ class PagesController < ApplicationPublicController
   def service
     set_meta_tags title: "Concepteur de CV en ligne"
   end
+
+  def examples
+    @examples = Article.all
+    set_meta_tags title: "Exemples de CV en ligne", description: "Retrouvez ici une selection d'exemples de CV pour vous inspirer lors de l'écriture de votre CV"
+  end
 end

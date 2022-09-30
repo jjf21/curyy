@@ -1,0 +1,7 @@
+.container.lg:w-2/3.mx-auto.text-gray-800
+  h1.text-center.font-bold.text-3xl = @article.title
+  p.text-center.my-6.mx-auto.lg:w-1/2 = @article.description
+
+.bg-gray-50.py-10
+  .container.lg:w-2/3.mx-auto.text-gray-800
+    .text-xl = @article.content.html_safe

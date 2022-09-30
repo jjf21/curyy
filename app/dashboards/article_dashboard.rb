@@ -1,8 +1,6 @@
-# frozen_string_literal: true
-
 require "administrate/base_dashboard"
 
-class CvDashboard < Administrate::BaseDashboard
+class ArticleDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -10,18 +8,14 @@ class CvDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    user: Field::BelongsTo,
-    theme: Field::BelongsTo,
     id: Field::Number,
-    body_bg: Field::String,
-    main_color: Field::String,
-    text_color: Field::String,
-    font_family: Field::String,
+    title: Field::String,
+    description: Field::String,
+    content: ActiontextField,
+    category: Field::Number,
+    lang: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    header_bg: Field::String,
-    body_bg_pattern: Field::String,
-    font_size: Field::String,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -31,40 +25,33 @@ class CvDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    user
-    theme
+    title
+    description
+    content
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-    user
-    theme
     id
-    body_bg
-    main_color
-    text_color
-    font_family
+    title
+    description
+    content
+    category
+    lang
     created_at
     updated_at
-    header_bg
-    body_bg_pattern
-    font_size
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    user
-    theme
-    body_bg
-    main_color
-    text_color
-    font_family
-    header_bg
-    body_bg_pattern
-    font_size
+    title
+    description
+    content
+    category
+    lang
   ].freeze
 
   # COLLECTION_FILTERS
@@ -79,10 +66,10 @@ class CvDashboard < Administrate::BaseDashboard
   #   }.freeze
   COLLECTION_FILTERS = {}.freeze
 
-  # Overwrite this method to customize how cvs are displayed
+  # Overwrite this method to customize how articles are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(cv)
-  #   "Cv ##{cv.id}"
+  # def display_resource(article)
+  #   "Article ##{article.id}"
   # end
 end
